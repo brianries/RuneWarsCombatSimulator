@@ -26,6 +26,7 @@ public class CoreUnit {
 
     int[] statistics = new int[5];
 
+    public CoreUnit(){}
     public CoreUnit(Formation formation, int[] unitStats, DiePool diePool) {
         this.formation = formation;
         this.unitStats = unitStats;
