@@ -18,16 +18,16 @@ public class CSim {
 
     public static void baseCombat() {
         // spearmen vs reanimates
-        int[] daqan = {1,1,4};// 2x1, 2x2, 3x2, 3x3
-        int[] waiqar = {1,1,4};// 2x1, 2x2, 3x2, 3x3, 4x3
+//        int[] daqan = {1,1,4};// 2x1, 2x2, 3x2, 3x3
+//        int[] waiqar = {1,1,4};// 2x1, 2x2, 3x2, 3x3, 4x3
 
         // rune golems vs carrion lancer
 //        int[] daqan = {4,2,1}; // 1, 2x1, 2x2, 3x2
 //        int[] waiqar = {3,3,1}; // 1, 2x1, 2x2, 3x2
 
         // oathsworn vs deathknights
-//        int[] daqan = {2,1,2}; //  2x1, 2x2, 2x3, 3x3
-//        int[] waiqar = {3,1,2}; // 2x1, 2x2, 2x3
+        int[] daqan = {2,1,2}; //  2x1, 2x2, 2x3, 3x3
+        int[] waiqar = {3,1,2}; // 2x1, 2x2, 2x3
 
         Formation dform = Formation.THREE_BY_THREE;
         Formation wform = Formation.TWO_BY_THREE;
