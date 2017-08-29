@@ -2,7 +2,6 @@ package rwcsim.ui;
 
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,7 +29,7 @@ public class RWCombatSim extends Application {
     public ImageView rune5ImageView = new ImageView();
 
 
-    public void initialize(Stage primaryStage) {
+    public void initializeRunes(Stage primaryStage) {
         rune1 = (ToggleButton) primaryStage.getScene().lookup("#rune1");
         rune1.setGraphic(rune1ImageView);
         rune1ImageView.imageProperty().bind(Bindings.when(rune1.selectedProperty())
@@ -83,10 +82,6 @@ public class RWCombatSim extends Application {
         primaryStage.setScene(new Scene(root, 640, 480));
         primaryStage.show();
 
-        initialize(primaryStage);
-    }
-
-    public void rune1OnAction(ActionEvent actionEvent) {
-
+        initializeRunes(primaryStage);
     }
 }
