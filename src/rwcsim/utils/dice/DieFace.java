@@ -8,7 +8,7 @@ import java.util.*;
  * Created by dsayles on 5/14/15.
  */
 public enum DieFace {
-    BLANK(),
+    BLANK(ActionType.BLANK),
     HIT(ActionType.HIT),
     ACCURACY(ActionType.ACCURACY),
     MORALE(ActionType.MORALE),

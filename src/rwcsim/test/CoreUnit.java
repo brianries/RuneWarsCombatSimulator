@@ -17,6 +17,8 @@ public class CoreUnit {
     public static final int MORALE = 2;
     public static final int MORTALSTRIKE = 3;
     public static final int SURGE = 4;
+    public static final int BLANK = 5;
+    public static final int REROLLS = 6;
 
     Formation formation;
     int[] unitStats;
@@ -24,7 +26,11 @@ public class CoreUnit {
 
     int unitHitCount;
 
-    int[] statistics = new int[5];
+    int[] statistics = new int[7];
+
+    public void incrementStat(int statid) {
+        statistics[statid]++;
+    }
 
     public CoreUnit(){}
     public CoreUnit(Formation formation, int[] unitStats, DiePool diePool) {
@@ -36,17 +42,19 @@ public class CoreUnit {
 
 
     public List<ActionType> attack() {
-        return Roller.rollPool(diePool.getAttackPool());
+        return Roller.rollPool(diePool.getAttackPool(), this);
     }
 
 
     public boolean applyResults(CoreUnit attacker, List<ActionType> ats) {
+        int b = (int)ats.stream().filter(actionType -> actionType==ActionType.BLANK).count();
         int a = (int)ats.stream().filter(actionType -> actionType==ActionType.ACCURACY).count();
         int h = (int)ats.stream().filter(actionType -> actionType==ActionType.HIT).count();
         int m = (int)ats.stream().filter(actionType -> actionType==ActionType.MORALE).count();
         int ms = (int)ats.stream().filter(actionType -> actionType==ActionType.MORTAL_STRIKE).count();
         int s = (int)ats.stream().filter(actionType -> actionType==ActionType.SURGE).count();
 
+        attacker.statistics[BLANK] += b;
         attacker.statistics[ACCURACY] += a;
         attacker.statistics[HIT] += h;
         attacker.statistics[MORALE] += m;
@@ -73,7 +81,7 @@ public class CoreUnit {
     }
 
     public void showStats() {
-        System.out.println("A,H,M,MS,S: "+ Arrays.toString(statistics));
+        System.out.println("A,H,M,MS,S,B,RR: "+ Arrays.toString(statistics));
     }
 
     public int[] getStats() {

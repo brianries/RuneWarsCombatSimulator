@@ -10,7 +10,8 @@ public enum Formation {
     THREE_BY_TWO(3,2),
     THREE_BY_THREE(3,3),
     FOUR_BY_THREE(4,3),
-    TWO_BY_THREE(2,3);
+    TWO_BY_THREE(2,3),
+    FOUR_BY_ONE(4,1);
 
     private int columns;
     private int rows;
@@ -30,7 +31,7 @@ public enum Formation {
         return columns;
     }
 
-    public int getRerolls() {
+    public int getNumberOfRerolls() {
         return rows-1;
     }
 }
