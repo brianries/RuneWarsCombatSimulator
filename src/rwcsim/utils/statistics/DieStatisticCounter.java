@@ -1,4 +1,4 @@
-package rwcsim.utils.dice;
+package rwcsim.utils.statistics;
 
 import java.util.Arrays;
 

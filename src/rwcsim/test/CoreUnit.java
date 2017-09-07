@@ -3,11 +3,10 @@ package rwcsim.test;
 import rwcsim.base.ActionType;
 import rwcsim.base.Formation;
 import rwcsim.utils.dice.DiePool;
-import rwcsim.utils.dice.DieStatisticCounter;
+import rwcsim.utils.statistics.DieStatisticCounter;
 import rwcsim.utils.dice.Roller;
 import rwcsim.utils.interaction.DefaultInteractionManager;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
