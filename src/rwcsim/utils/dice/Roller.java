@@ -1,13 +1,10 @@
 package rwcsim.utils.dice;
 
 import rwcsim.base.ActionType;
-import rwcsim.base.RuleSetManager;
-import rwcsim.base.ruleset.AutomaticallyRerollBlanks;
 import rwcsim.test.CoreUnit;
+import rwcsim.utils.interaction.InteractionManager;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by dsayles on 5/14/15.
@@ -32,45 +29,41 @@ public class Roller {
         return die.result(rand.nextInt(die.faces.length));
     }
 
-
-    public static List<ActionType> rollPool(int[] pool, CoreUnit unit) {
+    public static List<ActionType> rollPool(int[] pool, CoreUnit unit, InteractionManager roller) {
         List<ActionType> actionPool = new ArrayList<>();
-        actionPool.addAll(rollDice(redDie,pool[DiePool.RED_DIE], unit));
-        actionPool.addAll(rollDice(blueDie,pool[DiePool.BLUE_DIE], unit));
-        actionPool.addAll(rollDice(whiteDie,pool[DiePool.WHITE_DIE], unit));
+        Map<Die, List<DieFace>> resultsPools = new HashMap<>();
+
+        resultsPools.put(redDie, rollDice(redDie,pool[DiePool.RED_DIE], unit));
+        resultsPools.put(blueDie, rollDice(blueDie,pool[DiePool.BLUE_DIE], unit));
+        resultsPools.put(whiteDie, rollDice(whiteDie,pool[DiePool.WHITE_DIE], unit));
+
+        actionPool.addAll(processPool(resultsPools, unit, roller));
+
         return actionPool;
     }
 
-    public static List<ActionType> rollDice(Die die, int count, CoreUnit unit) {
-        List<ActionType> pool = new ArrayList<>();
+    public static List<ActionType> processPool(Map<Die,List<DieFace>> interpretPools, CoreUnit unit, InteractionManager roller) {
+        List<ActionType> resultsPool = new ArrayList<>();
+
+        for (Map.Entry<Die,List<DieFace>> entry:interpretPools.entrySet()) {
+            for (DieFace df : entry.getValue()) {
+                resultsPool.addAll(df.getActions());
+            }
+        }
+
+        return resultsPool;
+    }
+
+
+
+
+
+    public static List<DieFace> rollDice(Die die, int count, CoreUnit unit) {
         List<DieFace> resultPool = new ArrayList<>();
         for (int i=0; i<count; i++) {
             resultPool.add(roll(die));
         }
-
-        // add control of AutoBlankRerolls
-        if (RuleSetManager.isEnabled(AutomaticallyRerollBlanks.name)) {
-            int z=0;
-            List<DieFace> workingPool = new ArrayList<>();
-            workingPool.addAll(resultPool);
-
-            for (DieFace df : workingPool) {
-                if (df.equals(DieFace.BLANK)) {
-                    resultPool.remove(df);
-                    z++;
-                    unit.incrementStat(CoreUnit.REROLLS);
-                }
-            }
-            for (int y=0; y<z; y++) {
-                resultPool.add(roll(die));
-            }
-        }
-
-
-        for (DieFace df : resultPool) {
-            pool.addAll(df.getActions());
-        }
-        return pool;
+        return resultPool;
     }
 
     public static void main(String[] args) {

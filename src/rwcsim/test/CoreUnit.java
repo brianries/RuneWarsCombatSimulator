@@ -3,7 +3,9 @@ package rwcsim.test;
 import rwcsim.base.ActionType;
 import rwcsim.base.Formation;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.dice.DieStatisticCounter;
 import rwcsim.utils.dice.Roller;
+import rwcsim.utils.interaction.DefaultInteractionManager;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,24 +14,19 @@ import java.util.List;
  * Created by dsayles on 8/17/17.
  */
 public class CoreUnit {
-    public static final int ACCURACY = 0;
-    public static final int HIT = 1;
-    public static final int MORALE = 2;
-    public static final int MORTALSTRIKE = 3;
-    public static final int SURGE = 4;
-    public static final int BLANK = 5;
-    public static final int REROLLS = 6;
-
+    DieStatisticCounter dsc = new DieStatisticCounter();
     Formation formation;
     int[] unitStats;
     DiePool diePool;
 
     int unitHitCount;
 
-    int[] statistics = new int[7];
 
     public void incrementStat(int statid) {
-        statistics[statid]++;
+        dsc.increment(statid);
+    }
+    public void incrementStatBy(int statid, int count) {
+        dsc.incrementBy(statid, count);
     }
 
     public CoreUnit(){}
@@ -42,7 +39,7 @@ public class CoreUnit {
 
 
     public List<ActionType> attack() {
-        return Roller.rollPool(diePool.getAttackPool(), this);
+        return Roller.rollPool(diePool.getAttackPool(), this, DefaultInteractionManager.instance());
     }
 
 
@@ -54,12 +51,12 @@ public class CoreUnit {
         int ms = (int)ats.stream().filter(actionType -> actionType==ActionType.MORTAL_STRIKE).count();
         int s = (int)ats.stream().filter(actionType -> actionType==ActionType.SURGE).count();
 
-        attacker.statistics[BLANK] += b;
-        attacker.statistics[ACCURACY] += a;
-        attacker.statistics[HIT] += h;
-        attacker.statistics[MORALE] += m;
-        attacker.statistics[MORTALSTRIKE] += ms;
-        attacker.statistics[SURGE] += s;
+        attacker.incrementStatBy(DieStatisticCounter.BLANK, b);
+        attacker.incrementStatBy(DieStatisticCounter.ACCURACY, a);
+        attacker.incrementStatBy(DieStatisticCounter.HIT, h);
+        attacker.incrementStatBy(DieStatisticCounter.MORALE, m);
+        attacker.incrementStatBy(DieStatisticCounter.MORTALSTRIKE, ms);
+        attacker.incrementStatBy(DieStatisticCounter.SURGE, s);
 
         unitHitCount = unitHitCount - ms;
         unitHitCount = unitHitCount - ((h * attacker.calcThreat()) / unitStats[CSim.ARMOR]);
@@ -80,13 +77,6 @@ public class CoreUnit {
         return unitHitCount > 0;
     }
 
-    public void showStats() {
-        System.out.println("A,H,M,MS,S,B,RR: "+ Arrays.toString(statistics));
-    }
-
-    public int[] getStats() {
-        return statistics;
-    }
 
     public int getHealth() {
         return unitHitCount;
