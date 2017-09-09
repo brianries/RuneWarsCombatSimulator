@@ -16,9 +16,9 @@ public class Statistics {
     public void showStats() {
         System.out.println("R: "+ rounds + " D:"+daqan.getHealth()+ " W:"+waiqar.getHealth());
         System.out.println("\nDaqar Data");
-        daqan.showStats();
+//        daqan.showStats();
 
         System.out.println("\nWaiqar Stats");
-        waiqar.showStats();
+//        waiqar.showStats();
     }
 }

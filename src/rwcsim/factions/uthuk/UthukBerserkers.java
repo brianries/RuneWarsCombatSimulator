@@ -1,7 +1,10 @@
-package rwcsim.factions.waiqar;
+package rwcsim.factions.uthuk;
 
 import rwcsim.base.Formation;
-import rwcsim.base.dials.*;
+import rwcsim.base.dials.CommandTool;
+import rwcsim.base.dials.DialFace;
+import rwcsim.base.dials.Face;
+import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
 import rwcsim.test.CoreUnit;
@@ -13,13 +16,13 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class Reanimates extends CoreUnit implements Unit, Infantry {
+public class UthukBerserkers extends CoreUnit implements Unit, Infantry {
 
 
-    public Reanimates() {
+    public UthukBerserkers() {
         super();
     }
-    public Reanimates(Formation formation, int[] unitStats, DiePool diePool){
+    public UthukBerserkers(Formation formation, int[] unitStats, DiePool diePool){
         super(formation, unitStats, diePool);
     }
 
@@ -44,7 +47,7 @@ public class Reanimates extends CoreUnit implements Unit, Infantry {
         modifierFaces.add(new DialFace(Face.MOVE_MOD_CHARGE, FaceColor.BLUE, -1));
         modifierFaces.add(new DialFace(Face.MOVE_MOD_TURNING_CHARGE, FaceColor.BLUE, -1));
         modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.GREEN, 1));
-        modifierFaces.add(new DialFace(Face.ENHANCE_MORALE, FaceColor.RED, 1));
+        modifierFaces.add(new DialFace(Face.ENHANCE_MORALE, FaceColor.RED));
         modifierFaces.add(new DialFace(Face.BLANK));
 
         commandTool.setActionDialFaces(actionFaces);

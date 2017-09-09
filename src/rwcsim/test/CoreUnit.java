@@ -2,6 +2,7 @@ package rwcsim.test;
 
 import rwcsim.base.ActionType;
 import rwcsim.base.Formation;
+import rwcsim.base.dials.CommandTool;
 import rwcsim.utils.dice.DiePool;
 import rwcsim.utils.statistics.DieStatisticCounter;
 import rwcsim.utils.dice.Roller;
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by dsayles on 8/17/17.
  */
 public class CoreUnit {
+    public CommandTool commandTool;
     DieStatisticCounter dsc = new DieStatisticCounter();
     Formation formation;
     int[] unitStats;
