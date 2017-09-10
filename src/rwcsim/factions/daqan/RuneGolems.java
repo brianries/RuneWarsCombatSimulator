@@ -5,6 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Siege;
 import rwcsim.factions.base.Unit;
 import rwcsim.test.CoreUnit;
@@ -17,15 +18,15 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class RuneGolems extends CoreUnit implements Unit, Siege {
+public class RuneGolems extends BaseUnit implements Siege {
 
 
     public RuneGolems() {
         super();
     }
-    public RuneGolems(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public RuneGolems(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

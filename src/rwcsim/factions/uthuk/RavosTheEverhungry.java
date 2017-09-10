@@ -5,10 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
-import rwcsim.factions.base.Cavalry;
-import rwcsim.factions.base.Hero;
-import rwcsim.factions.base.Infantry;
-import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.*;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 import rwcsim.utils.runes.Rune;
@@ -16,14 +13,14 @@ import rwcsim.utils.runes.Rune;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RavosTheEverhungry extends CoreUnit implements Unit, Hero, Cavalry, Infantry {
+public class RavosTheEverhungry extends BaseUnit implements Hero, Siege {
 
     public RavosTheEverhungry() {
         super();
     }
-    public RavosTheEverhungry(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public RavosTheEverhungry(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

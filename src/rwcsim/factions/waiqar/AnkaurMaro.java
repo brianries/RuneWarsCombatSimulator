@@ -5,24 +5,21 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
-import rwcsim.factions.base.Cavalry;
-import rwcsim.factions.base.Hero;
-import rwcsim.factions.base.Infantry;
-import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.*;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnkaurMaro extends CoreUnit implements Unit, Hero, Cavalry, Infantry {
+public class AnkaurMaro extends BaseUnit implements Hero, Cavalry, Infantry {
 
     public AnkaurMaro() {
         super();
     }
-    public AnkaurMaro(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public AnkaurMaro(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

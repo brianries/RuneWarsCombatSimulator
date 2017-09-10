@@ -1,5 +1,8 @@
 package rwcsim.utils.dice;
 
+import rwcsim.utils.runes.Rune;
+import rwcsim.utils.runes.RuneManager;
+
 /**
  * Created by dsayles on 6/10/15.
  */
@@ -8,12 +11,21 @@ public class DiePool {
     public static final int BLUE_DIE = 1;
     public static final int WHITE_DIE = 2;
 
+
     public static final int DIE_TYPE_COUNT = 3;
     private int[] attackDice = new int[DIE_TYPE_COUNT];
+    private Rune[] attackRune = new Rune[DIE_TYPE_COUNT];
 
     public int[] getAttackPool() {
         int[] ret = new int[DIE_TYPE_COUNT];
         System.arraycopy(attackDice, 0, ret, 0, attackDice.length);
+
+        for (int i = 0; i < DIE_TYPE_COUNT; i++) {
+            if (attackRune[i] != null) {
+//                ret[i] = RuneManager.;
+            }
+        }
+
         return ret;
     }
 
@@ -36,5 +48,11 @@ public class DiePool {
         tPool[BLUE_DIE] += blue;
         tPool[WHITE_DIE] += white;
         return tPool;
+    }
+
+    public void setAttackPool(Rune rred, Rune rblue, Rune rwhite) {
+        attackRune[RED_DIE] = rred;
+        attackRune[BLUE_DIE] = rblue;
+        attackRune[WHITE_DIE] = rwhite;
     }
 }

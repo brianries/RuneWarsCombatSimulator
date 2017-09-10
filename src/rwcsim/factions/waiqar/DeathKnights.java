@@ -5,6 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Cavalry;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
@@ -17,15 +18,15 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class DeathKnights extends CoreUnit implements Unit, Cavalry {
+public class DeathKnights extends BaseUnit implements Cavalry {
 
 
     public DeathKnights() {
         super();
     }
-    public DeathKnights(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public DeathKnights(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

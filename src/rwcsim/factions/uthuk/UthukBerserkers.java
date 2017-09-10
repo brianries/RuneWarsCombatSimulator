@@ -5,6 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
 import rwcsim.test.CoreUnit;
@@ -16,15 +17,15 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class UthukBerserkers extends CoreUnit implements Unit, Infantry {
+public class UthukBerserkers extends BaseUnit implements Infantry {
 
 
     public UthukBerserkers() {
         super();
     }
-    public UthukBerserkers(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public UthukBerserkers(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

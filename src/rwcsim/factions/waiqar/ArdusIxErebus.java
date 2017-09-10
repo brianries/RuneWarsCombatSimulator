@@ -5,6 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Hero;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
@@ -14,14 +15,14 @@ import rwcsim.utils.dice.DiePool;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArdusIxErebus extends CoreUnit implements Unit, Hero, Infantry {
+public class ArdusIxErebus extends BaseUnit implements Hero, Infantry {
 
     public ArdusIxErebus() {
         super();
     }
-    public ArdusIxErebus(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public ArdusIxErebus(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

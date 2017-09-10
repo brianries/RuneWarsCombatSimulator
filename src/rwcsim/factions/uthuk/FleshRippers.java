@@ -5,6 +5,7 @@ import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Cavalry;
 import rwcsim.factions.base.Unit;
 import rwcsim.test.CoreUnit;
@@ -16,15 +17,15 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class FleshRippers extends CoreUnit implements Unit, Cavalry {
+public class FleshRippers extends BaseUnit implements Cavalry {
 
 
     public FleshRippers() {
         super();
     }
-    public FleshRippers(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public FleshRippers(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {

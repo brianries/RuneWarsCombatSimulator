@@ -2,6 +2,7 @@ package rwcsim.factions.waiqar;
 
 import rwcsim.base.Formation;
 import rwcsim.base.dials.*;
+import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
 import rwcsim.test.CoreUnit;
@@ -13,15 +14,15 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class Reanimates extends CoreUnit implements Unit, Infantry {
+public class Reanimates extends BaseUnit implements Infantry {
 
 
     public Reanimates() {
         super();
     }
-    public Reanimates(Formation formation, int[] unitStats, DiePool diePool){
-        super(formation, unitStats, diePool);
-    }
+//    public Reanimates(Formation formation, int[] unitStats, DiePool diePool){
+//        super(formation, unitStats, diePool);
+//    }
 
     @Override
     public void initializeUnit() {
