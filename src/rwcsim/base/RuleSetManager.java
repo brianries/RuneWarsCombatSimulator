@@ -3,8 +3,11 @@ package rwcsim.base;
 import java.util.*;
 
 public class RuleSetManager {
+    private static boolean useSeed = false;
+
     private static final long seed = 5567001l;
     private static final Random random = new Random(seed);
+    private static final Random fullRandom = new Random(System.nanoTime());
 
     private static Map<String,Rule> allRules = new HashMap<>();
     private static Set<String> enabledRules = new HashSet<>();
@@ -50,11 +53,13 @@ public class RuleSetManager {
     }
 
     public static int getInt() {
-        return random.nextInt();
+        if (useSeed) { return random.nextInt(); }
+        return fullRandom.nextInt();
     }
 
     public static int getBoxedInt(int max) {
-        return random.nextInt(max);
+        if (useSeed) { return random.nextInt(max); }
+        return fullRandom.nextInt(max);
     }
 
 

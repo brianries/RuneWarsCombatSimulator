@@ -16,6 +16,7 @@ public class DiePool {
     private int[] attackDice = new int[DIE_TYPE_COUNT];
     private Rune[] attackRune = new Rune[DIE_TYPE_COUNT];
 
+    public int[] getAttackPool() { return getAttackPool(0, 0,0);}
     public int[] getAttackPool(int[] dice) {
         return getAttackPool(dice[RED_DIE], dice[BLUE_DIE], dice[WHITE_DIE]);
     }

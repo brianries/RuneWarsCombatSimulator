@@ -1,12 +1,14 @@
 package rwcsim.utils.runes;
 
+import rwcsim.utils.statistics.RuneStatistics;
+
 /**
  * Created by dsayles on 8/19/17.
  */
 public class RuneManager {
     private static RuneManager _instance = new RuneManager();
     private static RuneToken[] runeTokens = new RuneToken[5];
-    private RuneManager() {
+    static {
         runeTokens[0] = new RuneToken(Rune.BLANK, Rune.UNSTABLE);
         runeTokens[1] = new RuneToken(Rune.STABLE, Rune.STABLE);
         runeTokens[2] = new RuneToken(Rune.NATURAL, Rune.STABLE);
@@ -17,6 +19,7 @@ public class RuneManager {
     public void throwRunes() {
         for (RuneToken rt : runeTokens) {
             rt.setCurrentFace();
+            RuneStatistics.record(rt + " " + rt.getCurrentFace());
         }
     }
 
