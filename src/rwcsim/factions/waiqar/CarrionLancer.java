@@ -9,6 +9,7 @@ import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Siege;
 import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class CarrionLancer extends BaseUnit implements Siege {
+public class CarrionLancer extends WaiqarUnit implements Siege {
 
 
     public CarrionLancer() {
@@ -56,4 +57,37 @@ public class CarrionLancer extends BaseUnit implements Siege {
         commandTool.setModifierDialFaces(modifierFaces);
     }
 
+    public void populateFormations() {
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.ONE);
+        legalFormations.add(Formation.TWO_BY_ONE);
+        legalFormations.add(Formation.TWO_BY_TWO);
+        legalFormations.add(Formation.THREE_BY_TWO);
+    }
+
+
+    @Override
+    public void populateUpgrades(Formation formation) {}
+
+    @Override
+    public void populateUpgrades(boolean listContainsArdus, Formation formation) {
+        int legalFormationIndex = legalFormations.indexOf(formation);
+        if (listContainsArdus) {
+            if (legalFormationIndex < (legalFormations.size() - 1)) {
+                legalFormationIndex++;
+            }
+        }
+
+        switch(legalFormationIndex) {
+            case 3:
+            case 2:
+                legalUpgrades.add(UpgradeType.Equipment);
+            case 1:
+            case 0:
+                legalUpgrades.add(UpgradeType.Training);
+                break;
+            default:
+                return;
+        }
+    }
 }

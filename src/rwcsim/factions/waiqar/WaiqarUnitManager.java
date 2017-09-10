@@ -1,10 +1,14 @@
 package rwcsim.factions.waiqar;
 
+import rwcsim.base.Formation;
 import rwcsim.base.dials.CommandTool;
 import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.UnitManager;
+import rwcsim.factions.base.DeployableUnit;
+import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.upgrades.UpgradeType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,56 +22,72 @@ public class WaiqarUnitManager extends UnitManager {
     public static final int DEATH_KNIGHTS = 5;
     public static final int WRAITHS = 6;
 
+    public List<Formation> availableFormations(int unit) {
+        switch (unit) {
+            case ARDUS_IX_EREBUS: return new ArdusIxErebus().availableFormations();
+            case CARRION_LANCERS: return new CarrionLancer().availableFormations();
+            case REANIMATE_ARCHERS: return new ReanimateArchers().availableFormations();
+            case ANKAUR_MARO: return new AnkaurMaro().availableFormations();
+            case DEATH_KNIGHTS: return new DeathKnights().availableFormations();
+//            case WRAITHS: return new Wraiths().avaialbleFormations();
+        }
+        return null;
+    }
 
-//    public static CommandTool buildCommandTool(int unitType) {
-//        switch (unitType) {
-//            case ARDUS_IX_EREBUS:
-//                return ardusIxErebus();
-//            case CARRION_LANCERS:
-//                return carrionLancers();
-//            case REANIMATE_ARCHERS:
-//                return reanimateArchers();
-//            case REANIMATES:
-//                return reanimates();
-//            case ANKAUR_MARO:
-//                return ankaurMaro();
-//            case DEATH_KNIGHTS:
-//                return deathKnights();
-//            case WRAITHS:
-//                return wraiths();
-//            default:
-//                return null;
-//        }
-//    }
+    public int formationCost(int unit, Formation formation) {
+        switch(unit) {
+            case ARDUS_IX_EREBUS: return 37;
+            case CARRION_LANCERS:
+                switch(formation) {
+                    case ONE: return 15;
+                    case TWO_BY_ONE: return 27;
+                    case TWO_BY_TWO: return 46;
+                    case THREE_BY_TWO: return 68;
+                }
+                break;
+            case REANIMATE_ARCHERS:
+                switch(formation) {
+                    case TWO_BY_ONE: return 18;
+                    case TWO_BY_TWO: return 32;
+                    case THREE_BY_TWO: return 45;
+                }
+                break;
+            case REANIMATES:
+                switch (formation) {
+                    case TWO_BY_ONE: return 16;
+                    case TWO_BY_TWO: return 26;
+                    case THREE_BY_TWO: return 35;
+                    case THREE_BY_THREE: return 50;
+                    case FOUR_BY_THREE: return 64;
+                }
+            case ANKAUR_MARO:
+                switch(formation) {
+                    case ONE: return 40;
+                }
+                break;
+            case DEATH_KNIGHTS:
+                switch(formation) {
+                    case TWO_BY_ONE: return 24;
+                    case TWO_BY_TWO: return 42;
+                    case TWO_BY_THREE: return 55;
+                }
+                break;
+            case WRAITHS:
+                break;
+        }
+        return 0;
+    }
 
-//    private static CommandTool ardusIxErebus() {
-//        CommandTool ct = new CommandTool();
-//        List<DialFace> actionFaces = new ArrayList<>();
-//        List<DialFace> modifierFaces = new ArrayList<>();
-//
-//        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, 2));
-//        actionFaces.add(new DialFace(5, Face.MARCH, FaceColor.BLUE, 3));
-//        actionFaces.add(new DialFace(3, Face.REFORM, FaceColor.GREEN));
-//        actionFaces.add(new DialFace(5, Face.SHIFT, FaceColor.GREEN, 1));
-//        actionFaces.add(new DialFace(3, Face.ATTACK_MELEE, FaceColor.RED));
-//        actionFaces.add(new DialFace(2, Face.SKILL, FaceColor.YELLOW));
-//        actionFaces.add(new DialFace(Face.BLANK));
-//        actionFaces.add(new DialFace(Face.BLANK));
-//
-//        modifierFaces.add(new DialFace(Face.MOVE_MOD_TURN, FaceColor.BLUE, 0));
-//        modifierFaces.add(new DialFace(Face.MOVE_MOD_WHEEL, FaceColor.BLUE, -1));
-//        modifierFaces.add(new DialFace(Face.MOVE_MOD_CHARGE, FaceColor.BLUE));
-//        modifierFaces.add(new DialFace(Face.MOVE_MOD_TURNING_CHARGE, FaceColor.BLUE, -1));
-//        modifierFaces.add(new DialFace(Face.ENHANCE_HIT, FaceColor.RED));
-//        modifierFaces.add(new DialFace(Face.ENHANCE_SURGE, FaceColor.RED));
-//        modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.WHITE, 1));
-//        modifierFaces.add(new DialFace(Face.RALLY, FaceColor.WHITE));
-//
-//        ct.setActionDialFaces(actionFaces);
-//        ct.setModifierDialFaces(modifierFaces);
-//
-//        return ct;
-//    }
+    public List<UpgradeType> availableUpgrades(Unit unit, Formation formation) {
+        boolean containsArdus = false;
+        for (DeployableUnit du : getUnitList()) {
+            if (du.getUnit() instanceof ArdusIxErebus) {
+                containsArdus = true;
+                break;
+            }
+        }
+        return unit.getAsWaiqarUnit().availableUpgrades(containsArdus, formation);
+    }
 
 
 

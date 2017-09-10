@@ -9,13 +9,14 @@ import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Hero;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArdusIxErebus extends BaseUnit implements Hero, Infantry {
+public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry {
 
     public ArdusIxErebus() {
         super();
@@ -50,5 +51,19 @@ public class ArdusIxErebus extends BaseUnit implements Hero, Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+    }
+
+    public void populateFormations() {
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.ONE);
+    }
+
+    @Override
+    public void populateUpgrades(Formation formation) {}
+
+    @Override
+    public void populateUpgrades(boolean listContainsArdus, Formation formation) {
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 }

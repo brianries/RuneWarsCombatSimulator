@@ -2,16 +2,18 @@ package rwcsim.factions.base;
 
 import rwcsim.base.Formation;
 import rwcsim.base.dials.CommandTool;
-import rwcsim.utils.dice.DiePool;
+import rwcsim.factions.base.upgrades.UpgradeType;
+
+import java.util.List;
 
 public abstract class BaseUnit implements Unit {
     public CommandTool commandTool;
-    Formation formation;
+//    Formation formation;
 
-    DiePool meleePool;
-    DiePool rangedPool;
+//    DiePool meleePool;
+//    DiePool rangedPool;
 
-    int woundCount;
+//    int woundCount;
 
     @Override
     public Siege getAsSiege() {
@@ -35,5 +37,15 @@ public abstract class BaseUnit implements Unit {
     public Hero getAsHero() {
         if (this instanceof Hero) return (Hero)this;
         return null;
+    }
+
+    public List<Formation> availableFormations() {
+        populateFormations();
+        return legalFormations;
+    };
+
+    public List<UpgradeType> availableUpgrades(Formation formation) {
+        populateUpgrades(formation);
+        return legalUpgrades;
     }
 }
