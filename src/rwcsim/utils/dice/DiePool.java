@@ -16,16 +16,18 @@ public class DiePool {
     private int[] attackDice = new int[DIE_TYPE_COUNT];
     private Rune[] attackRune = new Rune[DIE_TYPE_COUNT];
 
-    public int[] getAttackPool() {
+    public int[] getAttackPool(int[] dice) {
+        return getAttackPool(dice[RED_DIE], dice[BLUE_DIE], dice[WHITE_DIE]);
+    }
+    public int[] getAttackPool(int red, int blue, int white) {
         int[] ret = new int[DIE_TYPE_COUNT];
         System.arraycopy(attackDice, 0, ret, 0, attackDice.length);
 
         for (int i = 0; i < DIE_TYPE_COUNT; i++) {
             if (attackRune[i] != null) {
-//                ret[i] = RuneManager.;
+                ret[i] = RuneManager.currentRuneCount(attackRune[i]);
             }
         }
-
         return ret;
     }
 
@@ -41,18 +43,23 @@ public class DiePool {
         attackDice[WHITE_DIE] = white;
     }
 
-    public int[] getTemporaryPool(int red, int blue, int white) {
-        int[] tPool = new int[DIE_TYPE_COUNT];
-        System.arraycopy(attackDice, 0, tPool, 0, attackDice.length);
-        tPool[RED_DIE] += red;
-        tPool[BLUE_DIE] += blue;
-        tPool[WHITE_DIE] += white;
-        return tPool;
-    }
+//    public int[] getTemporaryPool(int red, int blue, int white) {
+//        int[] tPool = new int[DIE_TYPE_COUNT];
+//        System.arraycopy(attackDice, 0, tPool, 0, attackDice.length);
+//        tPool[RED_DIE] += red;
+//        tPool[BLUE_DIE] += blue;
+//        tPool[WHITE_DIE] += white;
+//        return tPool;
+//    }
 
     public void setAttackPool(Rune rred, Rune rblue, Rune rwhite) {
         attackRune[RED_DIE] = rred;
         attackRune[BLUE_DIE] = rblue;
         attackRune[WHITE_DIE] = rwhite;
+    }
+
+    public void setAttackPool(int red, Rune rred, int blue, Rune rblue, int white, Rune rwhite) {
+        setAttackPool(red, blue, white);
+        setAttackPool(rred, rblue, rwhite);
     }
 }

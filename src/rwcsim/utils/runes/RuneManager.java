@@ -5,7 +5,7 @@ package rwcsim.utils.runes;
  */
 public class RuneManager {
     private static RuneManager _instance = new RuneManager();
-    private RuneToken[] runeTokens = new RuneToken[5];
+    private static RuneToken[] runeTokens = new RuneToken[5];
     private RuneManager() {
         runeTokens[0] = new RuneToken(Rune.BLANK, Rune.UNSTABLE);
         runeTokens[1] = new RuneToken(Rune.STABLE, Rune.STABLE);
@@ -14,10 +14,33 @@ public class RuneManager {
         runeTokens[4] = new RuneToken(Rune.NATURAL, Rune.UNSTABLE);
     }
 
+    public void throwRunes() {
+        for (RuneToken rt : runeTokens) {
+            rt.setCurrentFace();
+        }
+    }
+
     public Rune getRuneToken(int index, int side) {
         return runeTokens[index].sides[side];
     }
 
+    public static int[] currentRuneState() {
+        int[] res = new int[Rune.values().length];
+        for (int i = 0; i<res.length; i++) {
+            res[runeTokens[i].getCurrentFace().ordinal()] += runeTokens[i].getCurrentFace().getCount();
+        }
+        return res;
+    }
+
+    public static int currentRuneCount(Rune rune) {
+        int r = 0;
+        for (RuneToken rt:runeTokens) {
+            if (rt.getCurrentFace() == rune) {
+                r += rt.getCurrentFace().getCount();
+            }
+        }
+        return r;
+    }
 
     public static RuneManager getInstance() {
         return _instance;
@@ -25,7 +48,6 @@ public class RuneManager {
 
     public static void main(String[] args) {
         RuneManager rm = RuneManager.getInstance();
-
-
+        rm.throwRunes();
     }
 }

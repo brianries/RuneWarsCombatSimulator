@@ -3,6 +3,9 @@ package rwcsim.base;
 import java.util.*;
 
 public class RuleSetManager {
+    private static final long seed = 5567001l;
+    private static final Random random = new Random(seed);
+
     private static Map<String,Rule> allRules = new HashMap<>();
     private static Set<String> enabledRules = new HashSet<>();
 
@@ -45,4 +48,15 @@ public class RuleSetManager {
             enabledRules.add(name);
         }
     }
+
+    public static int getInt() {
+        return random.nextInt();
+    }
+
+    public static int getBoxedInt(int max) {
+        return random.nextInt(max);
+    }
+
+
+
 }

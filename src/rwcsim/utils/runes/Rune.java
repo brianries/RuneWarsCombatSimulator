@@ -10,21 +10,25 @@ import java.io.IOException;
  * Created by dsayles on 8/18/17.
  */
 public enum Rune {
-    BLANK("/images/BlankUnstable.png"),
-    NATURAL("/images/NaturalBlank.png"),
-    STABLE("/images/StableStable.png"),
-    UNSTABLE("/images/UnstableNatural.png");
+    BLANK(1,"/images/BlankUnstable.png"),
+    NATURAL(1, "/images/NaturalBlank.png"),
+    STABLE(1, "/images/StableStable.png"),
+    UNSTABLE(2, "/images/UnstableNatural.png");
 
+    int count;
     String imageName;
     Image rpic;
 
 
-    private Rune(String image) {
+    private Rune(int count, String image) {
+        this.count = count;
         imageName = image;
         rpic = new Image(this.getClass().getResourceAsStream(imageName));
     }
 
+
     public Image getImage() {
         return rpic;
     }
+    public int getCount() { return count; }
 }
