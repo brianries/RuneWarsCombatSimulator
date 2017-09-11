@@ -54,6 +54,10 @@ public class FleshRippers extends UthukUnit implements Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(1, 2, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
+
     }
     public void populateFormations() {
         if (legalFormations.size()>0) return;

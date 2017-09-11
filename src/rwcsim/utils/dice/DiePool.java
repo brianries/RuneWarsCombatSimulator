@@ -16,6 +16,20 @@ public class DiePool {
     private int[] attackDice = new int[DIE_TYPE_COUNT];
     private Rune[] attackRune = new Rune[DIE_TYPE_COUNT];
 
+    public DiePool(int r, int b, int w) {
+        this(r, null, b, null, w, null);
+    }
+    public DiePool(int r, Rune rr, int b, Rune rb, int w, Rune rw) {
+        this.attackDice[RED_DIE] = r;
+        this.attackDice[BLUE_DIE] = b;
+        this.attackDice[WHITE_DIE] = w;
+
+        this.attackRune[RED_DIE] = rr;
+        this.attackRune[BLUE_DIE] = rb;
+        this.attackRune[WHITE_DIE] = rw;
+    }
+
+
     public int[] getAttackPool() { return getAttackPool(0, 0,0);}
     public int[] getAttackPool(int[] dice) {
         return getAttackPool(dice[RED_DIE], dice[BLUE_DIE], dice[WHITE_DIE]);

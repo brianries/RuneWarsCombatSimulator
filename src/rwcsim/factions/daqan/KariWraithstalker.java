@@ -48,6 +48,10 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 1, 1));
+        setRangedAttackPool(new DiePool(0,1,1));
+
     }
 
     public void populateFormations() {

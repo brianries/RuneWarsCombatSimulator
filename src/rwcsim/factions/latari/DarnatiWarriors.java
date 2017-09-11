@@ -54,7 +54,11 @@ public class DarnatiWarriors extends LatariUnit implements Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 0, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
+
     public void populateFormations() {
         if (legalFormations.size()>0) return;
         legalFormations.add(Formation.TWO_BY_ONE);

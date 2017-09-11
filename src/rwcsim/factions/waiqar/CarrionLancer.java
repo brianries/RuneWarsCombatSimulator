@@ -55,6 +55,9 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(1, 2, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
     public void populateFormations() {

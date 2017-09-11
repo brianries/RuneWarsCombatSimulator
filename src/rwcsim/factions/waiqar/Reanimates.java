@@ -57,6 +57,9 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(2, 0, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
 

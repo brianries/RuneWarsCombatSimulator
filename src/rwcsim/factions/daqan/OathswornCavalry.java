@@ -54,6 +54,9 @@ public class OathswornCavalry extends DaqanUnit implements Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(2, 1, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
     public void populateFormations() {

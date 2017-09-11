@@ -9,6 +9,7 @@ import rwcsim.factions.base.*;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.runes.Rune;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +49,9 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 0, 1));
+        setRangedAttackPool(new DiePool(0,null,0,null,0, Rune.UNSTABLE));
     }
 
     public void populateFormations() {

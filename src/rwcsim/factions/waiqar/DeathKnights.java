@@ -55,6 +55,9 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+        
+        setMeleeAttackPool(new DiePool(2, 1, 0));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
 
@@ -64,6 +67,7 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
         legalFormations.add(Formation.TWO_BY_ONE);
         legalFormations.add(Formation.TWO_BY_TWO);
         legalFormations.add(Formation.TWO_BY_THREE);
+
     }
 
 

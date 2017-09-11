@@ -54,6 +54,9 @@ public class HeavyCrossbowmen extends DaqanUnit implements Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 1, 0));
+        setRangedAttackPool(new DiePool(1,1,0));
     }
 
     public void populateFormations() {

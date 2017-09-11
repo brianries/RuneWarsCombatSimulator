@@ -54,7 +54,11 @@ public class DeepwoodArchers extends LatariUnit implements Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 1, 0));
+        setRangedAttackPool(new DiePool(0,2,0));
     }
+
     public void populateFormations() {
         if (legalFormations.size()>0) return;
         legalFormations.add(Formation.TWO_BY_ONE);

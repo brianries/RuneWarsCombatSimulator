@@ -13,7 +13,7 @@ import rwcsim.utils.dice.DiePool;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Infantry {
+public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry {
 
     public MaeganCyndewin() {
         super();
@@ -48,6 +48,9 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Infantr
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 1, 1));
+        setRangedAttackPool(new DiePool(2,1,1));
     }
 
     public void populateFormations() {

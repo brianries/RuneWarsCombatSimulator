@@ -51,6 +51,9 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 0, 2));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
     public void populateFormations() {

@@ -36,7 +36,7 @@ public enum Formation {
         return columns;
     }
 
-    public int getNumberOfRerolls() {
+    public int getRanks() {
         return rows-1;
     }
 }

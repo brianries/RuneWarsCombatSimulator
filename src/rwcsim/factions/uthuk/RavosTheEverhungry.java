@@ -49,6 +49,9 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(1, 1, 1));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
     public void populateFormations() {
         legalFormations.add(Formation.ONE);

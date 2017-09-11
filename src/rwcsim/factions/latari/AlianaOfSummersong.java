@@ -49,6 +49,9 @@ public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(1, 1, 1));
+        setRangedAttackPool(new DiePool(0,0,0));
     }
 
     public void populateFormations() {

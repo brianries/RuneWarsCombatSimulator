@@ -1,11 +1,13 @@
 package rwcsim.factions.base;
 
 import rwcsim.base.Formation;
+import rwcsim.base.dials.CommandTool;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.factions.daqan.DaqanUnit;
 import rwcsim.factions.latari.LatariUnit;
 import rwcsim.factions.uthuk.UthukUnit;
 import rwcsim.factions.waiqar.WaiqarUnit;
+import rwcsim.utils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,4 +37,9 @@ public interface Unit {
     void populateFormations();
     void populateUpgrades(Formation formation);
 
+    CommandTool getCommandTool();
+    DiePool getMeleeAttackPool();
+    void setMeleeAttackPool(DiePool diePool);
+    DiePool getRangedAttackPool();
+    void setRangedAttackPool(DiePool diePool);
 }

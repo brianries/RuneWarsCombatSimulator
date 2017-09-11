@@ -3,15 +3,15 @@ package rwcsim.factions.base;
 import rwcsim.base.Formation;
 import rwcsim.base.dials.CommandTool;
 import rwcsim.factions.base.upgrades.UpgradeType;
+import rwcsim.utils.dice.DiePool;
 
 import java.util.List;
 
 public abstract class BaseUnit implements Unit {
     public CommandTool commandTool;
-//    Formation formation;
 
-//    DiePool meleePool;
-//    DiePool rangedPool;
+    DiePool meleePool;
+    DiePool rangedPool;
 
 //    int woundCount;
 
@@ -47,5 +47,23 @@ public abstract class BaseUnit implements Unit {
     public List<UpgradeType> availableUpgrades(Formation formation) {
         populateUpgrades(formation);
         return legalUpgrades;
+    }
+
+    public CommandTool getCommandTool() {
+        return this.commandTool;
+    }
+
+    public DiePool getMeleeAttackPool() {
+        return this.meleePool;
+    }
+    public void setMeleeAttackPool(DiePool diePool) {
+        this.meleePool = diePool;
+    }
+
+    public DiePool getRangedAttackPool() {
+        return this.rangedPool;
+    }
+    public void setRangedAttackPool(DiePool diePool) {
+        this.rangedPool = diePool;
     }
 }

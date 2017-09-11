@@ -48,6 +48,9 @@ public class LordHawthorne extends DaqanUnit implements Hero, Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+
+        setMeleeAttackPool(new DiePool(0, 1, 1));
+        setRangedAttackPool(new DiePool(0,1,1));
     }
 
     public void populateFormations() {
