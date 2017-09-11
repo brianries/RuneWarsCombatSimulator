@@ -3,6 +3,8 @@ package rwcsim.factions.base;
 import rwcsim.base.Formation;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.factions.daqan.DaqanUnit;
+import rwcsim.factions.latari.LatariUnit;
+import rwcsim.factions.uthuk.UthukUnit;
 import rwcsim.factions.waiqar.WaiqarUnit;
 
 import java.util.ArrayList;
@@ -25,8 +27,10 @@ public interface Unit {
 
     Hero getAsHero();
 
-    WaiqarUnit getAsWaiqarUnit();
     DaqanUnit getAsDaqanUnit();
+    LatariUnit getAsLatariUnit();
+    UthukUnit getAsUthukUnit();
+    WaiqarUnit getAsWaiqarUnit();
 
     void populateFormations();
     void populateUpgrades(Formation formation);

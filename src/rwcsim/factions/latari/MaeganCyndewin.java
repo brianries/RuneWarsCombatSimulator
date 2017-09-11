@@ -6,13 +6,14 @@ import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.base.*;
+import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaeganCyndewin extends BaseUnit implements Hero, Cavalry, Infantry {
+public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Infantry {
 
     public MaeganCyndewin() {
         super();
@@ -47,5 +48,16 @@ public class MaeganCyndewin extends BaseUnit implements Hero, Cavalry, Infantry 
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+    }
+
+    public void populateFormations() {
+        legalFormations.add(Formation.ONE);
+    }
+
+
+    @Override
+    public void populateUpgrades(Formation formation) {
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 }

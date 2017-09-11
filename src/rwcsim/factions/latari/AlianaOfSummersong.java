@@ -6,6 +6,7 @@ import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.base.*;
+import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 import rwcsim.utils.runes.Rune;
@@ -13,7 +14,7 @@ import rwcsim.utils.runes.Rune;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlianaOfSummersong extends BaseUnit implements Hero, Cavalry {
+public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry {
 
     public AlianaOfSummersong() {
         super();
@@ -48,5 +49,16 @@ public class AlianaOfSummersong extends BaseUnit implements Hero, Cavalry {
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
+    }
+
+    public void populateFormations() {
+        legalFormations.add(Formation.ONE);
+    }
+
+
+    @Override
+    public void populateUpgrades(Formation formation) {
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 }

@@ -20,41 +20,41 @@ public class DaqanUnitManager extends UnitManager {
 
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
-            case KARI_WRAITHSTALKER: return new ArdusIxErebus().availableFormations();
-            case SPEARMEN: return new CarrionLancer().availableFormations();
-            case OATHSWORN_CAVALRY: return new ReanimateArchers().availableFormations();
-            case RUNE_GOLEMS: return new AnkaurMaro().availableFormations();
-            case LORD_HAWTHORNE: return new DeathKnights().availableFormations();
-//            case WRAITHS: return new Wraiths().avaialbleFormations();
+            case KARI_WRAITHSTALKER: return new KariWraithstalker().availableFormations();
+            case SPEARMEN: return new Spearmen().availableFormations();
+            case OATHSWORN_CAVALRY: return new OathswornCavalry().availableFormations();
+            case RUNE_GOLEMS: return new RuneGolems().availableFormations();
+            case LORD_HAWTHORNE: return new LordHawthorne().availableFormations();
+            case HEAVY_CROSSBOWMEN: return new HeavyCrossbowmen().availableFormations();
         }
         return null;
     }
 
     public int formationCost(int unit, Formation formation) {
         switch(unit) {
-            case KARI_WRAITHSTALKER: return 37;
+            case KARI_WRAITHSTALKER: return 32;
             case SPEARMEN:
                 switch(formation) {
-                    case ONE: return 15;
-                    case TWO_BY_ONE: return 27;
-                    case TWO_BY_TWO: return 46;
-                    case THREE_BY_TWO: return 68;
+                    case TWO_BY_ONE: return 18;
+                    case TWO_BY_TWO: return 30;
+                    case THREE_BY_TWO: return 40;
+                    case THREE_BY_THREE: return 59;
                 }
                 break;
             case OATHSWORN_CAVALRY:
                 switch(formation) {
-                    case TWO_BY_ONE: return 18;
-                    case TWO_BY_TWO: return 32;
-                    case THREE_BY_TWO: return 45;
+                    case TWO_BY_ONE: return 20;
+                    case TWO_BY_TWO: return 34;
+                    case TWO_BY_THREE: return 46;
+                    case THREE_BY_THREE: return 68;
                 }
                 break;
             case RUNE_GOLEMS:
                 switch (formation) {
-                    case TWO_BY_ONE: return 16;
-                    case TWO_BY_TWO: return 26;
-                    case THREE_BY_TWO: return 35;
-                    case THREE_BY_THREE: return 50;
-                    case FOUR_BY_THREE: return 64;
+                    case ONE: return 17;
+                    case TWO_BY_ONE: return 26;
+                    case TWO_BY_TWO: return 50;
+                    case THREE_BY_TWO: return 74;
                 }
             case LORD_HAWTHORNE: return 34;
             case HEAVY_CROSSBOWMEN:
@@ -64,8 +64,6 @@ public class DaqanUnitManager extends UnitManager {
                     case THREE_BY_TWO: return 48;
                 }
                 break;
-//            case WRAITHS:
-//                break;
         }
         return 0;
     }

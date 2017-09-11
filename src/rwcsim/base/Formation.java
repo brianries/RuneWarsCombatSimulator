@@ -5,8 +5,11 @@ package rwcsim.base;
  */
 public enum Formation {
     ONE(1,1),
+    ONE_BY_TWO(1,2),
+    ONE_BY_THREE(1,3),
     TWO_BY_ONE(2,1),
     TWO_BY_TWO(2,2),
+    TWO_BY_TWO_2(2,2),
     TWO_BY_THREE(2,3),
     THREE_BY_ONE(3,1),
     THREE_BY_TWO(3,2),

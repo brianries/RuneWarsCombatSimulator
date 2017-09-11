@@ -8,6 +8,7 @@ import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Cavalry;
 import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 
@@ -17,7 +18,7 @@ import java.util.List;
 /**
  * Created by dsayles on 8/18/17.
  */
-public class LeonxRiders extends BaseUnit implements Cavalry {
+public class LeonxRiders extends LatariUnit implements Cavalry {
 
 
     public LeonxRiders() {
@@ -54,5 +55,30 @@ public class LeonxRiders extends BaseUnit implements Cavalry {
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
     }
+    public void populateFormations() {
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.TWO_BY_ONE);
+        legalFormations.add(Formation.THREE_BY_ONE);
+        legalFormations.add(Formation.TWO_BY_TWO);
+        legalFormations.add(Formation.THREE_BY_TWO);
+    }
 
+
+    @Override
+    public void populateUpgrades(Formation formation) {
+        int legalFormationIndex = legalFormations.indexOf(formation);
+        switch(legalFormationIndex) {
+            case 3:
+            case 2:
+                legalUpgrades.add(UpgradeType.Champion);
+                legalUpgrades.add(UpgradeType.Heraldry);
+            case 1:
+            case 0:
+                legalUpgrades.add(UpgradeType.Music);
+                legalUpgrades.add(UpgradeType.Training);
+                break;
+            default:
+                return;
+        }
+    }
 }
