@@ -39,9 +39,9 @@ public class CoreUnit {
     }
 
 
-    public List<ActionType> attack() {
-        return Roller.rollPool(diePool.getAttackPool(), this, DefaultInteractionManager.instance());
-    }
+//    public List<ActionType> attack() {
+//        return Roller.rollPool(diePool.getAttackPool(), this, DefaultInteractionManager.instance());
+//    }
 
 
     public boolean applyResults(CoreUnit attacker, List<ActionType> ats) {

@@ -1,6 +1,7 @@
 package rwcsim.base.systems;
 
 import rwcsim.base.Formation;
+import rwcsim.factions.base.DeployableUnit;
 import rwcsim.factions.base.Tray;
 import rwcsim.factions.base.Unit;
 
@@ -26,14 +27,16 @@ public class UnitFormationManager {
      *                                                    [8] [9] [10] [11]
      */
 
+    DeployableUnit deployableUnit;
     Unit unit;
     Formation formation;
     List<Tray> trayLayout;
     int trayCount;
 
-    public UnitFormationManager(Unit unit, Formation formation) {
-        this.unit = unit;
-        this.formation = formation;
+    public UnitFormationManager(DeployableUnit deployableUnit) {
+        this.deployableUnit = deployableUnit;
+        this.unit = deployableUnit.getUnit();
+        this.formation = deployableUnit.getFormation();
         trayCount = this.formation.getTrayCount();
         trayLayout = new ArrayList<>(trayCount);
     }

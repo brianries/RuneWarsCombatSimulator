@@ -18,6 +18,7 @@ import java.util.List;
 public interface Unit {
     List<Formation> legalFormations = new ArrayList<>();
     List<UpgradeType> legalUpgrades = new ArrayList<>();
+    List<Ability> abilities = new ArrayList<>();
 
     void initializeUnit();
 

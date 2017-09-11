@@ -42,11 +42,9 @@ public class CSim {
         Formation dform = Formation.FOUR_BY_ONE;
         Formation wform = Formation.TWO_BY_TWO;
 
-        DiePool dpool = new DiePool();
-        dpool.setAttackPool(2,1, 0);
+        DiePool dpool = new DiePool(2,1, 0);
 
-        DiePool wpool = new DiePool();
-        wpool.setAttackPool(2,1, 0);
+        DiePool wpool = new DiePool(2,1, 0);
 
         for (int i = 0; i<SIM_COUNT; i++) {
             if (i!=0&&i%DEMARKATION==0) {
@@ -62,25 +60,25 @@ public class CSim {
                 if (rounds%2==0) {
 
 //            System.out.println("Daqan pool:");
-                    List<ActionType> dres = daqanSpearmen.attack();
-//            System.out.println(dres);
-                    waiqarReanimates.applyResults(daqanSpearmen, dres);
-
-//            System.out.println("Waiqar pool:");
-                    List<ActionType> wres = waiqarReanimates.attack();
-//            System.out.println(wres);
-                    daqanSpearmen.applyResults(waiqarReanimates, wres);
-                } else {
-
-//            System.out.println("Waiqar pool:");
-                    List<ActionType> wres = waiqarReanimates.attack();
-//            System.out.println(wres);
-                    daqanSpearmen.applyResults(waiqarReanimates, wres);
-
-//            System.out.println("Daqan pool:");
-                    List<ActionType> dres = daqanSpearmen.attack();
-//            System.out.println(dres);
-                    waiqarReanimates.applyResults(daqanSpearmen, dres);
+//                    List<ActionType> dres = daqanSpearmen.attack();
+////            System.out.println(dres);
+//                    waiqarReanimates.applyResults(daqanSpearmen, dres);
+//
+////            System.out.println("Waiqar pool:");
+//                    List<ActionType> wres = waiqarReanimates.attack();
+////            System.out.println(wres);
+//                    daqanSpearmen.applyResults(waiqarReanimates, wres);
+//                } else {
+//
+////            System.out.println("Waiqar pool:");
+//                    List<ActionType> wres = waiqarReanimates.attack();
+////            System.out.println(wres);
+//                    daqanSpearmen.applyResults(waiqarReanimates, wres);
+//
+////            System.out.println("Daqan pool:");
+////                    List<ActionType> dres = daqanSpearmen.attack();
+////            System.out.println(dres);
+//                    waiqarReanimates.applyResults(daqanSpearmen, dres);
                 }
 
 

@@ -43,6 +43,10 @@ public class DiePool {
                 ret[i] = RuneManager.currentRuneCount(attackRune[i]);
             }
         }
+
+        ret[RED_DIE] += red;
+        ret[BLUE_DIE]+= blue;
+        ret[WHITE_DIE] += white;
         return ret;
     }
 
