@@ -13,7 +13,6 @@ import rwcsim.utils.interaction.InteractionManager;
 import java.util.List;
 import java.util.Map;
 
-import static rwcsim.utils.dice.Roller.rollPool;
 
 public class AttackLoop {
     AttackType attackType;
@@ -24,6 +23,10 @@ public class AttackLoop {
     DeployableUnit attackingUnit;
     DeployableUnit defendingUnit;
 
+    DiePool attackPool;
+    int[] adjustmentPool = new int[]{0,0,0};
+    Map<Die, List<DieFace>> rollResults;
+    Map<Die, List<DieFace>> rerollResults;
 
 
     public AttackLoop(InteractionManager attacker, DeployableUnit attackingUnit, InteractionManager defender, DeployableUnit defendingUnit, AttackType type) {
@@ -36,6 +39,7 @@ public class AttackLoop {
     }
 
     public void processAttack() {
+        attackPool = attackingUnit.getDiePool(attackType);
         rollDice();
         rerollForExtraRanks();
         modifyDice();
@@ -48,25 +52,20 @@ public class AttackLoop {
     }
 
     private void rollDice() {
-        DiePool attackPool = attackingUnit.getDiePool(attackType);
-        List<State> states = attackingUnit.unitStateManager.getAllStates(new FlankingState(defendingUnit.getUnit()));
-        long flankingCount = states.stream().filter(s -> ((FlankingState)s).getFlanking() == defendingUnit.getUnit()).count();
-        int[] adjustmentPool = new int[]{0,0,0};
-        if (flankingCount > 0) {
-            adjustmentPool = attacker.defineFlankingPool();
-        }
-        int[] adjustedPool = attackPool.getAttackPool(adjustmentPool);
-        Map<Die, List<DieFace>> results = Roller.rollPool(adjustedPool);
-
-        if (attackingUnit.canReroll()){
-            results = attacker.reroll(attackingUnit, adjustedPool, results);
-        }
-
-
+        //List<State> states = attackingUnit.unitStateManager.getAllStates(new FlankingState(defendingUnit.getUnit()));
+        //long flankingCount = states.stream().filter(s -> ((FlankingState)s).getFlanking() == defendingUnit.getUnit()).count();
+//        int[] adjustmentPool = new int[]{0,0,0};
+//        if (flankingCount > 0) {
+//            adjustmentPool = attacker.defineFlankingPool();
+//        }
+//        int[] adjustedPool = attackPool.getAttackPool(adjustmentPool);
+        rollResults = Roller.rollPool(adjustmentPool);
     }
 
     private void rerollForExtraRanks() {
-
+        if (attackingUnit.canReroll()){
+            rerollResults = attacker.reroll(attackingUnit.getRerollDieCount(), attackingUnit.hasPartialRank(), attackingUnit, rollResults, attackType);
+        }
     }
 
     private void modifyDice() {

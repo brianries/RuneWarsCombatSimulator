@@ -4,7 +4,9 @@ package rwcsim.utils.dice;
  * Created by dsayles on 5/14/15.
  */
 public class WhiteDie extends Die {
-
+    public WhiteDie() {
+        dieType = DiePool.WHITE_DIE;
+    }
     @Override
     public void setFaces() {
         faces = new DieFace[12];

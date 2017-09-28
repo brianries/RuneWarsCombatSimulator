@@ -31,16 +31,24 @@ public class UnitFormationManager {
     Unit unit;
     Formation formation;
     List<Tray> trayLayout;
-    int trayCount;
+    int totalTrayCount;
+    int currentTrayCount;
 
     public UnitFormationManager(DeployableUnit deployableUnit) {
         this.deployableUnit = deployableUnit;
         this.unit = deployableUnit.getUnit();
         this.formation = deployableUnit.getFormation();
-        trayCount = this.formation.getTrayCount();
-        trayLayout = new ArrayList<>(trayCount);
+        totalTrayCount = this.formation.getTrayCount();
+        trayLayout = new ArrayList<>(totalTrayCount);
+        currentTrayCount = totalTrayCount;
     }
 
+    public int getCurrentRanks() {
+        int currentRanks = currentTrayCount / formation.getThreat();
+        return currentRanks;
+    }
 
-
+    public boolean hasPartialRank() {
+        return currentTrayCount % formation.getThreat() > 0;
+    }
 }

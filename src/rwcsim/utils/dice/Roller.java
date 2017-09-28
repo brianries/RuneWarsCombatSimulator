@@ -11,9 +11,9 @@ import java.util.*;
  * Created by dsayles on 5/14/15.
  */
 public class Roller {
-    static RedDie redDie = new RedDie();
-    static WhiteDie whiteDie = new WhiteDie();
-    static BlueDie blueDie = new BlueDie();
+    public static RedDie redDie = new RedDie();
+    public static WhiteDie whiteDie = new WhiteDie();
+    public static BlueDie blueDie = new BlueDie();
 
     public static DieFace rollRedDie() {
         return roll(redDie);

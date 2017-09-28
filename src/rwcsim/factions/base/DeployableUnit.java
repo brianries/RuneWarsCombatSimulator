@@ -43,7 +43,17 @@ public class DeployableUnit {
         return null;
     }
 
+
     public boolean canReroll() {
-        return false;
+        return (getRerollDieCount()>0 || hasPartialRank());
+    }
+
+    public boolean hasPartialRank() {
+        return unitFormationManager.hasPartialRank();
+    }
+
+    public int getRerollDieCount() {
+        int dieRerolls = unitFormationManager.getCurrentRanks()-1;
+        return dieRerolls;
     }
 }

@@ -29,6 +29,13 @@ public class DiePool {
         this.attackRune[WHITE_DIE] = rw;
     }
 
+    public int size() {
+        int[] pool = getAttackPool();
+        int result = pool[RED_DIE];
+        result += pool[BLUE_DIE];
+        result += pool[WHITE_DIE];
+        return result;
+    }
 
     public int[] getAttackPool() { return getAttackPool(0, 0,0);}
     public int[] getAttackPool(int[] dice) {

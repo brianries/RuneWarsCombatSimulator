@@ -1,8 +1,11 @@
 package rwcsim.utils.interaction;
 
+import rwcsim.base.AttackType;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.utils.dice.Die;
 import rwcsim.utils.dice.DieFace;
+import rwcsim.utils.dice.RedDie;
+import rwcsim.utils.dice.Roller;
 
 import java.util.List;
 import java.util.Map;
@@ -20,8 +23,71 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     }
 
     @Override
-    public Map<Die, List<DieFace>> reroll(DeployableUnit attacker, int[] adjustedPool, Map<Die, List<DieFace>> results) {
+    public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, DeployableUnit attacker, Map<Die, List<DieFace>> results, AttackType type) {
         /* default reroll of blanks if possible */
-        return null;
+        int rerollDieCount =  rerollRankCount;
+
+        int[] rerollPool = new int[results.keySet().size()];
+
+        if (containsBlanks(results)) {
+            for (Map.Entry<Die, List<DieFace>> e : results.entrySet()) {
+                long r = e.getValue().stream().filter(f -> f == DieFace.BLANK).count();
+                if (r > 0) rerollPool[e.getKey().getDieType()] = (int) r;
+                while (e.getValue().remove(DieFace.BLANK)) {
+                    System.out.println("Removing blank face from " + e.getKey().toString());
+                }
+            }
+
+            Map<Die, List<DieFace>> rerollResult = Roller.rollPool(rerollPool);
+            for (Map.Entry<Die, List<DieFace>> e : results.entrySet()) {
+                if (rerollResult.containsKey(e.getKey())) {
+                    e.getValue().addAll(rerollResult.get(e.getKey()));
+                }
+            }
+
+
+            if (rerollDieCount - 1 > 0 && containsBlanks(results)) {
+                results = reroll(rerollDieCount-1, false, attacker, results, type);
+            }
+        }
+
+        if (containsBlanks(results) && rerollPartialRank) {
+            // reroll white
+            if (results.get(Roller.whiteDie).contains(DieFace.BLANK) && rerollPartialRank) {
+                results.get(Roller.whiteDie).remove(DieFace.BLANK);
+                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,0,1});
+                results.get(Roller.whiteDie).addAll(r.get(Roller.whiteDie));
+                rerollPartialRank = false;
+            }
+
+            // reroll red
+            if (results.get(Roller.redDie).contains(DieFace.BLANK) && rerollPartialRank) {
+                results.get(Roller.redDie).remove(DieFace.BLANK);
+                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{1,0,0});
+                results.get(Roller.redDie).addAll(r.get(Roller.redDie));
+                rerollPartialRank = false;
+            }
+
+            // reroll blue
+            if (results.get(Roller.blueDie).contains(DieFace.BLANK) && rerollPartialRank) {
+                results.get(Roller.blueDie).remove(DieFace.BLANK);
+                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,1,0});
+                results.get(Roller.blueDie).addAll(r.get(Roller.redDie));
+                rerollPartialRank = false;
+            }
+        }
+
+        return results;
     }
+
+    public boolean containsBlanks(Map<Die, List<DieFace>> results) {
+        for (Map.Entry<Die,List<DieFace>> e : results.entrySet()) {
+            if (e.getValue().contains(DieFace.BLANK)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }
