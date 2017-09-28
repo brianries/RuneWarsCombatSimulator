@@ -64,8 +64,6 @@ public class LatariUnitManager extends UnitManager {
                     case THREE_BY_THREE: return 60;
                 }
                 break;
-//            case WRAITHS:
-//                break;
         }
         return 0;
     }

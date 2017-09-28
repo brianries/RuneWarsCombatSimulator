@@ -28,29 +28,29 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry {
         List<DialFace> actionFaces = new ArrayList<>();
         List<DialFace> modifierFaces = new ArrayList<>();
 
-        actionFaces.add(new DialFace(5, Face.MARCH, FaceColor.BLUE, 2));
-        actionFaces.add(new DialFace(6, Face.MARCH, FaceColor.BLUE, 3));
+        actionFaces.add(new DialFace(3, Face.MARCH, FaceColor.BLUE, 2));
+        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, 3));
+        actionFaces.add(new DialFace(4, Face.REFORM, FaceColor.BLUE));
+        actionFaces.add(new DialFace(6, Face.SHIFT, FaceColor.BLUE, 1));
         actionFaces.add(new DialFace(7, Face.MARCH, FaceColor.BLUE, 4));
-        actionFaces.add(new DialFace(3, Face.REFORM, FaceColor.GREEN));
-        actionFaces.add(new DialFace(6, Face.SHIFT, FaceColor.GREEN, 1));
         actionFaces.add(new DialFace(4, Face.ATTACK_MELEE, FaceColor.RED));
-        actionFaces.add(new DialFace(6, Face.ATTACK_RANGED, FaceColor.RED));
-        actionFaces.add(new DialFace(8, Face.SKILL, FaceColor.YELLOW));
+        actionFaces.add(new DialFace(4, Face.ATTACK_RANGED, FaceColor.RED));
+        actionFaces.add(new DialFace(Face.BLANK));
 
-        modifierFaces.add(new DialFace(Face.MOVE_MOD_TURN, FaceColor.BLUE, -2));
-        modifierFaces.add(new DialFace(Face.MOVE_MOD_CHARGE, FaceColor.BLUE));
-        modifierFaces.add(new DialFace(Face.MARCH, FaceColor.BLUE, 2));
-        modifierFaces.add(new DialFace(Face.ENHANCE_HIT, FaceColor.RED, 2));
+        modifierFaces.add(new DialFace(Face.MOVE_MOD_TURN, FaceColor.BLUE, -1));
+        modifierFaces.add(new DialFace(Face.MOVE_MOD_WHEEL, FaceColor.BLUE, -1));
+        modifierFaces.add(new DialFace(Face.MOVE_MOD_CHARGE, FaceColor.BLUE, 0));
+        modifierFaces.add(new DialFace(Face.MOVE_MOD_TURNING_CHARGE, FaceColor.BLUE, -1));
+        modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.BLUE, 1));
         modifierFaces.add(new DialFace(Face.ENHANCE_SURGE, FaceColor.RED, 1));
-        modifierFaces.add(new DialFace(Face.ENHANCE_MORTAL_STRIKE, FaceColor.RED, 1));
         modifierFaces.add(new DialFace(Face.RALLY, FaceColor.WHITE));
-        modifierFaces.add(new DialFace(Face.BLANK));
+        modifierFaces.add(new DialFace(Face.SKILL, FaceColor.WHITE));
 
         commandTool.setActionDialFaces(actionFaces);
         commandTool.setModifierDialFaces(modifierFaces);
 
-        setMeleeAttackPool(new DiePool(0, 1, 1));
-        setRangedAttackPool(new DiePool(2,1,1));
+        setMeleeAttackPool(new DiePool(2, 1, 1));
+        setRangedAttackPool(new DiePool(0,1,1));
     }
 
     public void populateFormations() {
