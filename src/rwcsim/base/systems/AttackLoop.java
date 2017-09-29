@@ -5,10 +5,7 @@ import rwcsim.base.AttackType;
 import rwcsim.base.states.FlankingState;
 import rwcsim.base.states.State;
 import rwcsim.factions.base.DeployableUnit;
-import rwcsim.utils.dice.Die;
-import rwcsim.utils.dice.DieFace;
-import rwcsim.utils.dice.DiePool;
-import rwcsim.utils.dice.Roller;
+import rwcsim.utils.dice.*;
 import rwcsim.utils.interaction.InteractionManager;
 
 import java.util.List;
@@ -81,22 +78,26 @@ public class AttackLoop {
 
     private void spendSurges() {
         log.debug("spendSurges()");
-
+        int surgeCount = DieRollResultsAnalyzer.countAllSurges(rerollResults);
+        log.info("Surges: "+surgeCount);
     }
 
     private void assignAccuracy() {
         log.debug("assignAccuracy()");
-
+        int accuracyCount = DieRollResultsAnalyzer.countAllAccuracies(rerollResults);
+        log.info("Accuracies: "+accuracyCount);
     }
 
     private void spendMortalStrikes() {
         log.debug("spendMortalStrikes()");
-
+        int mortalStrikeCount = DieRollResultsAnalyzer.countMortalStrikes(rerollResults);
+        log.info("MortalStrikes: "+ mortalStrikeCount);
     }
 
     private void spendHits() {
         log.debug("spendHits()");
-
+        int hitCount = DieRollResultsAnalyzer.countAllHits(rerollResults);
+        log.info("Hits: "+ hitCount);
     }
 
     private void reconfigure() {
@@ -106,6 +107,8 @@ public class AttackLoop {
 
     private void resolveMorale() {
         log.debug("resolveMorale()");
+        int moraleCount = DieRollResultsAnalyzer.countAllMorale(rerollResults);
+        log.info("Morale: "+moraleCount);
 
     }
 }
