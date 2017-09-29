@@ -1,5 +1,6 @@
 package rwcsim.utils.dice;
 
+import org.apache.log4j.Logger;
 import rwcsim.base.ActionType;
 import rwcsim.base.RuleSetManager;
 import rwcsim.test.CoreUnit;
@@ -11,6 +12,7 @@ import java.util.*;
  * Created by dsayles on 5/14/15.
  */
 public class Roller {
+    private static final Logger logger = Logger.getLogger(Roller.class);
     public static RedDie redDie = new RedDie();
     public static WhiteDie whiteDie = new WhiteDie();
     public static BlueDie blueDie = new BlueDie();
@@ -33,6 +35,7 @@ public class Roller {
         return rollPool(pool.getAttackPool());
     }
     public static Map<Die,List<DieFace>> rollPool(int[] pool) {
+        logger.info("diepool: "+pool[0]+":"+pool[1]+":"+pool[2]);
 //        List<ActionType> actionPool = new ArrayList<>();
         Map<Die, List<DieFace>> resultsPools = new HashMap<>();
 
@@ -41,7 +44,7 @@ public class Roller {
         resultsPools.put(whiteDie, rollDice(whiteDie,pool[DiePool.WHITE_DIE]));
 
 //        actionPool.addAll(processPool(resultsPools, unit, roller));
-
+        logger.info(resultsPools.toString());
         return resultsPools;
     }
 

@@ -1,5 +1,6 @@
 package rwcsim.factions.waiqar;
 
+import org.apache.log4j.Logger;
 import rwcsim.base.Formation;
 import rwcsim.base.dials.*;
 import rwcsim.factions.base.BaseUnit;
@@ -18,6 +19,7 @@ import java.util.Map;
  * Created by dsayles on 8/18/17.
  */
 public class Reanimates extends WaiqarUnit implements Infantry {
+    private static final Logger logger = Logger.getLogger(Reanimates.class);
     Formation formation;
 
     public Reanimates() {
@@ -33,6 +35,7 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
     @Override
     public void initializeUnit() {
+        logger.info("initializeUnit()");
         this.commandTool = new CommandTool();
         List<DialFace> actionFaces = new ArrayList<>();
         List<DialFace> modifierFaces = new ArrayList<>();

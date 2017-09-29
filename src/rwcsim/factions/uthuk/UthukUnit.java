@@ -6,7 +6,9 @@ import rwcsim.factions.latari.LatariUnit;
 import rwcsim.factions.waiqar.WaiqarUnit;
 
 public abstract class UthukUnit extends BaseUnit {
-
+    public UthukUnit() {
+        super();
+    }
     public DaqanUnit getAsDaqanUnit() {
         return null;
     }

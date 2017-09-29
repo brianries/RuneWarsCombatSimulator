@@ -4,7 +4,6 @@ import rwcsim.base.AttackType;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.utils.dice.Die;
 import rwcsim.utils.dice.DieFace;
-import rwcsim.utils.dice.RedDie;
 import rwcsim.utils.dice.Roller;
 
 import java.util.List;

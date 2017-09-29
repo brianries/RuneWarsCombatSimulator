@@ -10,7 +10,9 @@ import rwcsim.factions.waiqar.WaiqarUnit;
 import java.util.List;
 
 public abstract class DaqanUnit extends BaseUnit {
-
+    public DaqanUnit() {
+        super();
+    }
     public DaqanUnit  getAsDaqanUnit() {
         return this;
     }

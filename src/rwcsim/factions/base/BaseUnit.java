@@ -15,6 +15,10 @@ public abstract class BaseUnit implements Unit {
 
 //    int woundCount;
 
+    public BaseUnit() {
+        initializeUnit();
+    }
+
     @Override
     public Siege getAsSiege() {
         if (this instanceof Siege) return (Siege)this;

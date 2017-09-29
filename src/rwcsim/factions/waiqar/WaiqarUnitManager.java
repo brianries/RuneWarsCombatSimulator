@@ -27,6 +27,7 @@ public class WaiqarUnitManager extends UnitManager {
             case ARDUS_IX_EREBUS: return new ArdusIxErebus().availableFormations();
             case CARRION_LANCERS: return new CarrionLancer().availableFormations();
             case REANIMATE_ARCHERS: return new ReanimateArchers().availableFormations();
+            case REANIMATES: return new Reanimates().availableFormations();
             case ANKAUR_MARO: return new AnkaurMaro().availableFormations();
             case DEATH_KNIGHTS: return new DeathKnights().availableFormations();
 //            case WRAITHS: return new Wraiths().avaialbleFormations();
