@@ -1,5 +1,6 @@
 package rwcsim.utils.interaction;
 
+import org.apache.log4j.Logger;
 import rwcsim.base.AttackType;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.utils.dice.Die;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DefaultInteractionManager extends BaseInteractionManager {
+    private static final Logger logger = Logger.getLogger(DefaultInteractionManager.class);
     private static DefaultInteractionManager dim = new DefaultInteractionManager();
 
     public static InteractionManager instance() {
@@ -55,6 +57,34 @@ public class DefaultInteractionManager extends BaseInteractionManager {
         }
 
         return results;
+    }
+
+    @Override
+    public void applyMortalStrikes(DeployableUnit unit, int count) {
+        logger.info("applyMortalStrikes: "+ unit.toString() + ":"+ count);
+    }
+
+
+    @Override
+    public void assignAccuracies(DeployableUnit unit, int count) {
+        logger.info("assignAccuracies: "+ unit.toString() + ":"+ count);
+    }
+
+
+    @Override
+    public void applyHits(DeployableUnit unit, int count) {
+        logger.info("applyHits: "+ unit.toString() + ":"+ count);
+    }
+
+    @Override
+    public void applyMorale(DeployableUnit unit, int count) {
+
+        logger.info("applyMorale: "+ unit.toString() + ":"+ count);
+    }
+
+    @Override
+    public void applySurges(DeployableUnit attackingUnit, DeployableUnit defendingUnit, int surgeCount) {
+
     }
 
 

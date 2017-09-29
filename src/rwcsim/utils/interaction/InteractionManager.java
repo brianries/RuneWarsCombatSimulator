@@ -12,5 +12,11 @@ public interface InteractionManager {
     int[] defineFlankingPool();
 
     Map<Die,List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, DeployableUnit attacker, Map<Die, List<DieFace>> results, AttackType type);
+    void applyMortalStrikes(DeployableUnit unit, int count);
+    void assignAccuracies(DeployableUnit unit, int count);
+    void applyHits(DeployableUnit defendingUnit, int hitCount);
+    void applyMorale(DeployableUnit defendingUnit, int moraleCount);
+
+    void applySurges(DeployableUnit attackingUnit, DeployableUnit defendingUnit, int surgeCount);
 }
 

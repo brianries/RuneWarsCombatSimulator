@@ -80,24 +80,36 @@ public class AttackLoop {
         log.debug("spendSurges()");
         int surgeCount = DieRollResultsAnalyzer.countAllSurges(rerollResults);
         log.info("Surges: "+surgeCount);
+        if (surgeCount>0) {
+            attacker.applySurges(attackingUnit, defendingUnit, surgeCount);
+        }
     }
 
     private void assignAccuracy() {
         log.debug("assignAccuracy()");
         int accuracyCount = DieRollResultsAnalyzer.countAllAccuracies(rerollResults);
         log.info("Accuracies: "+accuracyCount);
+        if (accuracyCount>0) {
+            attacker.assignAccuracies(defendingUnit, accuracyCount);
+        }
     }
 
     private void spendMortalStrikes() {
         log.debug("spendMortalStrikes()");
         int mortalStrikeCount = DieRollResultsAnalyzer.countMortalStrikes(rerollResults);
         log.info("MortalStrikes: "+ mortalStrikeCount);
+        if (mortalStrikeCount>0) {
+            defender.applyMortalStrikes(defendingUnit, mortalStrikeCount);
+        }
     }
 
     private void spendHits() {
         log.debug("spendHits()");
         int hitCount = DieRollResultsAnalyzer.countAllHits(rerollResults);
         log.info("Hits: "+ hitCount);
+        if (hitCount>0) {
+            attacker.applyHits(defendingUnit, hitCount);
+        }
     }
 
     private void reconfigure() {
@@ -109,7 +121,9 @@ public class AttackLoop {
         log.debug("resolveMorale()");
         int moraleCount = DieRollResultsAnalyzer.countAllMorale(rerollResults);
         log.info("Morale: "+moraleCount);
-
+        if (moraleCount>0) {
+            attacker.applyMorale(defendingUnit, moraleCount);
+        }
     }
 }
 
