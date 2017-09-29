@@ -22,17 +22,21 @@ public enum DieFace {
     MORTAL_STRIKE(ActionType.MORTAL_STRIKE);
 
     private List<ActionType> actions = new ArrayList<>();
+    private int symbolCount = 0;
 
     private DieFace(){}
     private DieFace(ActionType at) {
         actions.add(at);
+        symbolCount = 1;
     }
     private DieFace(ActionType a1, ActionType a2) {
         actions.add(a1);
         actions.add(a2);
+        symbolCount = 2;
     }
 
     public List<ActionType> getActions() {
         return actions;
     }
+    public int getSymbolCount() { return symbolCount; }
 }

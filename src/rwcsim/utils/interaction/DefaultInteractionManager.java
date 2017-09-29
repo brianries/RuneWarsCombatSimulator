@@ -51,31 +51,48 @@ public class DefaultInteractionManager extends BaseInteractionManager {
         }
 
         if (containsBlanks(results) && rerollPartialRank) {
-            // reroll white
-            if (results.get(Roller.whiteDie).contains(DieFace.BLANK) && rerollPartialRank) {
-                results.get(Roller.whiteDie).remove(DieFace.BLANK);
-                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,0,1});
-                results.get(Roller.whiteDie).addAll(r.get(Roller.whiteDie));
-                rerollPartialRank = false;
-            }
-
-            // reroll red
-            if (results.get(Roller.redDie).contains(DieFace.BLANK) && rerollPartialRank) {
-                results.get(Roller.redDie).remove(DieFace.BLANK);
-                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{1,0,0});
-                results.get(Roller.redDie).addAll(r.get(Roller.redDie));
-                rerollPartialRank = false;
-            }
-
-            // reroll blue
-            if (results.get(Roller.blueDie).contains(DieFace.BLANK) && rerollPartialRank) {
-                results.get(Roller.blueDie).remove(DieFace.BLANK);
-                Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,1,0});
-                results.get(Roller.blueDie).addAll(r.get(Roller.redDie));
-                rerollPartialRank = false;
-            }
+            results = rerollBlanks(results, rerollPartialRank);
         }
 
+        return results;
+    }
+
+
+    public boolean containsSingles(Map<Die, List<DieFace>> results) {
+        for (Map.Entry<Die,List<DieFace>> e : results.entrySet()) {
+            for ( DieFace f : e.getValue()) {
+                if (f.getSymbolCount()==1) { return true; }
+            }
+        }
+        return false;
+    }
+
+
+
+    public Map<Die,List<DieFace>> rerollBlanks(Map<Die,List<DieFace>> results, boolean rerollPartialRank) {
+        // reroll white
+        if (results.get(Roller.whiteDie).contains(DieFace.BLANK) && rerollPartialRank) {
+            results.get(Roller.whiteDie).remove(DieFace.BLANK);
+            Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,0,1});
+            results.get(Roller.whiteDie).addAll(r.get(Roller.whiteDie));
+            rerollPartialRank = false;
+        }
+
+        // reroll red
+        if (results.get(Roller.redDie).contains(DieFace.BLANK) && rerollPartialRank) {
+            results.get(Roller.redDie).remove(DieFace.BLANK);
+            Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{1,0,0});
+            results.get(Roller.redDie).addAll(r.get(Roller.redDie));
+            rerollPartialRank = false;
+        }
+
+        // reroll blue
+        if (results.get(Roller.blueDie).contains(DieFace.BLANK) && rerollPartialRank) {
+            results.get(Roller.blueDie).remove(DieFace.BLANK);
+            Map<Die,List<DieFace>> r = Roller.rollPool(new int[]{0,1,0});
+            results.get(Roller.blueDie).addAll(r.get(Roller.redDie));
+            rerollPartialRank = false;
+        }
         return results;
     }
 

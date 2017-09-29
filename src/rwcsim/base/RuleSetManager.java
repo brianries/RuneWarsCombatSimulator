@@ -3,7 +3,7 @@ package rwcsim.base;
 import java.util.*;
 
 public class RuleSetManager {
-    private static boolean useSeed = true;
+    private static boolean useSeed = false;
 
     private static final long seed = 5567001l;
     private static final Random random = new Random(seed);
