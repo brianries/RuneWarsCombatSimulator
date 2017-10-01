@@ -9,6 +9,7 @@ import rwcsim.factions.base.BaseUnit;
 import rwcsim.factions.base.Hero;
 import rwcsim.factions.base.Infantry;
 import rwcsim.factions.base.Unit;
+import rwcsim.factions.base.upgrades.Unique;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
@@ -18,7 +19,7 @@ import rwcsim.utils.trays.Tray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry {
+public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique {
 
     public ArdusIxErebus() {
         super();

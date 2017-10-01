@@ -6,6 +6,7 @@ import rwcsim.base.dials.DialFace;
 import rwcsim.base.dials.Face;
 import rwcsim.base.dials.FaceColor;
 import rwcsim.factions.base.*;
+import rwcsim.factions.base.upgrades.Unique;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
@@ -16,7 +17,7 @@ import rwcsim.utils.trays.Tray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry {
+public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry, Unique {
 
     public AlianaOfSummersong() {
         super();
