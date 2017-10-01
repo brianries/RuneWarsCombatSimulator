@@ -1,4 +1,4 @@
-package rwcsim.factions.waiqar.upgrades.figureupgrades.hero;
+package rwcsim.factions.waiqar.upgrades.champion;
 
 import rwcsim.factions.base.FigureUpgrade;
 import rwcsim.factions.base.HeroUpgrade;

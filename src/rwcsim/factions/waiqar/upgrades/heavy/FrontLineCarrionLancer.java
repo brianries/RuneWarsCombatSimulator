@@ -1,4 +1,4 @@
-package rwcsim.factions.waiqar.upgrades.figureupgrades.siege;
+package rwcsim.factions.waiqar.upgrades.heavy;
 
 import rwcsim.factions.base.FigureUpgrade;
 import rwcsim.factions.base.SiegeUpgrade;
