@@ -6,6 +6,7 @@ import rwcsim.base.AttackType;
 import rwcsim.base.Configuration;
 import rwcsim.base.Formation;
 import rwcsim.base.systems.AttackLoop;
+import rwcsim.base.systems.UnitFormationManager;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.factions.daqan.Spearmen;
 import rwcsim.factions.waiqar.Reanimates;
@@ -23,6 +24,9 @@ public class TestAttackLoop extends TestCase {
     DeployableUnit attackingUnit;
     DeployableUnit defendingUnit;
 
+    UnitFormationManager attackingFormation;
+    UnitFormationManager defendingFormation;
+
 
     public void setup() {
         Configuration.getInstance().reloadProperties();
@@ -35,11 +39,14 @@ public class TestAttackLoop extends TestCase {
         attackingUnit = new DeployableUnit(new Reanimates(), Formation.THREE_BY_TWO);
         defendingUnit = new DeployableUnit(new Spearmen(), Formation.THREE_BY_TWO);
 
+        attackingFormation = new UnitFormationManager(attackingUnit);
+        defendingFormation = new UnitFormationManager(defendingUnit);
+
     }
 
     public void testAttackLoop() {
         setup();
-        AttackLoop al = new AttackLoop(attacker, attackingUnit, defender, defendingUnit, attackType);
+        AttackLoop al = new AttackLoop(attacker, attackingFormation, defender, defendingFormation, attackType);
 
         al.processAttack();
 

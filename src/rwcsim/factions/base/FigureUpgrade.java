@@ -1,4 +1,4 @@
 package rwcsim.factions.base;
 
-public interface FigureUpgrade extends Figure {
+public class FigureUpgrade extends BaseFigure {
 }

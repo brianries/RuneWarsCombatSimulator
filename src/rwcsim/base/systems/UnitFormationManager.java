@@ -1,9 +1,11 @@
 package rwcsim.base.systems;
 
+import rwcsim.base.AttackType;
 import rwcsim.base.Formation;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.factions.base.Tray;
 import rwcsim.factions.base.Unit;
+import rwcsim.utils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +52,17 @@ public class UnitFormationManager {
 
     public boolean hasPartialRank() {
         return currentTrayCount % formation.getThreat() > 0;
+    }
+
+    public DiePool getDiePool(AttackType type) {
+        return this.deployableUnit.getDiePool(type);
+    }
+
+    public boolean canReroll() {
+        return this.deployableUnit.canReroll();
+    }
+
+    public int getRerollDieCount() {
+        return this.deployableUnit.getRerollDieCount();
     }
 }

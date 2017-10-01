@@ -1,7 +1,8 @@
-package rwcsim.factions.base;
+package rwcsim.utils.trays;
+
 
 public class SiegeTray extends BaseTray {
     public SiegeTray() {
-        trayLayout = new Figure[1];
+        super(1);
     }
 }

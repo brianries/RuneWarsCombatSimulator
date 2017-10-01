@@ -19,8 +19,8 @@ public class AttackLoop {
     InteractionManager attacker;
     InteractionManager defender;
 
-    DeployableUnit attackingUnit;
-    DeployableUnit defendingUnit;
+    UnitFormationManager attackingUnit;
+    UnitFormationManager defendingUnit;
 
     DiePool attackPool;
     int[] adjustmentPool = new int[]{0,0,0};
@@ -28,7 +28,7 @@ public class AttackLoop {
     Map<Die, List<DieFace>> rerollResults;
 
 
-    public AttackLoop(InteractionManager attacker, DeployableUnit attackingUnit, InteractionManager defender, DeployableUnit defendingUnit, AttackType type) {
+    public AttackLoop(InteractionManager attacker, UnitFormationManager attackingUnit, InteractionManager defender, UnitFormationManager defendingUnit, AttackType type) {
         this.attackType = type;
         this.attacker = attacker;
         this.attackingUnit = attackingUnit;
@@ -73,7 +73,8 @@ public class AttackLoop {
 
     private void modifyDice() {
         log.debug("modifyDice()");
-
+//        attacker.modifyAttackRoll();
+//        defender.modifyAttackRoll();
     }
 
     private void spendSurges() {
@@ -99,7 +100,7 @@ public class AttackLoop {
         int mortalStrikeCount = DieRollResultsAnalyzer.countMortalStrikes(rerollResults);
         log.info("MortalStrikes: "+ mortalStrikeCount);
         if (mortalStrikeCount>0) {
-            defender.applyMortalStrikes(defendingUnit, mortalStrikeCount);
+            attacker.applyMortalStrikes(defendingUnit, mortalStrikeCount);
         }
     }
 

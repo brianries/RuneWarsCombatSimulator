@@ -1,7 +1,9 @@
-package rwcsim.factions.base;
+package rwcsim.utils.trays;
+
 
 public class InfantryTray extends BaseTray {
     public InfantryTray() {
-        trayLayout = new Figure[4];
+        super(4);
+
     }
 }

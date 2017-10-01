@@ -8,5 +8,5 @@ public enum UpgradeType {
     Heraldry,
     Music,
     Training,
-    Unique
+    Unique;
 }
