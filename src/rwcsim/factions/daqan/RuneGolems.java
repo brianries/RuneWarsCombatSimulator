@@ -12,6 +12,9 @@ import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 import rwcsim.utils.runes.Rune;
+import rwcsim.utils.trays.CavalryTray;
+import rwcsim.utils.trays.SiegeTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,4 +88,8 @@ public class RuneGolems extends DaqanUnit implements Siege {
         }
     }
 
+    @Override
+    public Tray getTray() {
+        return new SiegeTray();
+    }
 }

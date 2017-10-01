@@ -10,6 +10,8 @@ import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
 import rwcsim.utils.runes.Rune;
+import rwcsim.utils.trays.HeroTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,5 +69,10 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry {
     public void populateUpgrades(boolean listContainsArdus, Formation formation) {
         legalUpgrades.add(UpgradeType.Artifact);
         legalUpgrades.add(UpgradeType.Unique);
+    }
+
+    @Override
+    public Tray getTray() {
+        return new HeroTray();
     }
 }

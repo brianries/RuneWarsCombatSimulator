@@ -12,6 +12,9 @@ import rwcsim.factions.base.Unit;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.trays.CavalryTray;
+import rwcsim.utils.trays.HeroTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,5 +98,10 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
             default:
                 return;
         }
+    }
+
+    @Override
+    public Tray getTray() {
+        return new CavalryTray();
     }
 }

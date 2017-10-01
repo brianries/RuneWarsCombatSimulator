@@ -11,6 +11,8 @@ import rwcsim.factions.base.Unit;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.trays.InfantryTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,4 +92,10 @@ public class ReanimateArchers extends WaiqarUnit implements Infantry {
                 return;
         }
     }
+
+    @Override
+    public Tray getTray() {
+        return new InfantryTray();
+    }
+
 }

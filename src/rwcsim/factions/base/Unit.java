@@ -8,6 +8,7 @@ import rwcsim.factions.latari.LatariUnit;
 import rwcsim.factions.uthuk.UthukUnit;
 import rwcsim.factions.waiqar.WaiqarUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,8 @@ public interface Unit {
     Cavalry getAsCavalry();
 
     Hero getAsHero();
+
+    Tray getTray();
 
     DaqanUnit getAsDaqanUnit();
     LatariUnit getAsLatariUnit();

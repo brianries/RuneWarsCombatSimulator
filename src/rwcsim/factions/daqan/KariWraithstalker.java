@@ -9,6 +9,8 @@ import rwcsim.factions.base.*;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.trays.HeroTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,5 +65,10 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry {
     public void populateUpgrades(Formation formation) {
         legalUpgrades.add(UpgradeType.Artifact);
         legalUpgrades.add(UpgradeType.Unique);
+    }
+
+    @Override
+    public Tray getTray() {
+        return new HeroTray();
     }
 }

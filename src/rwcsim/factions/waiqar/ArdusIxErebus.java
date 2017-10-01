@@ -12,6 +12,8 @@ import rwcsim.factions.base.Unit;
 import rwcsim.factions.base.upgrades.UpgradeType;
 import rwcsim.test.CoreUnit;
 import rwcsim.utils.dice.DiePool;
+import rwcsim.utils.trays.HeroTray;
+import rwcsim.utils.trays.Tray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,5 +70,10 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry {
     public void populateUpgrades(boolean listContainsArdus, Formation formation) {
         legalUpgrades.add(UpgradeType.Artifact);
         legalUpgrades.add(UpgradeType.Unique);
+    }
+
+    @Override
+    public Tray getTray() {
+        return new HeroTray();
     }
 }

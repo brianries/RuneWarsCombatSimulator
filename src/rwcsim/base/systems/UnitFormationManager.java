@@ -3,7 +3,8 @@ package rwcsim.base.systems;
 import rwcsim.base.AttackType;
 import rwcsim.base.Formation;
 import rwcsim.factions.base.DeployableUnit;
-import rwcsim.factions.base.Tray;
+import rwcsim.factions.base.FigureUpgrade;
+import rwcsim.utils.trays.Tray;
 import rwcsim.factions.base.Unit;
 import rwcsim.utils.dice.DiePool;
 
@@ -43,6 +44,13 @@ public class UnitFormationManager {
         totalTrayCount = this.formation.getTrayCount();
         trayLayout = new ArrayList<>(totalTrayCount);
         currentTrayCount = totalTrayCount;
+        initializeTrays();
+    }
+
+    public void initializeTrays() {
+        for (int i = 0; i<totalTrayCount; i++) {
+            trayLayout.add(i, unit.getTray());
+        }
     }
 
     public int getCurrentRanks() {
@@ -64,5 +72,12 @@ public class UnitFormationManager {
 
     public int getRerollDieCount() {
         return this.deployableUnit.getRerollDieCount();
+    }
+
+    public void setFigureUpgrade(int tray, int trayLocation, FigureUpgrade figureUpgrade) {
+        if (figureUpgrade.replaceTray()) {
+            trayLayout.add(tray, figureUpgrade.getTray());
+        }
+        trayLayout.get(tray).setFigureUpgrade(trayLocation, figureUpgrade);
     }
 }
