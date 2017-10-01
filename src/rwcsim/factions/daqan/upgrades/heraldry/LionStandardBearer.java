@@ -1,4 +1,4 @@
-package rwcsim.factions.daqan.upgrades.figureupgrades.infantry;
+package rwcsim.factions.daqan.upgrades.heraldry;
 
 import rwcsim.factions.base.FigureUpgrade;
 import rwcsim.factions.base.InfantryUpgrade;
