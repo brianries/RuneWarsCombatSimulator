@@ -2,7 +2,7 @@ package rwcsim.factions.base;
 
 import rwcsim.utils.trays.Tray;
 
-public class FigureUpgrade extends BaseFigure {
+public class FigureUpgrade extends AbstractFigure {
 
 
     @Override

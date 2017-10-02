@@ -2,19 +2,14 @@ package rwcsim.factions.base;
 
 import rwcsim.utils.trays.Tray;
 
-public abstract class BaseFigure implements Figure {
-    public int armor = 1;
-    public int health = 1;
+public class BaseFigure extends AbstractFigure {
     @Override
-    public boolean isUpgrade() {
+    public boolean replaceTray() {
         return false;
     }
-    public abstract boolean replaceTray();
-    public abstract Tray getTray();
-    public int getArmor() {
-        return armor;
-    }
-    public int getHealth() {
-        return health;
+
+    @Override
+    public Tray getTray() {
+        return null;
     }
 }
