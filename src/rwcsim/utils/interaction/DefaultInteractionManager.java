@@ -63,6 +63,11 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     @Override
     public void applyMortalStrikes(UnitFormationManager unit, int count) {
         logger.info("applyMortalStrikes: "+ unit.toString() + ":"+ count);
+
+        // apply mortal strikes to defender
+
+
+
     }
 
 

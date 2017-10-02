@@ -80,4 +80,6 @@ public class UnitFormationManager {
         }
         trayLayout.get(tray).setFigureUpgrade(trayLocation, figureUpgrade);
     }
+
+    
 }

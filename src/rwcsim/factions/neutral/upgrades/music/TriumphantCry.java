@@ -1,9 +1,12 @@
 package rwcsim.factions.neutral.upgrades.music;
 
 import rwcsim.base.systems.stages.WhenEngagedEnemyIsDestroyed;
+import rwcsim.factions.base.Cost;
 import rwcsim.factions.base.upgrades.Music;
 
-import java.nio.channels.MulticastChannel;
-
-public class TriumphantCry implements Music, WhenEngagedEnemyIsDestroyed {
+public class TriumphantCry implements Cost, Music, WhenEngagedEnemyIsDestroyed {
+    @Override
+    public int price() {
+        return 3;
+    }
 }
