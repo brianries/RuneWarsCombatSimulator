@@ -1,4 +1,7 @@
 package rwcsim.factions.neutral.upgrades.heraldry;
 
-public class CursedSignets {
+import rwcsim.base.systems.stages.OnReceivingBane;
+import rwcsim.factions.base.upgrades.Heraldry;
+
+public class CursedSignets implements Heraldry, OnReceivingBane {
 }

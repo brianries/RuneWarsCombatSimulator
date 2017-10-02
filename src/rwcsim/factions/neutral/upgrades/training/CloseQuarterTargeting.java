@@ -1,4 +1,7 @@
 package rwcsim.factions.neutral.upgrades.training;
 
-public class CloseQuarterTargeting {
+import rwcsim.base.systems.stages.OnAttack;
+import rwcsim.factions.base.upgrades.Training;
+
+public class CloseQuarterTargeting implements Training, OnAttack {
 }

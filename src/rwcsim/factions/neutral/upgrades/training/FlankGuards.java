@@ -1,4 +1,7 @@
 package rwcsim.factions.neutral.upgrades.training;
 
-public class FlankGuards {
+import rwcsim.base.systems.stages.WhileDefending;
+import rwcsim.factions.base.upgrades.Training;
+
+public class FlankGuards implements Training, WhileDefending {
 }

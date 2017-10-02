@@ -1,4 +1,7 @@
 package rwcsim.factions.neutral.upgrades.heraldry;
 
-public class TerrifyingHeraldry {
+import rwcsim.base.systems.stages.BeginningEndPhase;
+import rwcsim.factions.base.upgrades.Heraldry;
+
+public class TerrifyingHeraldry implements Heraldry, BeginningEndPhase {
 }
