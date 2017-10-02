@@ -1,4 +1,7 @@
 package rwcsim.factions.neutral.upgrades.champion;
 
-public class WarCrier {
+import rwcsim.base.systems.actions.OnSkill;
+import rwcsim.factions.base.upgrades.Champion;
+
+public class WarCrier implements Champion, OnSkill {
 }

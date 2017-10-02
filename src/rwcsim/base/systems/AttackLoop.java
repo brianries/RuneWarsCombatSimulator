@@ -13,6 +13,7 @@ import java.util.Map;
 
 
 public class AttackLoop {
+
     private static final Logger log = Logger.getLogger(AttackLoop.class);
     AttackType attackType;
 
