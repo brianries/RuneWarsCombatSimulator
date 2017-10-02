@@ -1,6 +1,7 @@
 package rwcsim.utils.interaction.ui;
 
 import rwcsim.base.AttackType;
+import rwcsim.base.systems.UnitFormationManager;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.utils.dice.Die;
 import rwcsim.utils.dice.DieFace;
@@ -16,32 +17,32 @@ public class UIInteractionManager extends BaseInteractionManager {
     }
 
     @Override
-    public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, DeployableUnit attacker, Map<Die, List<DieFace>> results, AttackType type) {
+    public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, UnitFormationManager attacker, Map<Die, List<DieFace>> results, AttackType type) {
         return null;
     }
 
     @Override
-    public void applyMortalStrikes(DeployableUnit unit, int count) {
+    public void applyMortalStrikes(UnitFormationManager unit, int count) {
 
     }
 
     @Override
-    public void assignAccuracies(DeployableUnit unit, int count) {
+    public void assignAccuracies(UnitFormationManager unit, int count) {
 
     }
 
     @Override
-    public void applyHits(DeployableUnit defendingUnit, int hitCount) {
+    public void applyHits(UnitFormationManager defendingUnit, int hitCount) {
 
     }
 
     @Override
-    public void applyMorale(DeployableUnit defendingUnit, int moraleCount) {
+    public void applyMorale(UnitFormationManager defendingUnit, int moraleCount) {
 
     }
 
     @Override
-    public void applySurges(DeployableUnit attackingUnit, DeployableUnit defendingUnit, int surgeCount) {
+    public void applySurges(UnitFormationManager attackingUnit, UnitFormationManager defendingUnit, int surgeCount) {
 
     }
 }

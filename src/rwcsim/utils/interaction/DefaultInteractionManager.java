@@ -2,6 +2,7 @@ package rwcsim.utils.interaction;
 
 import org.apache.log4j.Logger;
 import rwcsim.base.AttackType;
+import rwcsim.base.systems.UnitFormationManager;
 import rwcsim.factions.base.DeployableUnit;
 import rwcsim.utils.dice.Die;
 import rwcsim.utils.dice.DieFace;
@@ -24,7 +25,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     }
 
     @Override
-    public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, DeployableUnit attacker, Map<Die, List<DieFace>> results, AttackType type) {
+    public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, UnitFormationManager attacker, Map<Die, List<DieFace>> results, AttackType type) {
         /* default reroll of blanks if possible */
         int rerollDieCount =  rerollRankCount;
 
@@ -60,30 +61,30 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     }
 
     @Override
-    public void applyMortalStrikes(DeployableUnit unit, int count) {
+    public void applyMortalStrikes(UnitFormationManager unit, int count) {
         logger.info("applyMortalStrikes: "+ unit.toString() + ":"+ count);
     }
 
 
     @Override
-    public void assignAccuracies(DeployableUnit unit, int count) {
+    public void assignAccuracies(UnitFormationManager unit, int count) {
         logger.info("assignAccuracies: "+ unit.toString() + ":"+ count);
     }
 
 
     @Override
-    public void applyHits(DeployableUnit unit, int count) {
+    public void applyHits(UnitFormationManager unit, int count) {
         logger.info("applyHits: "+ unit.toString() + ":"+ count);
     }
 
     @Override
-    public void applyMorale(DeployableUnit unit, int count) {
+    public void applyMorale(UnitFormationManager unit, int count) {
 
         logger.info("applyMorale: "+ unit.toString() + ":"+ count);
     }
 
     @Override
-    public void applySurges(DeployableUnit attackingUnit, DeployableUnit defendingUnit, int surgeCount) {
+    public void applySurges(UnitFormationManager attackingUnit, UnitFormationManager defendingUnit, int surgeCount) {
 
     }
 
