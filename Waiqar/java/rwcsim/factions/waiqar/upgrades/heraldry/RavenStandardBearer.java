@@ -1,12 +1,11 @@
 package rwcsim.factions.waiqar.upgrades.heraldry;
 
-import rwcsim.base.dials.FaceColor;
-import rwcsim.base.systems.stages.OnActivation;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.abilities.InitiativeAdjustment;
-import rwcsim.factions.base.upgrades.Heraldry;
+import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.abilities.InitiativeAdjustment;
+import rwcsim.basicutils.upgrade.Heraldry;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class RavenStandardBearer extends FigureUpgrade implements Cost, Waiqar, Heraldry, InfantryUpgrade, InitiativeAdjustment {

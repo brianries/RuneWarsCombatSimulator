@@ -1,10 +1,10 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
-import rwcsim.base.systems.stages.OnAttack;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.upgrades.Heraldry;
+import rwcsim.basicutils.stages.OnAttack;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Heraldry;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
 public class EagleBannerBearer extends FigureUpgrade implements Cost, Daqan, Heraldry, InfantryUpgrade, OnAttack {

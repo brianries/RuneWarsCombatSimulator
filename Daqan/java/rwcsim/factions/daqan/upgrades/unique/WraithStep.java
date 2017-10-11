@@ -1,9 +1,9 @@
 package rwcsim.factions.daqan.upgrades.unique;
 
-import rwcsim.base.systems.actions.OnSkill;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.upgrades.HeroSpecific;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.actions.OnSkill;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.HeroSpecific;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.daqan.KariWraithstalker;
 import rwcsim.factions.daqan.upgrades.Daqan;
 

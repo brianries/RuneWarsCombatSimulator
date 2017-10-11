@@ -1,8 +1,8 @@
 package rwcsim.factions.waiqar.upgrades.training;
 
-import rwcsim.base.systems.stages.OnEmptyTray;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.upgrades.Training;
+import rwcsim.basicutils.stages.OnEmptyTray;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.Training;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class LingeringDead implements Cost, Waiqar, Training, OnEmptyTray {

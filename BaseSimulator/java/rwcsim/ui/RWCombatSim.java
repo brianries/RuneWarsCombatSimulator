@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import rwcsim.utils.runes.RuneManager;
+import rwcsim.basicutils.runes.RuneManager;
 
 
 public class RWCombatSim extends Application {

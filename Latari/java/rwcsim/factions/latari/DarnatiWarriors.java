@@ -1,17 +1,17 @@
 package rwcsim.factions.latari;
 
-import rwcsim.base.Formation;
-import rwcsim.base.dials.CommandTool;
-import rwcsim.base.dials.DialFace;
-import rwcsim.base.dials.Face;
-import rwcsim.base.dials.FaceColor;
-import rwcsim.factions.base.Infantry;
-import rwcsim.factions.base.LatariUnit;
-import rwcsim.factions.base.Unit;
-import rwcsim.factions.base.upgrades.UpgradeType;
-import rwcsim.utils.dice.DiePool;
-import rwcsim.utils.trays.InfantryTray;
-import rwcsim.utils.trays.Tray;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.dials.CommandTool;
+import rwcsim.basicutils.dials.DialFace;
+import rwcsim.basicutils.dials.Face;
+import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.concepts.Infantry;
+import rwcsim.basicutils.unit.LatariUnit;
+import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.dice.DiePool;
+import rwcsim.basicutils.trays.InfantryTray;
+import rwcsim.basicutils.concepts.Tray;
 
 import java.util.ArrayList;
 import java.util.List;

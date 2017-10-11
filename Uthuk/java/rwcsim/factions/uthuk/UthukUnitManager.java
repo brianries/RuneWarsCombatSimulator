@@ -1,10 +1,9 @@
 package rwcsim.factions.uthuk;
 
-import rwcsim.base.Formation;
-import rwcsim.factions.UnitManager;
-import rwcsim.factions.base.Unit;
-import rwcsim.factions.base.upgrades.UpgradeType;
-import rwcsim.factions.latari.*;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.managers.UnitManager;
+import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.upgrade.UpgradeType;
 
 import java.util.List;
 

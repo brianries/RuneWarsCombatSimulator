@@ -1,15 +1,15 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
-import rwcsim.base.systems.stages.AfterActivation;
-import rwcsim.base.systems.actions.OnSkill;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.SiegeUpgrade;
-import rwcsim.factions.base.abilities.Overgrow;
-import rwcsim.factions.base.upgrades.Heavy;
+import rwcsim.basicutils.stages.AfterActivation;
+import rwcsim.basicutils.actions.OnSkill;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.SiegeUpgrade;
+import rwcsim.basicutils.abilities.Overgrow;
+import rwcsim.basicutils.upgrade.Heavy;
 import rwcsim.factions.latari.upgrades.Latari;
-import rwcsim.utils.runes.Rune;
-import rwcsim.utils.runes.RuneManager;
+import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneManager;
 
 public class SupportAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, Overgrow {
     public SupportAymhelinScion() {

@@ -1,10 +1,10 @@
 package rwcsim.factions.waiqar.upgrades.champion;
 
-import rwcsim.base.systems.stages.AvailableUpgrades;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.upgrades.Champion;
+import rwcsim.basicutils.stages.AvailableUpgrades;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Champion;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class FallenHero extends FigureUpgrade implements Cost, Waiqar, Champion, InfantryUpgrade, AvailableUpgrades {

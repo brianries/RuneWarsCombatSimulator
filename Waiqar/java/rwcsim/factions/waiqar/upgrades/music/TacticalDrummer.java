@@ -1,10 +1,10 @@
 package rwcsim.factions.waiqar.upgrades.music;
 
-import rwcsim.base.systems.stages.OnDisengage;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.upgrades.Music;
+import rwcsim.basicutils.stages.OnDisengage;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Music;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class TacticalDrummer extends FigureUpgrade implements Cost, Waiqar, Music, InfantryUpgrade, OnDisengage {

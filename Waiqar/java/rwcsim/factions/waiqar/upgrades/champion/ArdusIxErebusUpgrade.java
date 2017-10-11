@@ -1,13 +1,13 @@
 package rwcsim.factions.waiqar.upgrades.champion;
 
-import rwcsim.base.systems.actions.AddDie;
-import rwcsim.base.systems.stages.SpendSurges;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.HeroUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.upgrades.Champion;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.stages.SpendSurges;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.HeroUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class ArdusIxErebusUpgrade extends FigureUpgrade implements Cost, Waiqar, Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges {

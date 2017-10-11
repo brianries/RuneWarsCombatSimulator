@@ -1,15 +1,17 @@
 package rwcsim.factions.waiqar;
 
-import rwcsim.base.Formation;
-import rwcsim.base.dials.CommandTool;
-import rwcsim.base.dials.DialFace;
-import rwcsim.base.dials.Face;
-import rwcsim.base.dials.FaceColor;
-import rwcsim.factions.base.*;
-import rwcsim.factions.base.upgrades.UpgradeType;
-import rwcsim.utils.dice.DiePool;
-import rwcsim.utils.trays.SiegeTray;
-import rwcsim.utils.trays.Tray;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.concepts.Siege;
+import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.unit.WaiqarUnit;
+import rwcsim.basicutils.dials.CommandTool;
+import rwcsim.basicutils.dials.DialFace;
+import rwcsim.basicutils.dials.Face;
+import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.dice.DiePool;
+import rwcsim.basicutils.trays.SiegeTray;
+import rwcsim.basicutils.concepts.Tray;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,15 +1,15 @@
 package rwcsim.factions.waiqar;
 
 import org.apache.log4j.Logger;
-import rwcsim.base.Formation;
-import rwcsim.base.dials.*;
-import rwcsim.factions.base.Infantry;
-import rwcsim.factions.base.Unit;
-import rwcsim.factions.base.WaiqarUnit;
-import rwcsim.factions.base.upgrades.UpgradeType;
-import rwcsim.utils.dice.DiePool;
-import rwcsim.utils.trays.InfantryTray;
-import rwcsim.utils.trays.Tray;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.dials.*;
+import rwcsim.basicutils.concepts.Infantry;
+import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.unit.WaiqarUnit;
+import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.dice.DiePool;
+import rwcsim.basicutils.trays.InfantryTray;
+import rwcsim.basicutils.concepts.Tray;
 
 import java.util.ArrayList;
 import java.util.List;

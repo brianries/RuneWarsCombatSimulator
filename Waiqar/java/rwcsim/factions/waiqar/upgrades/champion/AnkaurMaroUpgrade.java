@@ -1,9 +1,13 @@
 package rwcsim.factions.waiqar.upgrades.champion;
 
-import rwcsim.base.systems.actions.OnSkill;
-import rwcsim.factions.base.*;
-import rwcsim.factions.base.upgrades.Champion;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.actions.OnSkill;
+import rwcsim.basicutils.upgrade.CavalryUpgrade;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.HeroUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
 public class AnkaurMaroUpgrade extends FigureUpgrade implements Cost, Waiqar, Champion, HeroUpgrade, InfantryUpgrade, CavalryUpgrade, Unique, OnSkill {

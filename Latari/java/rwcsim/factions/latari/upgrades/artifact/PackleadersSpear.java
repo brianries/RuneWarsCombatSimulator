@@ -1,10 +1,10 @@
 package rwcsim.factions.latari.upgrades.artifact;
 
-import rwcsim.base.systems.stages.Exhaustable;
-import rwcsim.base.systems.stages.OnMeleeAttack;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.upgrades.Artifact;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.stages.Exhaustable;
+import rwcsim.basicutils.stages.OnMeleeAttack;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.Artifact;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.latari.upgrades.Latari;
 
 public class PackleadersSpear implements Cost, Latari, Artifact, Unique, Exhaustable, OnMeleeAttack {

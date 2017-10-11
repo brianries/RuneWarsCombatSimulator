@@ -1,16 +1,15 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
-import rwcsim.base.systems.stages.Exhaustable;
-import rwcsim.base.systems.stages.OnAttack;
-import rwcsim.base.systems.stages.SpendSurges;
-import rwcsim.base.systems.stages.WhileAttacking;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.SiegeUpgrade;
-import rwcsim.factions.base.upgrades.Heavy;
+import rwcsim.basicutils.stages.Exhaustable;
+import rwcsim.basicutils.stages.OnAttack;
+import rwcsim.basicutils.stages.SpendSurges;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.SiegeUpgrade;
+import rwcsim.basicutils.upgrade.Heavy;
 import rwcsim.factions.latari.upgrades.Latari;
-import rwcsim.utils.runes.Rune;
-import rwcsim.utils.runes.RuneManager;
+import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneManager;
 
 public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, OnAttack, Exhaustable, SpendSurges {
     public FrontlineAymhelinScion() {

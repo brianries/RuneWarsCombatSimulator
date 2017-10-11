@@ -1,12 +1,12 @@
 package rwcsim.factions.latari.upgrades.unique;
 
-import rwcsim.base.dials.DialFace;
-import rwcsim.base.dials.Face;
-import rwcsim.base.systems.stages.OnMarch;
-import rwcsim.base.systems.stages.OnShift;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.upgrades.HeroSpecific;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.dials.DialFace;
+import rwcsim.basicutils.dials.Face;
+import rwcsim.basicutils.stages.OnMarch;
+import rwcsim.basicutils.stages.OnShift;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.HeroSpecific;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.latari.AlianaOfSummersong;
 import rwcsim.factions.latari.upgrades.Latari;
 

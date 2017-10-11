@@ -1,11 +1,10 @@
 package rwcsim.test;
 
-import rwcsim.base.ActionType;
-import rwcsim.base.Formation;
-import rwcsim.base.RuleSetManager;
-import rwcsim.base.ruleset.Reroll;
-import rwcsim.base.ruleset.AutomaticallyRerollBlanks;
-import rwcsim.utils.dice.DiePool;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.managers.RuleSetManager;
+import rwcsim.basicutils.ruleset.Reroll;
+import rwcsim.basicutils.ruleset.AutomaticallyRerollBlanks;
+import rwcsim.basicutils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;

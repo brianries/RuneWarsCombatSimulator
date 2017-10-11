@@ -1,10 +1,14 @@
 package rwcsim.factions.daqan.upgrades.champion;
 
-import rwcsim.base.systems.actions.AddDie;
-import rwcsim.base.systems.stages.AfterAttacking;
-import rwcsim.factions.base.*;
-import rwcsim.factions.base.upgrades.Champion;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.stages.AfterAttacking;
+import rwcsim.basicutils.upgrade.CavalryUpgrade;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.HeroUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
 public class LordHawthorneUpgrade extends FigureUpgrade implements Champion, Daqan, HeroUpgrade, InfantryUpgrade, CavalryUpgrade, Unique, AddDie, AfterAttacking, Cost {

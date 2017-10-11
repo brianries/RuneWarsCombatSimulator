@@ -1,14 +1,14 @@
 package rwcsim.factions.latari.upgrades.champion;
 
-import rwcsim.base.systems.actions.AddDie;
-import rwcsim.base.systems.stages.SpendSurges;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.HeroUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.abilities.Impact;
-import rwcsim.factions.base.upgrades.Champion;
-import rwcsim.factions.base.upgrades.Unique;
+import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.stages.SpendSurges;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.HeroUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.abilities.Impact;
+import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.latari.upgrades.Latari;
 
 public class AlianaOfSummersongUpgrade extends FigureUpgrade implements Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges, Impact, Latari, Cost {

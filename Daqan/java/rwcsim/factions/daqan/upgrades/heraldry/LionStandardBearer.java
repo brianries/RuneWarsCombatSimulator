@@ -1,11 +1,11 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
-import rwcsim.base.morale.MoraleType;
-import rwcsim.factions.base.Cost;
-import rwcsim.factions.base.FigureUpgrade;
-import rwcsim.factions.base.InfantryUpgrade;
-import rwcsim.factions.base.abilities.Steadfast;
-import rwcsim.factions.base.upgrades.Heraldry;
+import rwcsim.basicutils.morale.MoraleType;
+import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.upgrade.InfantryUpgrade;
+import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.upgrade.Heraldry;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
 public class LionStandardBearer extends FigureUpgrade implements Cost, Daqan, Heraldry, InfantryUpgrade, Steadfast {

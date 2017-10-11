@@ -1,16 +1,11 @@
 package rwcsim.factions.waiqar;
 
-import rwcsim.base.Formation;
-import rwcsim.base.dials.CommandTool;
-import rwcsim.base.dials.DialFace;
-import rwcsim.base.dials.Face;
-import rwcsim.base.dials.FaceColor;
-import rwcsim.factions.UnitManager;
-import rwcsim.factions.base.DeployableUnit;
-import rwcsim.factions.base.Unit;
-import rwcsim.factions.base.upgrades.UpgradeType;
+import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.managers.UnitManager;
+import rwcsim.basicutils.unit.DeployableUnit;
+import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.upgrade.UpgradeType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WaiqarUnitManager extends UnitManager {
