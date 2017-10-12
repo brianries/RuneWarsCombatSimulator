@@ -53,8 +53,8 @@ public class AttackLoop {
     private void rollDice() {
         log.debug("rollDice()");
 
-        //List<State> states = attackingUnit.unitStateManager.getAllStates(new FlankingState(defendingUnit.getUnit()));
-        //long flankingCount = states.stream().filter(s -> ((FlankingState)s).getFlanking() == defendingUnit.getUnit()).count();
+        //List<State> states = attackingUnit.unitStateManager.getAllStates(new Flanking(defendingUnit.getUnit()));
+        //long flankingCount = states.stream().filter(s -> ((Flanking)s).getFlanking() == defendingUnit.getUnit()).count();
 //        int[] adjustmentPool = new int[]{0,0,0};
 //        if (flankingCount > 0) {
 //            adjustmentPool = attacker.defineFlankingPool();

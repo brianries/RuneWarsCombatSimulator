@@ -3,10 +3,10 @@ package rwcsim.basicutils.states;
 import rwcsim.basicutils.concepts.State;
 import rwcsim.basicutils.unit.Unit;
 
-public class EngagedState implements State<EngagedState> {
+public class Engaged implements State<Engaged> {
     Unit engagedWith;
 
-    public EngagedState(Unit unit) {
+    public Engaged(Unit unit) {
         engagedWith = unit;
     }
 
@@ -15,7 +15,7 @@ public class EngagedState implements State<EngagedState> {
     }
 
     @Override
-    public EngagedState getType() {
+    public Engaged getType() {
         return this;
     }
 }

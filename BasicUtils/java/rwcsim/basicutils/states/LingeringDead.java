@@ -2,9 +2,9 @@ package rwcsim.basicutils.states;
 
 import rwcsim.basicutils.concepts.State;
 
-public class LingeringDeadState implements State<LingeringDeadState> {
+public class LingeringDead implements State<LingeringDead> {
     @Override
-    public LingeringDeadState getType() {
+    public LingeringDead getType() {
         return this;
     }
 }

@@ -3,10 +3,10 @@ package rwcsim.basicutils.states;
 import rwcsim.basicutils.concepts.State;
 import rwcsim.basicutils.unit.Unit;
 
-public class FlankingState implements State<FlankingState> {
+public class Flanking implements State<Flanking> {
     Unit flanking;
 
-    public FlankingState(Unit unit) {
+    public Flanking(Unit unit) {
         flanking = unit;
     }
 
@@ -15,7 +15,7 @@ public class FlankingState implements State<FlankingState> {
     }
 
     @Override
-    public FlankingState getType() {
+    public Flanking getType() {
         return this;
     }
 }

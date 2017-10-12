@@ -2,10 +2,9 @@ package rwcsim.basicutils.states;
 
 import rwcsim.basicutils.concepts.State;
 
-public class AliveState implements State<AliveState> {
-
+public class Unavailable implements State<Unavailable> {
     @Override
-    public AliveState getType() {
+    public Unavailable getType() {
         return this;
     }
 }
