@@ -1,4 +1,8 @@
 package rwcsim.basicutils.stages;
 
-public interface WhenEngagedEnemyIsDestroyed {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface WhenEngagedEnemyIsDestroyed extends Stage<WhenEngagedEnemyIsDestroyed> {
+    Key<WhenEngagedEnemyIsDestroyed> key = new Key<>();
+    default Key<WhenEngagedEnemyIsDestroyed> key() { return key; };
 }

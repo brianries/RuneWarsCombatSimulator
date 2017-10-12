@@ -7,6 +7,7 @@ import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnAttack;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.upgrade.FigureUpgrade;
 import rwcsim.basicutils.upgrade.SiegeUpgrade;
 import rwcsim.basicutils.upgrade.Heavy;
@@ -16,7 +17,7 @@ import rwcsim.basicutils.runes.RuneManager;
 
 import java.util.List;
 
-public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, AddStages<OnAttack,SpendSurges>, Exhaustable {
+public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, AddStages, Exhaustable {
     public FrontlineAymhelinScion() {
         this.armor = 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
         this.health = 3;
@@ -27,8 +28,9 @@ public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latar
         return 6;
     }
 
+
     @Override
-    public List<Stage> getStage() {
-        return null;
+    public void registerStages(Unit unit) {
+        //unit.registerUpgrade(new OnAttack(), this);//<OnAttack,SpendSurges>
     }
 }
