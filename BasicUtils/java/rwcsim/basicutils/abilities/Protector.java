@@ -1,5 +1,7 @@
 package rwcsim.basicutils.abilities;
 
-public interface Protector {
+import rwcsim.basicutils.concepts.Ability;
+
+public interface Protector extends Ability {
 
 }

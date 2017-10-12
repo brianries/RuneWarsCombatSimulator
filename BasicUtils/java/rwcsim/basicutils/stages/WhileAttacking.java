@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface WhileAttacking {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface WhileAttacking extends Stage<WhileAttacking> {
 }

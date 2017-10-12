@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface WhileMoving {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface WhileMoving extends Stage<WhileMoving> {
 }

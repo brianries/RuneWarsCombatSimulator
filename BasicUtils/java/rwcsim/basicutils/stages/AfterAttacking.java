@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AfterAttacking {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AfterAttacking extends Stage<AfterAttacking> {
 }

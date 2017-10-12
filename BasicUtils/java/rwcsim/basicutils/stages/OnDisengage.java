@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnDisengage {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnDisengage extends Stage<OnDisengage> {
 }

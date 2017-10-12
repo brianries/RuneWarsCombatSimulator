@@ -1,5 +1,7 @@
 package rwcsim.basicutils.abilities;
 
-public interface Brutal {
+import rwcsim.basicutils.concepts.Ability;
+
+public interface Brutal extends Ability {
     int getBrutalValue();
 }

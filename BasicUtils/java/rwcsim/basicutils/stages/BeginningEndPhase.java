@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface BeginningEndPhase {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface BeginningEndPhase extends Stage<BeginningEndPhase> {
 }

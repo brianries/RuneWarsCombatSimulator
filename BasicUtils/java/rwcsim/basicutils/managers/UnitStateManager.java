@@ -1,5 +1,6 @@
 package rwcsim.basicutils.managers;
 
+import rwcsim.basicutils.concepts.Manager;
 import rwcsim.basicutils.states.*;
 import rwcsim.basicutils.concepts.State;
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UnitStateManager {
+public class UnitStateManager implements Manager {
     public static UnavailableState UNAVAILABLE_STATE = new UnavailableState();
     public static List<State> UNAVAILABLE_STATE_LIST = new ArrayList<>();
     static { UNAVAILABLE_STATE_LIST.add(UNAVAILABLE_STATE); }

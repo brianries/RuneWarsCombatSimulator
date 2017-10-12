@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnRangedAttack {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnRangedAttack extends Stage<OnRangedAttack> {
 }

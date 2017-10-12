@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnEmptyTray {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnEmptyTray extends Stage<OnEmptyTray> {
 }

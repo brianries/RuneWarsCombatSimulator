@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnCollision {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnCollision extends Stage<OnCollision> {
 }

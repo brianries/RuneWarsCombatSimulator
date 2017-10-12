@@ -1,10 +1,11 @@
 package rwcsim.basicutils.managers;
 
+import rwcsim.basicutils.concepts.Manager;
 import rwcsim.basicutils.concepts.Rule;
 
 import java.util.*;
 
-public class RuleSetManager {
+public class RuleSetManager implements Manager {
     private static boolean useSeed = false;
 
     private static final long seed = 5567001l;

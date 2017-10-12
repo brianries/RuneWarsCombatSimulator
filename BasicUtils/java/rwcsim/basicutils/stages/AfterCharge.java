@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AfterCharge {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AfterCharge extends Stage<AfterCharge> {
 }

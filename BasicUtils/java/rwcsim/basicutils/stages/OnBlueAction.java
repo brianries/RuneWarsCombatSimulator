@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnBlueAction {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnBlueAction extends Stage<OnBlueAction> {
 }

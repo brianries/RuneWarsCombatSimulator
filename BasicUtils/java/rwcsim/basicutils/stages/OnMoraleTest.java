@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnMoraleTest {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnMoraleTest extends Stage<OnMoraleTest> {
 }

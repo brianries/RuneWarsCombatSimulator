@@ -1,5 +1,7 @@
 package rwcsim.basicutils.abilities;
 
-public interface Impact {
+import rwcsim.basicutils.concepts.Ability;
+
+public interface Impact extends Ability {
     int getImpactValue();
 }

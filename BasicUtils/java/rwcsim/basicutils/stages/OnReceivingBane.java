@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnReceivingBane {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnReceivingBane extends Stage<OnReceivingBane> {
 }

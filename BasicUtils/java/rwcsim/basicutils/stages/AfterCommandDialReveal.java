@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AfterCommandDialReveal {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AfterCommandDialReveal extends Stage<AfterCommandDialReveal> {
 }

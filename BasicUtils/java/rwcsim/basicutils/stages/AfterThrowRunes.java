@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AfterThrowRunes {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AfterThrowRunes extends Stage<AfterThrowRunes> {
 }

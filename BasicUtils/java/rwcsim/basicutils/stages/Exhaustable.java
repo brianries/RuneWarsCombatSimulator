@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface Exhaustable {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface Exhaustable extends Stage<Exhaustable> {
 }

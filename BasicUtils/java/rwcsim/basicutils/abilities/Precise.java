@@ -1,5 +1,7 @@
 package rwcsim.basicutils.abilities;
 
-public interface Precise {
+import rwcsim.basicutils.concepts.Ability;
+
+public interface Precise extends Ability {
     int additionalRanks();
 }

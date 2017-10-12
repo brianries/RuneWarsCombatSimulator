@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AfterActivation {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AfterActivation extends Stage<AfterActivation> {
 }

@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface OnActivation {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface OnActivation extends Stage<OnActivation> {
 }

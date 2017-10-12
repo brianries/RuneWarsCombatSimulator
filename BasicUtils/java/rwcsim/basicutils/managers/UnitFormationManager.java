@@ -2,6 +2,7 @@ package rwcsim.basicutils.managers;
 
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.concepts.Manager;
 import rwcsim.basicutils.unit.DeployableUnit;
 import rwcsim.basicutils.upgrade.FigureUpgrade;
 import rwcsim.basicutils.concepts.Tray;
@@ -11,7 +12,7 @@ import rwcsim.basicutils.dice.DiePool;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnitFormationManager {
+public class UnitFormationManager implements Manager {
     /**
      * 1: [0]  1x2:  [0]    1x3:  [0]
      *               [1]          [1]

@@ -1,5 +1,7 @@
 package rwcsim.basicutils.abilities;
 
-public interface Overgrow {
+import rwcsim.basicutils.concepts.Ability;
+
+public interface Overgrow extends Ability {
     int getOvergrowValue();
 }

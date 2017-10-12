@@ -1,4 +1,6 @@
 package rwcsim.basicutils.stages;
 
-public interface AvailableUpgrades {
+import rwcsim.basicutils.concepts.Stage;
+
+public interface AvailableUpgrades extends Stage<AvailableUpgrades> {
 }
