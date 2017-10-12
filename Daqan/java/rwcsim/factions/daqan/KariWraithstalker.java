@@ -1,6 +1,9 @@
 package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Precise;
+import rwcsim.basicutils.abilities.Protected;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.unit.DaqanUnit;
@@ -73,5 +76,11 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry, Uniq
     @Override
     public Tray getTray() {
         return new HeroTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Brutal.asAbility(1));
+        addAbility(Precise.asAbility(1));
     }
 }

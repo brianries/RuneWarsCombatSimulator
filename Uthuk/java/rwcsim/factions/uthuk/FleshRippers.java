@@ -1,6 +1,7 @@
 package rwcsim.factions.uthuk;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Impact;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -89,5 +90,10 @@ public class FleshRippers extends UthukUnit implements Cavalry {
     @Override
     public Tray getTray() {
         return new CavalryTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Impact.asAbility(1));
     }
 }

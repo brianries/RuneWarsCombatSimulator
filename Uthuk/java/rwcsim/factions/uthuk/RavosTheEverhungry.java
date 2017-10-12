@@ -1,8 +1,13 @@
 package rwcsim.factions.uthuk;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Impact;
+import rwcsim.basicutils.abilities.Precise;
+import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.concepts.Siege;
+import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.UthukUnit;
 import rwcsim.basicutils.dials.CommandTool;
@@ -72,5 +77,12 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege, Unique
     @Override
     public Tray getTray() {
         return new HeroTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Brutal.asAbility(1));
+        addAbility(Precise.asAbility(1));
+        addAbility(Steadfast.asAbility(MoraleType.FEAR, 2));
     }
 }

@@ -1,5 +1,6 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
+import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.AfterActivation;
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
@@ -11,19 +12,19 @@ import rwcsim.factions.latari.upgrades.Latari;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public class SupportAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, Overgrow {
+public class SupportAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, AddAbility<Overgrow> {
     public SupportAymhelinScion() {
         this.armor = 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
         this.health = 3;
     }
 
     @Override
-    public int getOvergrowValue() {
-        return 1;
+    public int price() {
+        return 4;
     }
 
     @Override
-    public int price() {
-        return 4;
+    public Overgrow getAbility() {
+        return Overgrow.asAbility(1);
     }
 }

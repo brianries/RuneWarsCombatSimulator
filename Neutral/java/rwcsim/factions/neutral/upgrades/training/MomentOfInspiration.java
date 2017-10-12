@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.training;
 
 import rwcsim.basicutils.actions.AddDie;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.stages.Exhaustable;
+import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnAttack;
 import rwcsim.basicutils.upgrade.Training;
 

@@ -1,13 +1,14 @@
 package rwcsim.factions.waiqar.upgrades.heraldry;
 
 import rwcsim.basicutils.concepts.Cost;
+import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.upgrade.FigureUpgrade;
 import rwcsim.basicutils.upgrade.InfantryUpgrade;
 import rwcsim.basicutils.abilities.Protector;
 import rwcsim.basicutils.upgrade.Heraldry;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class ProfaneBannerBearer extends FigureUpgrade implements Cost, Waiqar,Heraldry, InfantryUpgrade, Protector {
+public class ProfaneBannerBearer extends FigureUpgrade implements Cost, Waiqar,Heraldry, InfantryUpgrade, AddAbility<Protector> {
     public ProfaneBannerBearer() {
         this.armor = 2;
     }
@@ -15,5 +16,10 @@ public class ProfaneBannerBearer extends FigureUpgrade implements Cost, Waiqar,H
     @Override
     public int price() {
         return 5;
+    }
+
+    @Override
+    public Protector getAbility() {
+        return Protector.asAbility(2);
     }
 }

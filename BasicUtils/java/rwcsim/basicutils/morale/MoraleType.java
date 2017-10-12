@@ -6,5 +6,8 @@ package rwcsim.basicutils.morale;
 public enum MoraleType {
     FEAR,
     CONFUSION,
-    DOUBT,
+    DOUBT;
+
+    static MoraleType[] values = MoraleType.values();
+    public static MoraleType getType(int i) { return values[i]; }
 }

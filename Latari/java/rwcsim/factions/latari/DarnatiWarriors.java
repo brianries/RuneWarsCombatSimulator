@@ -89,6 +89,9 @@ public class DarnatiWarriors extends LatariUnit implements Infantry {
         }
     }
 
+    @Override
+    public void setAbilities() {}
+
 
     @Override
     public Tray getTray() {

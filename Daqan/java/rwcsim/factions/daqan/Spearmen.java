@@ -88,6 +88,11 @@ public class Spearmen extends DaqanUnit implements Infantry {
         }
     }
 
+    @Override
+    public void setAbilities() {
+
+    }
+
 
     @Override
     public Tray getTray() {

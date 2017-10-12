@@ -1,10 +1,13 @@
 package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.DaqanUnit;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.unit.Unit;
@@ -89,5 +92,10 @@ public class RuneGolems extends DaqanUnit implements Siege {
     @Override
     public Tray getTray() {
         return new SiegeTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Brutal.asAbility(RuneFaces.STABLE));
     }
 }

@@ -1,6 +1,7 @@
 package rwcsim.factions.latari.upgrades.champion;
 
 import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.upgrade.FigureUpgrade;
@@ -11,7 +12,7 @@ import rwcsim.basicutils.upgrade.Champion;
 import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.factions.latari.upgrades.Latari;
 
-public class AlianaOfSummersongUpgrade extends FigureUpgrade implements Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges, Impact, Latari, Cost {
+public class AlianaOfSummersongUpgrade extends FigureUpgrade implements Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges, AddAbility<Impact>, Latari, Cost {
     public AlianaOfSummersongUpgrade() {
         this.armor = 3;
         this.health = 2;
@@ -23,12 +24,12 @@ public class AlianaOfSummersongUpgrade extends FigureUpgrade implements Champion
     }
 
     @Override
-    public int getImpactValue() {
-        return 1;
+    public int price() {
+        return 12;
     }
 
     @Override
-    public int price() {
-        return 12;
+    public Impact getAbility() {
+        return Impact.asAbility(1);
     }
 }

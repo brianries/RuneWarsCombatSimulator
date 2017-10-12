@@ -4,13 +4,14 @@ import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public interface Impact extends Ability<Impact> {
-    static Impact asAbility(int i) {
-        return (Impact) new NullAbility(i);
+public interface Protected extends Ability<Protected> {
+    static Protected asAbility(int i) {
+        return (Protected) new NullAbility(i);
     }
 
-    static Impact asAbility(RuneFaces rf) {
-        Impact ability = (Impact) new NullAbility(rf.ordinal());
+
+    static Protected asAbility(RuneFaces rf) {
+        Protected ability = (Protected) new NullAbility(rf.ordinal());
         ability.activateOther();
         return ability;
     }

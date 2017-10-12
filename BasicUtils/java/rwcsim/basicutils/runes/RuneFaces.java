@@ -15,6 +15,8 @@ public enum RuneFaces {
     String imageName;
     Image rpic;
 
+    static RuneFaces[] values = RuneFaces.values();
+
 
     private RuneFaces(int count, String image) {
         this.count = count;
@@ -27,4 +29,7 @@ public enum RuneFaces {
         return rpic;
     }
     public int getCount() { return count; }
+
+
+    public static RuneFaces getFace(int i) { return values[i]; }
 }

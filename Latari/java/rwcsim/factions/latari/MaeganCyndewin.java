@@ -1,8 +1,12 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Lethal;
+import rwcsim.basicutils.abilities.Precise;
+import rwcsim.basicutils.abilities.Protected;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.concepts.Hero;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.unit.LatariUnit;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.dials.CommandTool;
@@ -72,5 +76,11 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Unique 
     @Override
     public Tray getTray() {
         return new HeroTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Lethal.asAbility(RuneFaces.NATURAL));
+        addAbility(Protected.asAbility(RuneFaces.STABLE));
     }
 }

@@ -1,6 +1,9 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Impact;
+import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.unit.LatariUnit;
@@ -73,5 +76,11 @@ public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry, Uni
     @Override
     public Tray getTray() {
         return new HeroTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Impact.asAbility(2));
+        addAbility(Precise.asAbility(1));
     }
 }

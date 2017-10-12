@@ -2,8 +2,12 @@ package rwcsim.factions.waiqar;
 
 import org.apache.log4j.Logger;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Regenerate;
+import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.dials.*;
 import rwcsim.basicutils.concepts.Infantry;
+import rwcsim.basicutils.morale.MoraleType;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.WaiqarUnit;
 import rwcsim.basicutils.upgrade.UpgradeType;
@@ -107,5 +111,11 @@ public class Reanimates extends WaiqarUnit implements Infantry {
     @Override
     public Tray getTray() {
         return new InfantryTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Regenerate.asAbility(RuneFaces.NATURAL));
+        addAbility(Steadfast.asAbility(MoraleType.DOUBT,1));
     }
 }

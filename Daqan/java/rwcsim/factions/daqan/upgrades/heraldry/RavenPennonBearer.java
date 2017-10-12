@@ -1,6 +1,6 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
-import rwcsim.basicutils.stages.Exhaustable;
+import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnActivation;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.upgrade.FigureUpgrade;

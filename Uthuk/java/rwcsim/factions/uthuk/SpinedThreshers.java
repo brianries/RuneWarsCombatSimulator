@@ -1,11 +1,15 @@
 package rwcsim.factions.uthuk;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Precise;
+import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.concepts.Siege;
+import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.UthukUnit;
 import rwcsim.basicutils.upgrade.UpgradeType;
@@ -89,5 +93,11 @@ public class SpinedThreshers extends UthukUnit implements Siege {
     @Override
     public Tray getTray() {
         return new SiegeTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Brutal.asAbility(1));
+        addAbility(Steadfast.asAbility(MoraleType.FEAR, 1));
     }
 }

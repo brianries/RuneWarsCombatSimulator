@@ -1,6 +1,8 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Impact;
+import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -97,5 +99,10 @@ public class DeepwoodArchers extends LatariUnit implements Infantry {
     @Override
     public Tray getTray() {
         return new InfantryTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Precise.asAbility(1));
     }
 }

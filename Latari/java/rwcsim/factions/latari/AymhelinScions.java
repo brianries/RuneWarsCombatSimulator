@@ -1,6 +1,8 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Immobilize;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -91,5 +93,10 @@ public class AymhelinScions extends LatariUnit implements Siege {
     @Override
     public Tray getTray() {
         return new SiegeTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Immobilize.asAbility(1));
     }
 }

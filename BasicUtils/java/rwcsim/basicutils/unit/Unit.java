@@ -42,4 +42,7 @@ public interface Unit {
     void setMeleeAttackPool(DiePool diePool);
     DiePool getRangedAttackPool();
     void setRangedAttackPool(DiePool diePool);
+
+    void setAbilities();
+    default void addAbility(Ability ability) { abilities.add(ability); }
 }

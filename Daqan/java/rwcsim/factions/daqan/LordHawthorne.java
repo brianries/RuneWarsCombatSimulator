@@ -1,6 +1,8 @@
 package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.unit.DaqanUnit;
@@ -72,5 +74,10 @@ public class LordHawthorne extends DaqanUnit implements Hero, Cavalry, Unique {
     @Override
     public Tray getTray() {
         return new HeroTray();
+    }
+
+    @Override
+    public void setAbilities() {
+        addAbility(Brutal.asAbility(1));
     }
 }

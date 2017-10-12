@@ -1,6 +1,6 @@
 package rwcsim.factions.latari.upgrades.artifact;
 
-import rwcsim.basicutils.stages.Exhaustable;
+import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnMeleeAttack;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.upgrade.Artifact;

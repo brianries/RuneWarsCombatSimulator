@@ -4,9 +4,10 @@ import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public interface Impact extends Ability<Impact> {
-    static Impact asAbility(int i) {
-        return (Impact) new NullAbility(i);
+public interface Regenerate extends Ability<Regenerate> {
+
+    static Regenerate asAbility(int i) {
+        return (Regenerate) new NullAbility(i);
     }
 
     static Impact asAbility(RuneFaces rf) {

@@ -1,10 +1,13 @@
 package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Protected;
+import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.DaqanUnit;
 import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.unit.Unit;
@@ -89,5 +92,9 @@ public class HeavyCrossbowmen extends DaqanUnit implements Infantry {
     @Override
     public Tray getTray() {
         return new InfantryTray();
+    }
+    @Override
+    public void setAbilities() {
+        addAbility(Protected.asAbility(1));
     }
 }

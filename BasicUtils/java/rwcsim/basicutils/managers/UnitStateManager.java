@@ -32,7 +32,7 @@ public class UnitStateManager implements Manager {
     }
     public List<State> getAllStates(State circumstance) {
         if (checkCircumstance(circumstance)) {
-            return activeCircumstances.stream().filter(c -> c.getType() == circumstance.getType()).collect(Collectors.toList());
+            return activeCircumstances.stream().filter(c -> c.getState() == circumstance.getState()).collect(Collectors.toList());
         }
         return UNAVAILABLE_STATE_LIST;
     }
