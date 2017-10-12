@@ -1,4 +1,6 @@
 package rwcsim.basicutils.actions;
 
-public interface OnSkill {
+import rwcsim.basicutils.concepts.Action;
+
+public interface OnSkill extends Action {
 }

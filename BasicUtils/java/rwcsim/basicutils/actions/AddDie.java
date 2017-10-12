@@ -1,5 +1,7 @@
 package rwcsim.basicutils.actions;
 
-public interface AddDie {
+import rwcsim.basicutils.concepts.Action;
+
+public interface AddDie extends Action {
     int[] modifyDiePool();
 }

@@ -12,7 +12,7 @@ import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.basicutils.upgrade.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;
 import rwcsim.basicutils.concepts.Tray;
 
@@ -44,7 +44,7 @@ public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry, Uni
         actionFaces.add(new DialFace(Face.BLANK));
 
         modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.BLUE, 1));
-        modifierFaces.add(new DialFace(Face.SHIFT, FaceColor.GREEN, Rune.NATURAL));
+        modifierFaces.add(new DialFace(Face.SHIFT, FaceColor.GREEN, RuneFaces.NATURAL));
         modifierFaces.add(new DialFace(Face.ENHANCE_MORALE, FaceColor.RED, 1));
         modifierFaces.add(new DialFace(Face.MOVE_MOD_TURN, FaceColor.WHITE, -1));
         modifierFaces.add(new DialFace(Face.MOVE_MOD_WHEEL, FaceColor.WHITE, -1));

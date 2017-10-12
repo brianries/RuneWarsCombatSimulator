@@ -1,6 +1,6 @@
 package rwcsim.basicutils.morale.checks;
 
-import rwcsim.basicutils.morale.MoraleCheck;
+import rwcsim.basicutils.concepts.MoraleCheck;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.morale.OneCost;
 

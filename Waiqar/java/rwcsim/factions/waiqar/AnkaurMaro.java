@@ -13,7 +13,7 @@ import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.basicutils.upgrade.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;
 import rwcsim.basicutils.concepts.Tray;
 
@@ -57,7 +57,7 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry, U
         commandTool.setModifierDialFaces(modifierFaces);
 
         setMeleeAttackPool(new DiePool(0, 0, 1));
-        setRangedAttackPool(new DiePool(0,null,0,null,0, Rune.UNSTABLE));
+        setRangedAttackPool(new DiePool(0,null,0,null,0, RuneFaces.UNSTABLE));
     }
 
     public void populateFormations() {

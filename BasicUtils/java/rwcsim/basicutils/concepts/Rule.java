@@ -1,4 +1,4 @@
-package rwcsim.basicutils;
+package rwcsim.basicutils.concepts;
 
 public interface Rule<T> {
     public String name();

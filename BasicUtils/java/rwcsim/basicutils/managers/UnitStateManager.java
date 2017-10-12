@@ -1,6 +1,8 @@
 package rwcsim.basicutils.managers;
 
 import rwcsim.basicutils.states.*;
+import rwcsim.basicutils.concepts.State;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

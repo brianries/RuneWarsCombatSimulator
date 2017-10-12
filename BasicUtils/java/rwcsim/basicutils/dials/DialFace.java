@@ -1,13 +1,13 @@
 package rwcsim.basicutils.dials;
 
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 
 public class DialFace {
     private int         initiative;
     private Face        face;
     private FaceColor   color;
     private int         count;
-    private Rune        rune;
+    private RuneFaces rune;
 
     public DialFace(Face face) {
         this(0, face, null, 0, null);
@@ -21,7 +21,7 @@ public class DialFace {
         this(initiative, face, color, count, null);
     }
 
-    public DialFace(int initiative, Face face, FaceColor color, Rune rune) {
+    public DialFace(int initiative, Face face, FaceColor color, RuneFaces rune) {
         this(initiative, face, color, 0, rune);
     }
 
@@ -33,15 +33,15 @@ public class DialFace {
         this(0, face, color, count, null);
     }
 
-    public DialFace(Face face, FaceColor color, Rune rune) {
+    public DialFace(Face face, FaceColor color, RuneFaces rune) {
         this(0, face, color, 0, rune);
     }
 
-    public DialFace(Face face, FaceColor color, int count, Rune rune) {
+    public DialFace(Face face, FaceColor color, int count, RuneFaces rune) {
         this(0, face, color, count, rune);
     }
 
-    public DialFace(int initiative, Face face, FaceColor color, int count, Rune rune) {
+    public DialFace(int initiative, Face face, FaceColor color, int count, RuneFaces rune) {
         this.initiative = initiative;
         this.face = face;
         this.color = color;
@@ -81,11 +81,11 @@ public class DialFace {
         this.count = count;
     }
 
-    public Rune getRune() {
+    public RuneFaces getRune() {
         return rune;
     }
 
-    public void setRune(Rune rune) {
+    public void setRune(RuneFaces rune) {
         this.rune = rune;
     }
 }

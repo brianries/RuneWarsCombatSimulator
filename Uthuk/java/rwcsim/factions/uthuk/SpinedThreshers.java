@@ -10,7 +10,7 @@ import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.UthukUnit;
 import rwcsim.basicutils.upgrade.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.SiegeTray;
 import rwcsim.basicutils.concepts.Tray;
 
@@ -36,7 +36,7 @@ public class SpinedThreshers extends UthukUnit implements Siege {
         List<DialFace> actionFaces = new ArrayList<>();
         List<DialFace> modifierFaces = new ArrayList<>();
 
-        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, Rune.UNSTABLE));
+        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, RuneFaces.UNSTABLE));
         actionFaces.add(new DialFace(8, Face.MARCH, FaceColor.BLUE, 2));
         actionFaces.add(new DialFace(7, Face.SHIFT, FaceColor.GREEN, 1));
         actionFaces.add(new DialFace(3, Face.SKILL, FaceColor.RED));
@@ -46,7 +46,7 @@ public class SpinedThreshers extends UthukUnit implements Siege {
         actionFaces.add(new DialFace(Face.BLANK));
 
         modifierFaces.add(new DialFace(Face.MOVE_MOD_CHARGE, FaceColor.BLUE));
-        modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.RED, Rune.STABLE));
+        modifierFaces.add(new DialFace(Face.DEFEND, FaceColor.RED, RuneFaces.STABLE));
         modifierFaces.add(new DialFace(Face.RALLY, FaceColor.WHITE));
         modifierFaces.add(new DialFace(Face.REFORM, FaceColor.WHITE));
         modifierFaces.add(new DialFace(Face.BLANK));

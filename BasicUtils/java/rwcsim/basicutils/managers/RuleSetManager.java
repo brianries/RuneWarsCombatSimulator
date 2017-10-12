@@ -1,6 +1,6 @@
 package rwcsim.basicutils.managers;
 
-import rwcsim.basicutils.Rule;
+import rwcsim.basicutils.concepts.Rule;
 
 import java.util.*;
 

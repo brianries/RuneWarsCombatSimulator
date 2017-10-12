@@ -1,6 +1,6 @@
 package rwcsim.basicutils.ruleset;
 
-import rwcsim.basicutils.Rule;
+import rwcsim.basicutils.concepts.Rule;
 import rwcsim.basicutils.managers.RuleSetManager;
 
 public class Reroll implements Rule<Reroll> {

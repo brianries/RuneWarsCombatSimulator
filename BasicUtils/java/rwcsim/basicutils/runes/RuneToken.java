@@ -1,16 +1,17 @@
 package rwcsim.basicutils.runes;
 
 import rwcsim.basicutils.managers.RuleSetManager;
+import rwcsim.basicutils.concepts.Rune;
 
 /**
  * Created by dsayles on 8/19/17.
  */
-public class RuneToken {
+public class RuneToken implements Rune {
     private static int instance = 0;
     private int id;
     int currentFace = 0;
-    Rune[] sides = new Rune[2];
-    public RuneToken(Rune first, Rune second) {
+    RuneFaces[] sides = new RuneFaces[2];
+    public RuneToken(RuneFaces first, RuneFaces second) {
         id = instance++;
 
         sides[0] = first;
@@ -21,7 +22,7 @@ public class RuneToken {
         currentFace = RuleSetManager.getBoxedInt(2);
     }
 
-    public Rune getCurrentFace() {
+    public RuneFaces getCurrentFace() {
         return sides[currentFace];
     }
 }

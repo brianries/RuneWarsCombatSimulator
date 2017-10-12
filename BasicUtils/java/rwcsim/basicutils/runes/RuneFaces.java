@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 /**
  * Created by dsayles on 8/18/17.
  */
-public enum Rune {
+public enum RuneFaces {
     BLANK(1, "/images/BlankUnstable.png"),
     NATURAL(1, "/images/NaturalBlank.png"),
     STABLE(1, "/images/StableStable.png"),
@@ -16,7 +16,7 @@ public enum Rune {
     Image rpic;
 
 
-    private Rune(int count, String image) {
+    private RuneFaces(int count, String image) {
         this.count = count;
         imageName = image;
         rpic = new Image(this.getClass().getResourceAsStream(imageName));

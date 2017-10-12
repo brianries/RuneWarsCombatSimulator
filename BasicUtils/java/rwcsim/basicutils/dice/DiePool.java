@@ -1,6 +1,6 @@
 package rwcsim.basicutils.dice;
 
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
 /**
@@ -14,12 +14,12 @@ public class DiePool {
 
     public static final int DIE_TYPE_COUNT = 3;
     private int[] attackDice = new int[DIE_TYPE_COUNT];
-    private Rune[] attackRune = new Rune[DIE_TYPE_COUNT];
+    private RuneFaces[] attackRune = new RuneFaces[DIE_TYPE_COUNT];
 
     public DiePool(int r, int b, int w) {
         this(r, null, b, null, w, null);
     }
-    public DiePool(int r, Rune rr, int b, Rune rb, int w, Rune rw) {
+    public DiePool(int r, RuneFaces rr, int b, RuneFaces rb, int w, RuneFaces rw) {
         this.attackDice[RED_DIE] = r;
         this.attackDice[BLUE_DIE] = b;
         this.attackDice[WHITE_DIE] = w;
@@ -78,13 +78,13 @@ public class DiePool {
 //        return tPool;
 //    }
 
-    public void setAttackPool(Rune rred, Rune rblue, Rune rwhite) {
+    public void setAttackPool(RuneFaces rred, RuneFaces rblue, RuneFaces rwhite) {
         attackRune[RED_DIE] = rred;
         attackRune[BLUE_DIE] = rblue;
         attackRune[WHITE_DIE] = rwhite;
     }
 
-    public void setAttackPool(int red, Rune rred, int blue, Rune rblue, int white, Rune rwhite) {
+    public void setAttackPool(int red, RuneFaces rred, int blue, RuneFaces rblue, int white, RuneFaces rwhite) {
         setAttackPool(red, blue, white);
         setAttackPool(rred, rblue, rwhite);
     }

@@ -10,7 +10,7 @@ import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.upgrade.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.SiegeTray;
 import rwcsim.basicutils.concepts.Tray;
 
@@ -36,7 +36,7 @@ public class AymhelinScions extends LatariUnit implements Siege {
         List<DialFace> actionFaces = new ArrayList<>();
         List<DialFace> modifierFaces = new ArrayList<>();
 
-        actionFaces.add(new DialFace(3, Face.MARCH, FaceColor.BLUE, Rune.NATURAL));
+        actionFaces.add(new DialFace(3, Face.MARCH, FaceColor.BLUE, RuneFaces.NATURAL));
         actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, 2));
         actionFaces.add(new DialFace(5, Face.MARCH, FaceColor.BLUE, 3));
         actionFaces.add(new DialFace(3, Face.SKILL, FaceColor.GREEN));

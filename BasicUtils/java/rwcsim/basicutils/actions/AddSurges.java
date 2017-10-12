@@ -1,6 +1,8 @@
 package rwcsim.basicutils.actions;
 
-public interface AddSurges {
+import rwcsim.basicutils.concepts.Action;
+
+public interface AddSurges extends Action {
     int getSurges();
     default int addSurges() { return getSurges(); }
 }

@@ -12,7 +12,7 @@ import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.upgrade.Unique;
 import rwcsim.basicutils.upgrade.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;
 import rwcsim.basicutils.concepts.Tray;
 
@@ -35,7 +35,7 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege, Unique
         List<DialFace> modifierFaces = new ArrayList<>();
 
         actionFaces.add(new DialFace(3, Face.MARCH, FaceColor.BLUE, 1));
-        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, Rune.UNSTABLE));
+        actionFaces.add(new DialFace(4, Face.MARCH, FaceColor.BLUE, RuneFaces.UNSTABLE));
         actionFaces.add(new DialFace(6, Face.MARCH, FaceColor.BLUE, 3));
         actionFaces.add(new DialFace(8, Face.MARCH, FaceColor.BLUE, 4));
         actionFaces.add(new DialFace(2, Face.RALLY, FaceColor.GREEN));

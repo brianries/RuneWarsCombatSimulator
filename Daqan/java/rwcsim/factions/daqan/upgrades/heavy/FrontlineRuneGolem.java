@@ -7,7 +7,7 @@ import rwcsim.basicutils.upgrade.SiegeUpgrade;
 import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.upgrade.Heavy;
 import rwcsim.factions.daqan.upgrades.Daqan;
-import rwcsim.basicutils.runes.Rune;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
 public class FrontlineRuneGolem extends FigureUpgrade implements Daqan, Heavy, SiegeUpgrade, WhileAttacking, Brutal, Cost {
@@ -18,7 +18,7 @@ public class FrontlineRuneGolem extends FigureUpgrade implements Daqan, Heavy, S
 
     @Override
     public int getBrutalValue() {
-        return RuneManager.currentRuneCount(Rune.STABLE);
+        return RuneManager.currentRuneCount(RuneFaces.STABLE);
     }
 
     @Override
