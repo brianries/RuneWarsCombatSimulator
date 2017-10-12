@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class UnitStateManager implements Manager {
-    public static Unavailable UNAVAILABLE_STATE = new Unavailable();
+    public static UnavailableState UNAVAILABLE_STATE = new UnavailableState();
     public static List<State> UNAVAILABLE_STATE_LIST = new ArrayList<>();
     static { UNAVAILABLE_STATE_LIST.add(UNAVAILABLE_STATE); }
 
@@ -17,7 +17,7 @@ public class UnitStateManager implements Manager {
 
 
     public UnitStateManager() {
-        activeCircumstances.add(new Alive());
+        activeCircumstances.add(new AliveState());
     }
 
     public boolean checkCircumstance(State circumstance) {

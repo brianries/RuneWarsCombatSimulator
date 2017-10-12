@@ -2,9 +2,7 @@ package rwcsim.basicutils.states;
 
 import rwcsim.basicutils.concepts.State;
 
-public class Unavailable implements State<Unavailable> {
+public interface Unavailable extends State<Unavailable> {
     @Override
-    public Unavailable getType() {
-        return this;
-    }
+    default Unavailable getState() { return new UnavailableState(); }
 }

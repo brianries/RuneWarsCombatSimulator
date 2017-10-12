@@ -3,19 +3,7 @@ package rwcsim.basicutils.states;
 import rwcsim.basicutils.concepts.State;
 import rwcsim.basicutils.unit.Unit;
 
-public class Flanking implements State<Flanking> {
-    Unit flanking;
-
-    public Flanking(Unit unit) {
-        flanking = unit;
-    }
-
-    public Unit getFlanking() {
-        return flanking;
-    }
-
+public interface Flanking extends State<Flanking> {
     @Override
-    public Flanking getType() {
-        return this;
-    }
+    default Flanking getState(Unit unit) { return new FlankingState(unit); }
 }
