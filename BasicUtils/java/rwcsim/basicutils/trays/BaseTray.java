@@ -6,43 +6,117 @@ import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.concepts.FigureUpgrade;
 
 public abstract class BaseTray implements Tray {
+    class DeadFigure implements Figure {
+
+        @Override
+        public boolean isAlive() {
+            return false;
+        }
+
+        @Override
+        public boolean applyDamage(int count) {
+            return false;
+        }
+
+        @Override
+        public void setInitialHealth() {}
+    }
+
     protected int figureCount;
     protected Figure[] trayLayout;
-    protected int[] accuracyCount;
+    protected int[] accuracyCountPerSlot;
+    protected int[] figureUpgradeSlots;
 
 
     BaseTray(int c) {
         figureCount = c;
         trayLayout = new Figure[c];
-        accuracyCount = new int[c];
+        accuracyCountPerSlot = new int[c];
         for (int i = 0; i < figureCount; i++) {
             trayLayout[i] = new BaseFigure();
         }
-
+        figureUpgradeSlots = new int[c];
         clearAccuracy();
     }
 
+
+
+    @Override
     public void setFigureUpgrade(int trayLocation, FigureUpgrade figureUpgrade) {
         trayLayout[trayLocation] = figureUpgrade.getFigure();
     }
 
-    public void setAccuracy(int trayLocation) {
-        accuracyCount[trayLocation]++;
-    }
-
-    public void clearAccuracy() {
-        for (int i = 0; i<accuracyCount.length; i++) {
-            accuracyCount[i] = 0;
-        }
-    }
-
+    @Override
     public boolean containsUpgradeFigure() {
         for (int i = 0; i< trayLayout.length; i++) {
-//            if (trayLayout[i].isUpgrade()) {
-//                return true;
-//            }
+            if (trayLayout[i].isUpgrade()) {
+                return true;
+            }
         }
         return false;
     }
+
+    @Override
+    public int[] getUpgradeSlots() {
+        return figureUpgradeSlots;
+    }
+
+
+
+
+    @Override
+    public void setAccuracy(int trayLocation, int accuracyCount) {
+        accuracyCountPerSlot[trayLocation] += accuracyCount;
+    }
+
+
+    @Override
+    public void clearAccuracy() {
+        for (int i = 0; i< accuracyCountPerSlot.length; i++) {
+            accuracyCountPerSlot[i] = 0;
+        }
+    }
+
+    @Override
+    public boolean hasAccuracy() {
+        for ( int i : accuracyCountPerSlot ) {
+            if (i>0) { return true; }
+        }
+        return false;
+    }
+
+    @Override
+    public int[] getAccuracySlots() {
+        return accuracyCountPerSlot;
+    }
+
+    @Override
+    public boolean applyDamage(int count) {
+        // apply damage count in order of the tray, until damage is consumed
+        for ( int slot = 0; count > 0; slot++ ) {
+            while (trayLayout[slot].applyDamage(1)) {
+                count--;
+            }
+            trayLayout[slot] = new DeadFigure();
+            figureCount--;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean applyDamageToSlot(int slot, int count) {
+        return trayLayout[slot].applyDamage(count);
+    }
+
+
+
+
+    @Override
+    public boolean isEmpty() {
+        if (figureCount>0) return true;
+        return false;
+    }
+
+
 
 }

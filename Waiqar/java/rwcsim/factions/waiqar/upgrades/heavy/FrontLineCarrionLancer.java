@@ -1,6 +1,7 @@
 package rwcsim.factions.waiqar.upgrades.heavy;
 
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.FigureUpgrade;
@@ -8,7 +9,7 @@ import rwcsim.basicutils.upgrades.SiegeUpgrade;
 import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class FrontLineCarrionLancer implements FigureUpgrade, Cost, Waiqar, Heavy, SiegeUpgrade, SpendSurges {
+public class FrontLineCarrionLancer extends BaseFigure implements FigureUpgrade, Cost, Waiqar, Heavy, SiegeUpgrade, SpendSurges {
     public FrontLineCarrionLancer() {}
 
 

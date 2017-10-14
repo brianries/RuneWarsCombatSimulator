@@ -2,6 +2,7 @@ package rwcsim.factions.waiqar.upgrades.champion;
 
 import rwcsim.basicutils.actions.AddDie;
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.FigureUpgrade;
@@ -11,7 +12,7 @@ import rwcsim.basicutils.upgrades.Champion;
 import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class ArdusIxErebusUpgrade implements Figure, FigureUpgrade, Cost, Waiqar, Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges {
+public class ArdusIxErebusUpgrade extends BaseFigure implements Figure, FigureUpgrade, Cost, Waiqar, Champion, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges {
     public ArdusIxErebusUpgrade() {
     }
 

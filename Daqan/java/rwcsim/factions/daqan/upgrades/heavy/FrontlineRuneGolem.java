@@ -1,6 +1,7 @@
 package rwcsim.factions.daqan.upgrades.heavy;
 
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.WhileAttacking;
 import rwcsim.basicutils.concepts.Cost;
@@ -11,7 +12,7 @@ import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.daqan.upgrades.Daqan;
 import rwcsim.basicutils.runes.RuneFaces;
 
-public class FrontlineRuneGolem implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, WhileAttacking, AddAbility<Brutal>, Cost {
+public class FrontlineRuneGolem extends BaseFigure implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, WhileAttacking, AddAbility<Brutal>, Cost {
     public FrontlineRuneGolem() {
     }
 

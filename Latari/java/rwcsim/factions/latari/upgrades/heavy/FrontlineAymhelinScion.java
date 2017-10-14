@@ -1,6 +1,7 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.modifiers.AddStages;
 import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.concepts.Cost;
@@ -12,7 +13,7 @@ import rwcsim.factions.latari.upgrades.Latari;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public class FrontlineAymhelinScion implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, AddStages, Exhaustable {
+public class FrontlineAymhelinScion extends BaseFigure implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, AddStages, Exhaustable {
     public FrontlineAymhelinScion() {
     }
 

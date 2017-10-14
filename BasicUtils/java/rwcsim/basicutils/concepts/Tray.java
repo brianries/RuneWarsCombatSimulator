@@ -12,6 +12,16 @@ public interface Tray {
 
     void setFigureUpgrade(int trayLocation, FigureUpgrade figureUpgrade);
     boolean containsUpgradeFigure();
-    void setAccuracy(int trayLocation);
+    int[] getUpgradeSlots();
+
+    void setAccuracy(int trayLocation, int accuracyCount);
     void clearAccuracy();
+    boolean hasAccuracy();
+    int[] getAccuracySlots();
+    boolean applyDamage(int count);
+    boolean applyDamageToSlot(int slot, int count);
+
+    boolean isEmpty();
+
+
 }

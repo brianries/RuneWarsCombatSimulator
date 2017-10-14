@@ -1,6 +1,7 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnActivation;
 import rwcsim.basicutils.concepts.Cost;
@@ -9,7 +10,7 @@ import rwcsim.basicutils.upgrades.InfantryUpgrade;
 import rwcsim.basicutils.upgrades.Heraldry;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class RavenPennonBearer implements FigureUpgrade, Cost, Daqan, Heraldry, InfantryUpgrade, Exhaustable, OnActivation {
+public class RavenPennonBearer extends BaseFigure implements FigureUpgrade, Cost, Daqan, Heraldry, InfantryUpgrade, Exhaustable, OnActivation {
     public RavenPennonBearer() {
 
     }

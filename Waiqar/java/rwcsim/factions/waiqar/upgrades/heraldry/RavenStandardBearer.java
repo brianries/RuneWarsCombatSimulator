@@ -4,12 +4,13 @@ import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.upgrades.InfantryUpgrade;
 import rwcsim.basicutils.modifiers.InitiativeAdjustment;
 import rwcsim.basicutils.upgrades.Heraldry;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class RavenStandardBearer implements FigureUpgrade, Cost, Waiqar, Heraldry, InfantryUpgrade, InitiativeAdjustment {
+public class RavenStandardBearer extends BaseFigure implements FigureUpgrade, Cost, Waiqar, Heraldry, InfantryUpgrade, InitiativeAdjustment {
     public RavenStandardBearer() {
 
     }

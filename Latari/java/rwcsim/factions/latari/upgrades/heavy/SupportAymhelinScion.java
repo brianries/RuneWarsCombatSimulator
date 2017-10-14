@@ -1,6 +1,7 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
 import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.AfterActivation;
 import rwcsim.basicutils.actions.OnSkill;
@@ -13,7 +14,7 @@ import rwcsim.factions.latari.upgrades.Latari;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public class SupportAymhelinScion implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, AddAbility<Overgrow> {
+public class SupportAymhelinScion extends BaseFigure implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, AddAbility<Overgrow> {
     public SupportAymhelinScion() {
     }
 

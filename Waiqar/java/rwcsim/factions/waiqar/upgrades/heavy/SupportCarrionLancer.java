@@ -4,11 +4,12 @@ import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.upgrades.SiegeUpgrade;
 import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class SupportCarrionLancer implements FigureUpgrade, Cost, Waiqar, Heavy, SiegeUpgrade, OnSkill {
+public class SupportCarrionLancer extends BaseFigure implements FigureUpgrade, Cost, Waiqar, Heavy, SiegeUpgrade, OnSkill {
     public SupportCarrionLancer() {
     }
 

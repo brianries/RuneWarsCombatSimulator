@@ -5,9 +5,21 @@ import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Tray;
 
 public abstract class AbstractFigure implements Figure {
-    public boolean isUpgrade() {
-        return false;
+    int currentHealth = 0;
+
+    @Override
+    public boolean isAlive() {
+        return currentHealth > 0;
     }
-    public abstract boolean replaceTray();
-    public abstract Tray getTray();
+
+    @Override
+    public boolean applyDamage(int count) {
+        currentHealth -= count;
+        return isAlive();
+    }
+
+    @Override
+    public void setInitialHealth() {
+        currentHealth = getHealth();
+    }
 }

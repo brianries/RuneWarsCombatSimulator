@@ -4,11 +4,12 @@ import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.upgrades.SiegeUpgrade;
 import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class SupportRuneGolem implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, OnSkill, Cost {
+public class SupportRuneGolem extends BaseFigure implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, OnSkill, Cost {
     public SupportRuneGolem() {
     }
 
