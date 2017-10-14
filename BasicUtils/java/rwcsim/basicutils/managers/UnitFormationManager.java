@@ -4,7 +4,7 @@ import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.concepts.Manager;
 import rwcsim.basicutils.unit.DeployableUnit;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.concepts.FigureUpgrade;
 import rwcsim.basicutils.concepts.Tray;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.dice.DiePool;
@@ -76,9 +76,10 @@ public class UnitFormationManager implements Manager {
     }
 
     public void setFigureUpgrade(int tray, int trayLocation, FigureUpgrade figureUpgrade) {
-        if (figureUpgrade.replaceTray()) {
-            trayLayout.add(tray, figureUpgrade.getTray());
-        }
+        // TODO:  Get Trady support in tray
+//        if (figureUpgrade.replaceTray()) {
+//            trayLayout.add(tray, figureUpgrade.getTray());
+//        }
         trayLayout.get(tray).setFigureUpgrade(trayLocation, figureUpgrade);
     }
 

@@ -1,7 +1,6 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.abilities.Impact;
 import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.concepts.Cavalry;
@@ -12,8 +11,8 @@ import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
-import rwcsim.basicutils.upgrade.Unique;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.Unique;
+import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;

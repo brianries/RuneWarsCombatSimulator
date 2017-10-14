@@ -2,16 +2,14 @@ package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Protected;
-import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
-import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.DaqanUnit;
 import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.unit.Unit;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.InfantryTray;
 import rwcsim.basicutils.concepts.Tray;

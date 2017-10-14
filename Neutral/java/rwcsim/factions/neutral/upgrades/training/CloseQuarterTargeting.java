@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.training;
 
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.stages.OnAttack;
-import rwcsim.basicutils.upgrade.Training;
+import rwcsim.basicutils.upgrades.Training;
 
 public class CloseQuarterTargeting implements Cost, Training, OnAttack {
     @Override

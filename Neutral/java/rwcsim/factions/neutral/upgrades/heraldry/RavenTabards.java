@@ -3,7 +3,7 @@ package rwcsim.factions.neutral.upgrades.heraldry;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.modifiers.InitiativeAdjustment;
-import rwcsim.basicutils.upgrade.Heraldry;
+import rwcsim.basicutils.upgrades.Heraldry;
 
 public class RavenTabards implements Cost, Heraldry, InitiativeAdjustment {
     @Override

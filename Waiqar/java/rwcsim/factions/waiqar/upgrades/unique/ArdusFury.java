@@ -2,12 +2,12 @@ package rwcsim.factions.waiqar.upgrades.unique;
 
 import rwcsim.basicutils.actions.AddSurges;
 import rwcsim.basicutils.stages.OnMeleeAttack;
-import rwcsim.basicutils.upgrade.HeroSpecific;
-import rwcsim.basicutils.upgrade.Unique;
-import rwcsim.basicutils.upgrade.Upgrade;
+import rwcsim.basicutils.upgrades.HeroSpecific;
+import rwcsim.basicutils.upgrades.Unique;
+import rwcsim.basicutils.upgrades.UpgradeSlot;
 import rwcsim.factions.waiqar.ArdusIxErebus;
 
-public class ArdusFury implements Upgrade, HeroSpecific<ArdusIxErebus>, Unique, OnMeleeAttack, AddSurges {
+public class ArdusFury implements UpgradeSlot, HeroSpecific<ArdusIxErebus>, Unique, OnMeleeAttack, AddSurges {
 
     @Override
     public int getSurges() {

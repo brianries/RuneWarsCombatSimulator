@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.equipment;
 
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.Equipment;
+import rwcsim.basicutils.upgrades.Equipment;
 
 public class WindRune implements Cost, Equipment, OnSkill {
     @Override

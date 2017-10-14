@@ -2,19 +2,33 @@ package rwcsim.factions.daqan.upgrades.heavy;
 
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.SiegeUpgrade;
-import rwcsim.basicutils.upgrade.Heavy;
+import rwcsim.basicutils.concepts.Figure;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.SiegeUpgrade;
+import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class SupportRuneGolem extends FigureUpgrade implements Daqan, Heavy, SiegeUpgrade, OnSkill, Cost {
+public class SupportRuneGolem implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, OnSkill, Cost {
     public SupportRuneGolem() {
-        this.armor = 4;
-        this.health = 2;
     }
 
     @Override
     public int price() {
         return 6;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 4;
+    }
+
+    @Override
+    public int getHealth() {
+        return 2;
     }
 }

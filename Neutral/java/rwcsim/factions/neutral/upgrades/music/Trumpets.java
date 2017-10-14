@@ -1,7 +1,7 @@
 package rwcsim.factions.neutral.upgrades.music;
 
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.Music;
+import rwcsim.basicutils.upgrades.Music;
 
 public class Trumpets implements Cost, Music {
     @Override

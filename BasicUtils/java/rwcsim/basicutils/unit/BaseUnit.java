@@ -7,7 +7,7 @@ import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 
 import java.util.List;
 

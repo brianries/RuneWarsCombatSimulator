@@ -5,8 +5,8 @@ import rwcsim.basicutils.modifiers.AddStages;
 import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.ModifyDice;
 import rwcsim.basicutils.unit.Unit;
-import rwcsim.basicutils.upgrade.Artifact;
-import rwcsim.basicutils.upgrade.Unique;
+import rwcsim.basicutils.upgrades.Artifact;
+import rwcsim.basicutils.upgrades.Unique;
 
 public class FortunasDice implements Cost, Artifact, AddStages, ModifyDice, Unique, Exhaustable {
     @Override

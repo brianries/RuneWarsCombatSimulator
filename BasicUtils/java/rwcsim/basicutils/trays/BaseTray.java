@@ -3,7 +3,7 @@ package rwcsim.basicutils.trays;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Tray;
 import rwcsim.basicutils.figure.BaseFigure;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
+import rwcsim.basicutils.concepts.FigureUpgrade;
 
 public abstract class BaseTray implements Tray {
     protected int figureCount;
@@ -23,7 +23,7 @@ public abstract class BaseTray implements Tray {
     }
 
     public void setFigureUpgrade(int trayLocation, FigureUpgrade figureUpgrade) {
-        trayLayout[trayLocation] = figureUpgrade;
+        trayLayout[trayLocation] = figureUpgrade.getFigure();
     }
 
     public void setAccuracy(int trayLocation) {
@@ -38,9 +38,9 @@ public abstract class BaseTray implements Tray {
 
     public boolean containsUpgradeFigure() {
         for (int i = 0; i< trayLayout.length; i++) {
-            if (trayLayout[i].isUpgrade()) {
-                return true;
-            }
+//            if (trayLayout[i].isUpgrade()) {
+//                return true;
+//            }
         }
         return false;
     }

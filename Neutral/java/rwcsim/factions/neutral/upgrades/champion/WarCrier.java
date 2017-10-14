@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.champion;
 
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.upgrades.Champion;
 
 public class WarCrier implements Cost, Champion, OnSkill {
     @Override

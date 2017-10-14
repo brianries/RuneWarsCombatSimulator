@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.equipment;
 
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.stages.WhileDefending;
-import rwcsim.basicutils.upgrade.Equipment;
+import rwcsim.basicutils.upgrades.Equipment;
 
 public class ShieldWall implements Cost, Equipment, WhileDefending {
     @Override

@@ -3,7 +3,7 @@ package rwcsim.factions.uthuk;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.managers.UnitManager;
 import rwcsim.basicutils.unit.Unit;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 
 import java.util.List;
 

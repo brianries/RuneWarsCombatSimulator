@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.heraldry;
 
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.stages.BeginningEndPhase;
-import rwcsim.basicutils.upgrade.Heraldry;
+import rwcsim.basicutils.upgrades.Heraldry;
 
 public class TerrifyingHeraldry implements Cost, Heraldry, BeginningEndPhase {
     @Override

@@ -1,8 +1,6 @@
 package rwcsim.basicutils.concepts;
 
 
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-
 public interface Tray {
     int TRAY_LOCATION_FRONT_LEFT = 0;
     int TRAY_LOCATION_FRONT_RIGHT = 1;

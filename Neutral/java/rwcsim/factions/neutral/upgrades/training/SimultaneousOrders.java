@@ -2,7 +2,7 @@ package rwcsim.factions.neutral.upgrades.training;
 
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.Training;
+import rwcsim.basicutils.upgrades.Training;
 
 public class SimultaneousOrders implements Cost, Training, OnSkill {
     @Override

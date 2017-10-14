@@ -1,7 +1,6 @@
 package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.abilities.Immobilize;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
@@ -10,7 +9,7 @@ import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.unit.LatariUnit;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.unit.Unit;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.SiegeTray;

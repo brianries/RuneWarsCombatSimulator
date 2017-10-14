@@ -1,20 +1,17 @@
 package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.abilities.Brutal;
-import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.concepts.Infantry;
-import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.WaiqarUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
-import rwcsim.basicutils.upgrade.Unique;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.Unique;
+import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;

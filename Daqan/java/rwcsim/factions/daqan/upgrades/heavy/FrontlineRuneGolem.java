@@ -1,20 +1,18 @@
 package rwcsim.factions.daqan.upgrades.heavy;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.WhileAttacking;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.SiegeUpgrade;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.SiegeUpgrade;
 import rwcsim.basicutils.abilities.Brutal;
-import rwcsim.basicutils.upgrade.Heavy;
+import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.daqan.upgrades.Daqan;
 import rwcsim.basicutils.runes.RuneFaces;
-import rwcsim.basicutils.runes.RuneManager;
 
-public class FrontlineRuneGolem extends FigureUpgrade implements Daqan, Heavy, SiegeUpgrade, WhileAttacking, AddAbility<Brutal>, Cost {
+public class FrontlineRuneGolem implements FigureUpgrade, Daqan, Heavy, SiegeUpgrade, WhileAttacking, AddAbility<Brutal>, Cost {
     public FrontlineRuneGolem() {
-        this.armor = 4;
-        this.health = 2;
     }
 
     @Override
@@ -25,5 +23,20 @@ public class FrontlineRuneGolem extends FigureUpgrade implements Daqan, Heavy, S
     @Override
     public Brutal getAbility() {
         return Brutal.asAbility(RuneFaces.STABLE);
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 4;
+    }
+
+    @Override
+    public int getHealth() {
+        return 2;
     }
 }

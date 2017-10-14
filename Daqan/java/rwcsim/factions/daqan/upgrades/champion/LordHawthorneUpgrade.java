@@ -2,19 +2,18 @@ package rwcsim.factions.daqan.upgrades.champion;
 
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.stages.AfterAttacking;
-import rwcsim.basicutils.upgrade.CavalryUpgrade;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.HeroUpgrade;
-import rwcsim.basicutils.upgrade.InfantryUpgrade;
-import rwcsim.basicutils.upgrade.Champion;
-import rwcsim.basicutils.upgrade.Unique;
+import rwcsim.basicutils.upgrades.CavalryUpgrade;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.HeroUpgrade;
+import rwcsim.basicutils.upgrades.InfantryUpgrade;
+import rwcsim.basicutils.upgrades.Champion;
+import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class LordHawthorneUpgrade extends FigureUpgrade implements Champion, Daqan, HeroUpgrade, InfantryUpgrade, CavalryUpgrade, Unique, AddDie, AfterAttacking, Cost {
+public class LordHawthorneUpgrade implements FigureUpgrade, Champion, Daqan, HeroUpgrade, InfantryUpgrade, CavalryUpgrade, Unique, AddDie, AfterAttacking, Cost {
     public LordHawthorneUpgrade() {
-        this.armor = 3;
-        this.health = 2;
     }
 
     @Override
@@ -25,5 +24,20 @@ public class LordHawthorneUpgrade extends FigureUpgrade implements Champion, Daq
     @Override
     public int price() {
         return 22;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 3;
+    }
+
+    @Override
+    public int getHealth() {
+        return 2;
     }
 }

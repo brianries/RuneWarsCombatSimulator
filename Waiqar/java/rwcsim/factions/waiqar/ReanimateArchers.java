@@ -10,7 +10,7 @@ import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.Unit;
 import rwcsim.basicutils.unit.WaiqarUnit;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.InfantryTray;
 import rwcsim.basicutils.concepts.Tray;

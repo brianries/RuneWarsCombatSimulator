@@ -1,21 +1,20 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.AfterActivation;
 import rwcsim.basicutils.actions.OnSkill;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.SiegeUpgrade;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.SiegeUpgrade;
 import rwcsim.basicutils.abilities.Overgrow;
-import rwcsim.basicutils.upgrade.Heavy;
+import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.latari.upgrades.Latari;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public class SupportAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, AddAbility<Overgrow> {
+public class SupportAymhelinScion implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, OnSkill, AfterActivation, AddAbility<Overgrow> {
     public SupportAymhelinScion() {
-        this.armor = 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
-        this.health = 3;
     }
 
     @Override
@@ -26,5 +25,20 @@ public class SupportAymhelinScion extends FigureUpgrade implements Cost, Latari,
     @Override
     public Overgrow getAbility() {
         return Overgrow.asAbility(1);
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
+    }
+
+    @Override
+    public int getHealth() {
+        return 3;
     }
 }

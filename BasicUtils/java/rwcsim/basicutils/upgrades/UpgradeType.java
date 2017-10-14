@@ -1,4 +1,4 @@
-package rwcsim.basicutils.upgrade;
+package rwcsim.basicutils.upgrades;
 
 public enum UpgradeType {
     Artifact,

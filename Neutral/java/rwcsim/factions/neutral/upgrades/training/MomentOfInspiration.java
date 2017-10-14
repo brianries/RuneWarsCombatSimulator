@@ -4,7 +4,7 @@ import rwcsim.basicutils.actions.AddDie;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnAttack;
-import rwcsim.basicutils.upgrade.Training;
+import rwcsim.basicutils.upgrades.Training;
 
 public class MomentOfInspiration implements Cost, Training, Exhaustable, AddDie, OnAttack {
     @Override

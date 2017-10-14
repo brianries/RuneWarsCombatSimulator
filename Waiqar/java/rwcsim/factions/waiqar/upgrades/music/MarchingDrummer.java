@@ -1,18 +1,17 @@
 package rwcsim.factions.waiqar.upgrades.music;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.stages.OnMarch;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.InfantryUpgrade;
-import rwcsim.basicutils.upgrade.Music;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.InfantryUpgrade;
+import rwcsim.basicutils.upgrades.Music;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class MarchingDrummer extends FigureUpgrade implements Cost, Waiqar, Music, InfantryUpgrade, OnMarch {
-    public MarchingDrummer() {
-        this.armor = 2;
-    }
+public class MarchingDrummer implements FigureUpgrade, Cost, Waiqar, Music, InfantryUpgrade, OnMarch {
+    public MarchingDrummer() {}
 
     @Override
     public DialFace applyModifier() {
@@ -21,6 +20,16 @@ public class MarchingDrummer extends FigureUpgrade implements Cost, Waiqar, Musi
 
     @Override
     public int price() {
+        return 2;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
         return 2;
     }
 }

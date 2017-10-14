@@ -1,4 +1,4 @@
-package rwcsim.basicutils.upgrade;
+package rwcsim.basicutils.upgrades;
 
 import rwcsim.basicutils.concepts.Figure;
 

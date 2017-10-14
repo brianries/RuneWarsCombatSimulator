@@ -9,7 +9,7 @@ import rwcsim.basicutils.morale.ThreeCost;
  */
 public class DisciplineBreakdown implements MoraleCheck, ThreeCost {
     MoraleType type = MoraleType.CONFUSION;
-    String text = "You choose and discard one upgrade card from the unit.  If it was a figure upgrade, " +
+    String text = "You choose and discard one upgrades card from the unit.  If it was a figure upgrades, " +
             "remove it's corresponding figure.";
 }
 

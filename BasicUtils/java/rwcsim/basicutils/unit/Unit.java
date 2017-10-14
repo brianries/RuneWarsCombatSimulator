@@ -4,8 +4,8 @@ import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.upgrade.Upgrade;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeSlot;
+import rwcsim.basicutils.upgrades.UpgradeType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public interface Unit {
     List<Formation> legalFormations = new ArrayList<>();
     List<UpgradeType> legalUpgrades = new ArrayList<>();
     List<Ability> abilities = new ArrayList<>();
-    Map<Stage.Key,List<Upgrade>> upgradeRegister = new HashMap<>();
+    Map<Stage.Key,List<UpgradeSlot>> upgradeRegister = new HashMap<>();
 
     void initializeUnit();
 
@@ -50,11 +50,11 @@ public interface Unit {
     void setAbilities();
     default void addAbility(Ability ability) { abilities.add(ability); }
 
-    default void registerUpgrade(Stage stage, Upgrade upgrade) {
+    default void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot) {
         if (!upgradeRegister.containsKey(stage.key())) {
-            upgradeRegister.put(stage.key(), new ArrayList<Upgrade>());
+            upgradeRegister.put(stage.key(), new ArrayList<UpgradeSlot>());
         }
-        upgradeRegister.get(stage.key()).add(upgrade);
+        upgradeRegister.get(stage.key()).add(upgradeSlot);
     }
-    default Map<Stage.Key, List<Upgrade>> getStageRegister() { return upgradeRegister; }
+    default Map<Stage.Key, List<UpgradeSlot>> getStageRegister() { return upgradeRegister; }
 }

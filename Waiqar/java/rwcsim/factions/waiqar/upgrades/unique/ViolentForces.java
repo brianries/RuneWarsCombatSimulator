@@ -4,8 +4,8 @@ import rwcsim.basicutils.modifiers.AddAbility;
 import rwcsim.basicutils.stages.OnRangedAttack;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.abilities.Brutal;
-import rwcsim.basicutils.upgrade.HeroSpecific;
-import rwcsim.basicutils.upgrade.Unique;
+import rwcsim.basicutils.upgrades.HeroSpecific;
+import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.factions.waiqar.AnkaurMaro;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 

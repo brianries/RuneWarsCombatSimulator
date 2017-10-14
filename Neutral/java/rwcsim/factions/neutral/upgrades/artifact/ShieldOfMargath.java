@@ -2,8 +2,8 @@ package rwcsim.factions.neutral.upgrades.artifact;
 
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.stages.AfterDefending;
-import rwcsim.basicutils.upgrade.Artifact;
-import rwcsim.basicutils.upgrade.Unique;
+import rwcsim.basicutils.upgrades.Artifact;
+import rwcsim.basicutils.upgrades.Unique;
 
 public class ShieldOfMargath implements Artifact, AfterDefending, Cost, Unique {
     @Override

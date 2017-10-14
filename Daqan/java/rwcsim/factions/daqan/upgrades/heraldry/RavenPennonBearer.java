@@ -1,21 +1,31 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.modifiers.Exhaustable;
 import rwcsim.basicutils.stages.OnActivation;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.InfantryUpgrade;
-import rwcsim.basicutils.upgrade.Heraldry;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.InfantryUpgrade;
+import rwcsim.basicutils.upgrades.Heraldry;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class RavenPennonBearer extends FigureUpgrade implements Cost, Daqan, Heraldry, InfantryUpgrade, Exhaustable, OnActivation {
+public class RavenPennonBearer implements FigureUpgrade, Cost, Daqan, Heraldry, InfantryUpgrade, Exhaustable, OnActivation {
     public RavenPennonBearer() {
-        this.armor = 3;
 
     }
 
     @Override
     public int price() {
         return 5;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 3;
     }
 }

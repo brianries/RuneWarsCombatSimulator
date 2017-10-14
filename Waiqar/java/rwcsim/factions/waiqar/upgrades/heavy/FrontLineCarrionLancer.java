@@ -1,20 +1,35 @@
 package rwcsim.factions.waiqar.upgrades.heavy;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.SiegeUpgrade;
-import rwcsim.basicutils.upgrade.Heavy;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.SiegeUpgrade;
+import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class FrontLineCarrionLancer extends FigureUpgrade implements Cost, Waiqar, Heavy, SiegeUpgrade, SpendSurges {
-    public FrontLineCarrionLancer() {
-        this.armor = 3;
-        this.health = 3;
-    }
+public class FrontLineCarrionLancer implements FigureUpgrade, Cost, Waiqar, Heavy, SiegeUpgrade, SpendSurges {
+    public FrontLineCarrionLancer() {}
+
+
 
     @Override
     public int price() {
         return 5;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 3;
+    }
+
+    @Override
+    public int getHealth() {
+        return 3;
     }
 }

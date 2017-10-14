@@ -1,19 +1,27 @@
 package rwcsim.factions.waiqar.upgrades.champion;
 
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.stages.Engaged;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.InfantryUpgrade;
-import rwcsim.basicutils.upgrade.Champion;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.InfantryUpgrade;
+import rwcsim.basicutils.upgrades.Champion;
 import rwcsim.factions.waiqar.upgrades.Waiqar;
 
-public class CaptivatingHexer extends FigureUpgrade implements Cost, Waiqar, Champion, InfantryUpgrade, Engaged {
-    public CaptivatingHexer() {
-        this.armor = 2;
-    }
+public class CaptivatingHexer implements Figure, FigureUpgrade, Cost, Waiqar, Champion, InfantryUpgrade, Engaged {
+    public CaptivatingHexer(){}
 
     @Override
     public int price() {
         return 5;
+    }
+
+    public int getArmor() {
+        return 2;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
     }
 }

@@ -3,7 +3,7 @@ package rwcsim.factions.neutral.upgrades.heraldry;
 import rwcsim.basicutils.abilities.Impact;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.modifiers.AddAbility;
-import rwcsim.basicutils.upgrade.Heraldry;
+import rwcsim.basicutils.upgrades.Heraldry;
 
 public class BullPennon implements Cost, Heraldry, AddAbility<Impact> {
      @Override

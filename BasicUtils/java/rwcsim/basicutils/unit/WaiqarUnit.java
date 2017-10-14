@@ -1,7 +1,7 @@
 package rwcsim.basicutils.unit;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.upgrade.UpgradeType;
+import rwcsim.basicutils.upgrades.UpgradeType;
 
 import java.util.List;
 

@@ -1,19 +1,18 @@
 package rwcsim.factions.daqan.upgrades.champion;
 
 import rwcsim.basicutils.actions.AddDie;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.HeroUpgrade;
-import rwcsim.basicutils.upgrade.InfantryUpgrade;
-import rwcsim.basicutils.upgrade.Champion;
-import rwcsim.basicutils.upgrade.Unique;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.HeroUpgrade;
+import rwcsim.basicutils.upgrades.InfantryUpgrade;
+import rwcsim.basicutils.upgrades.Champion;
+import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class KariWraithstalkerUpgrade extends FigureUpgrade implements Champion, Daqan, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges, Cost {
+public class KariWraithstalkerUpgrade implements FigureUpgrade, Champion, Daqan, HeroUpgrade, InfantryUpgrade, Unique, AddDie, SpendSurges, Cost {
     public KariWraithstalkerUpgrade() {
-        this.armor = 3;
-        this.health = 2;
     }
 
     @Override
@@ -24,5 +23,20 @@ public class KariWraithstalkerUpgrade extends FigureUpgrade implements Champion,
     @Override
     public int price() {
         return 18;
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 3;
+    }
+
+    @Override
+    public int getHealth() {
+        return 2;
     }
 }

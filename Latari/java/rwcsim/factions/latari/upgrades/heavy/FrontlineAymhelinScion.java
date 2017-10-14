@@ -1,26 +1,19 @@
 package rwcsim.factions.latari.upgrades.heavy;
 
-import rwcsim.basicutils.concepts.Stage;
-import rwcsim.basicutils.modifiers.AddStage;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.modifiers.AddStages;
 import rwcsim.basicutils.modifiers.Exhaustable;
-import rwcsim.basicutils.stages.OnAttack;
-import rwcsim.basicutils.stages.SpendSurges;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.unit.Unit;
-import rwcsim.basicutils.upgrade.FigureUpgrade;
-import rwcsim.basicutils.upgrade.SiegeUpgrade;
-import rwcsim.basicutils.upgrade.Heavy;
+import rwcsim.basicutils.concepts.FigureUpgrade;
+import rwcsim.basicutils.upgrades.SiegeUpgrade;
+import rwcsim.basicutils.upgrades.Heavy;
 import rwcsim.factions.latari.upgrades.Latari;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-import java.util.List;
-
-public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latari, Heavy, SiegeUpgrade, AddStages, Exhaustable {
+public class FrontlineAymhelinScion implements FigureUpgrade, Cost, Latari, Heavy, SiegeUpgrade, AddStages, Exhaustable {
     public FrontlineAymhelinScion() {
-        this.armor = 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
-        this.health = 3;
     }
 
     @Override
@@ -32,5 +25,20 @@ public class FrontlineAymhelinScion extends FigureUpgrade implements Cost, Latar
     @Override
     public void registerStages(Unit unit) {
         //unit.registerUpgrade(new OnAttack(), this);//<OnAttack,SpendSurges>
+    }
+
+    @Override
+    public Figure getFigure() {
+        return null;
+    }
+
+    @Override
+    public int getArmor() {
+        return 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
+    }
+
+    @Override
+    public int getHealth() {
+        return 3;
     }
 }
