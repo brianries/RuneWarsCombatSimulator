@@ -1,7 +1,6 @@
 package rwcsim.basicutils.states;
 
-import rwcsim.basicutils.concepts.State;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 
 public class EngagedState implements Engaged {
     Unit engagedWith;

@@ -2,7 +2,7 @@ package rwcsim.factions.latari.upgrades.unique;
 
 import rwcsim.basicutils.modifiers.AddStages;
 import rwcsim.basicutils.concepts.Cost;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.upgrades.HeroSpecific;
 import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.factions.latari.AlianaOfSummersong;

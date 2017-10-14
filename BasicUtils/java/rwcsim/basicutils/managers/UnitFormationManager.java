@@ -6,7 +6,7 @@ import rwcsim.basicutils.concepts.Manager;
 import rwcsim.basicutils.unit.DeployableUnit;
 import rwcsim.basicutils.concepts.FigureUpgrade;
 import rwcsim.basicutils.concepts.Tray;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dice.DiePool;
 
 import java.util.ArrayList;

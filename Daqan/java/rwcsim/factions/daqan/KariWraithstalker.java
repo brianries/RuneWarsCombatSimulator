@@ -6,7 +6,7 @@ import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.unit.DaqanUnit;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;

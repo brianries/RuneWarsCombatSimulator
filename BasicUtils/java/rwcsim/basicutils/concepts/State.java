@@ -1,8 +1,6 @@
 package rwcsim.basicutils.concepts;
 
 
-import rwcsim.basicutils.unit.Unit;
-
 public interface State<T> {
     default T getState() { return (T) new NullState(); }
     default T getState(Unit unit) { return (T) new NullState(unit); };

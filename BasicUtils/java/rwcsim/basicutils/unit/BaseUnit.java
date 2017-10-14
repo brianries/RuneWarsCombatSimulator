@@ -1,10 +1,7 @@
 package rwcsim.basicutils.unit;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.concepts.Cavalry;
-import rwcsim.basicutils.concepts.Hero;
-import rwcsim.basicutils.concepts.Infantry;
-import rwcsim.basicutils.concepts.Siege;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.upgrades.UpgradeType;

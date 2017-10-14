@@ -2,7 +2,7 @@ package rwcsim.factions.latari;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.managers.UnitManager;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.upgrades.UpgradeType;
 
 import java.util.List;

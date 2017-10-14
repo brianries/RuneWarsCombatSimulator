@@ -8,7 +8,7 @@ import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
 import rwcsim.basicutils.unit.DaqanUnit;
 import rwcsim.basicutils.concepts.Siege;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;

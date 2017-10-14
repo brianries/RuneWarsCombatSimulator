@@ -2,6 +2,7 @@ package rwcsim.basicutils.unit;
 
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.managers.UnitFormationManager;

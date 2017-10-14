@@ -7,7 +7,7 @@ import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.concepts.Hero;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.morale.MoraleType;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.unit.UthukUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;

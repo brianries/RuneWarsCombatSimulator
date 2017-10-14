@@ -6,7 +6,7 @@ import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.runes.RuneFaces;
-import rwcsim.basicutils.unit.Unit;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.unit.WaiqarUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
