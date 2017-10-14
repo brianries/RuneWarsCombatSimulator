@@ -6,5 +6,8 @@ public class InfantryTray extends BaseTray {
         super(4);
     }
 
-
+    public static void main(String[] args) {
+        InfantryTray it = new InfantryTray();
+        it.isEmpty();
+    }
 }

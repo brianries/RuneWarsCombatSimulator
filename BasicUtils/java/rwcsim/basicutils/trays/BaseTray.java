@@ -94,13 +94,13 @@ public abstract class BaseTray implements Tray {
     public boolean applyDamage(int count) {
         // apply damage count in order of the tray, until damage is consumed
         for ( int slot = 0; count > 0; slot++ ) {
-            while (trayLayout[slot].applyDamage(1)) {
+            do {
                 count--;
-            }
+            } while (trayLayout[slot].applyDamage(1));
             trayLayout[slot] = new DeadFigure();
             figureCount--;
         }
-        return false;
+        return isEmpty();
     }
 
     @Override
@@ -113,10 +113,30 @@ public abstract class BaseTray implements Tray {
 
     @Override
     public boolean isEmpty() {
-        if (figureCount>0) return true;
+        if (figureCount>0) return false;
+        return true;
+    }
+
+    @Override
+    public boolean hasEmptySlots() {
+        for ( Figure f : trayLayout ) {
+            if (!f.isAlive()) return true;
+        }
         return false;
     }
 
-
-
+    @Override
+    public int[] getEmptySlots() {
+        int counter = 0;
+        int j = 0;
+        int[] empty;
+        for (Figure f:trayLayout) if (!f.isAlive()) counter++;
+        empty = new int[counter];
+        for ( int i = 0; i < trayLayout.length; i++) {
+            if (!trayLayout[i].isAlive()) {
+                empty[j++] = i;
+            }
+        }
+        return empty;
+    }
 }

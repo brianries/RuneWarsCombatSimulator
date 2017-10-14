@@ -18,7 +18,6 @@
     <orderEntry type="module" module-name="Waiqar" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="log4j" level="project" />
-    <orderEntry type="library" name="mockito" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -28,5 +27,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mockito-all-2.0.2-beta" level="project" />
   </component>
 </module>

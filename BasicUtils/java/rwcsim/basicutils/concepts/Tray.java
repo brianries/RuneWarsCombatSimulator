@@ -22,6 +22,7 @@ public interface Tray {
     boolean applyDamageToSlot(int slot, int count);
 
     boolean isEmpty();
-
+    boolean hasEmptySlots();
+    int[] getEmptySlots();
 
 }

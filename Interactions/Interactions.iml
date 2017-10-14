@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="BasicUtils" />
     <orderEntry type="module" module-name="BaseSimulator" />
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="mockito-all-2.0.2-beta" level="project" />
   </component>
 </module>
