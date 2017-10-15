@@ -14,11 +14,11 @@ public class Statistics {
     }
 
     public void showStats() {
-        System.out.println("R: "+ rounds + " D:"+daqan.getHealth()+ " W:"+waiqar.getHealth());
-        System.out.println("\nDaqar Data");
+//        System.out.println("R: "+ rounds + " D:"+daqan.getHealth()+ " W:"+waiqar.getHealth());
+//        System.out.println("\nDaqar Data");
 //        daqan.showStats();
-
-        System.out.println("\nWaiqar Stats");
+//
+//        System.out.println("\nWaiqar Stats");
 //        waiqar.showStats();
     }
 }

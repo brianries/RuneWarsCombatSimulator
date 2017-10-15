@@ -54,9 +54,9 @@ public class CSim {
 
             int rounds = 0;
 //        System.out.println("D: "+ daqanSpearmen.getHealth() +" W: "+ waiqarReanimates.getHealth());
-            while ((daqanSpearmen.isAlive() && waiqarReanimates.isAlive()) && rounds <= 7) {
+//            while ((daqanSpearmen.isAlive() && waiqarReanimates.isAlive()) && rounds <= 7) {
 //            System.out.println("Round: "+rounds);
-                if (rounds%2==0) {
+//                if (rounds%2==0) {
 
 //            System.out.println("Daqan pool:");
 //                    List<ActionType> dres = daqanSpearmen.attack();
@@ -82,12 +82,12 @@ public class CSim {
 
 
 //            System.out.println("D: "+ daqanSpearmen.getHealth() +" W: "+ waiqarReanimates.getHealth());
-                rounds++;
-            }
+//                rounds++;
+//            }
 
 //            System.out.println("D: " + daqanSpearmen.getHealth() + " W: " + waiqarReanimates.getHealth());
-            stats.add(new Statistics(rounds, daqanSpearmen, waiqarReanimates));
-        }
+//            stats.add(new Statistics(rounds, daqanSpearmen, waiqarReanimates));
+//        }
     }
 
     public static void main(String[] args) {

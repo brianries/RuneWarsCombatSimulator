@@ -3,6 +3,8 @@ package rwcsim.basicutils.managers;
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.concepts.Manager;
+import rwcsim.basicutils.dice.Die;
+import rwcsim.basicutils.dice.DieFace;
 import rwcsim.basicutils.unit.DeployableUnit;
 import rwcsim.basicutils.concepts.FigureUpgrade;
 import rwcsim.basicutils.concepts.Tray;
@@ -11,6 +13,7 @@ import rwcsim.basicutils.dice.DiePool;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class UnitFormationManager implements Manager {
     /**
@@ -131,4 +134,13 @@ public class UnitFormationManager implements Manager {
         }
         return result;
     }
+
+    public void recordDieRoll(Map<Die,List<DieFace>> dieRoll) {
+        deployableUnit.unitStateManager.recordResults(dieRoll);
+    }
+    public void recordDieRoll(Map<Die,List<DieFace>> dieRoll, boolean reroll) {
+        deployableUnit.unitStateManager.recordResults(dieRoll, reroll);
+    }
+
+
 }

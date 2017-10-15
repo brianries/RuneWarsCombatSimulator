@@ -19,6 +19,7 @@ import java.util.List;
 public class MassAttackLoopTest {
     private static Logger log = Logger.getLogger(MassAttackLoopTest.class);
 
+    private static List<Statistics> stats = new ArrayList<>();
 
     private long testSeed = 421390616945059l;
 

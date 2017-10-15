@@ -28,6 +28,15 @@ public class DieStatisticCounter {
     public static final int FACE_SURGE_MORALE = 20;
     public static final int FACE_MORTAL_STRIKE = 21;
 
+    // Reroll Die Faces
+    public static final int REROLL_ACCURACY = 22;
+    public static final int REROLL_HIT = 23;
+    public static final int REROLL_MORALE = 24;
+    public static final int REROLL_MORTALSTRIKE = 25;
+    public static final int REROLL_SURGE = 26;
+    public static final int REROLL_BLANK = 27;
+
+
     int[] statistics = new int[STAT_SIZE];
 
     public void increment(int statid) {
@@ -39,7 +48,7 @@ public class DieStatisticCounter {
     }
 
     public void showStats() {
-        System.out.println("A,H,M,MS,S,B,RR: "+ Arrays.toString(statistics));
+        System.out.println("A,H,M,MS,S,B,RR,RA,RH,RM,RMS,RS,RB: "+ Arrays.toString(statistics));
     }
 
     public int[] getStats() {

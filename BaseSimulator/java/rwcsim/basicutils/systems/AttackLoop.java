@@ -63,12 +63,14 @@ public class AttackLoop {
 //        }
 //        int[] adjustedPool = attackPool.getAttackPool(adjustmentPool);
         rollResults = Roller.rollPool(attackPool);
+        attackingUnit.recordDieRoll(rollResults);
     }
 
     private void rerollForExtraRanks() {
         log.debug("rerollForExtraRanks()");
         if (attackingUnit.canReroll()){
             rerollResults = attacker.reroll(attackingUnit.getRerollDieCount(), attackingUnit.hasPartialRank(), attackingUnit, rollResults, attackType);
+            attackingUnit.recordDieRoll(rerollResults, true);
         }
     }
 
