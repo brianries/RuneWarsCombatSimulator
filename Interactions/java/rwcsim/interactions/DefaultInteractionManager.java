@@ -35,7 +35,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
                 long r = e.getValue().stream().filter(f -> f == DieFace.BLANK).count();
                 if (r > 0) rerollPool[e.getKey().getDieType()] = (int) r;
                 while (e.getValue().remove(DieFace.BLANK)) {
-                    System.out.println("Removing blank face from " + e.getKey().toString());
+                    logger.debug("Removing blank face from " + e.getKey().toString());
                 }
             }
 
@@ -61,7 +61,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public void applyMortalStrikes(UnitFormationManager unit, int count) {
-        logger.info("applyMortalStrikes: "+ unit.toString() + ":"+ count);
+        logger.debug("applyMortalStrikes: "+ unit.toString() + ":"+ count);
 
         // apply mortal strikes to defender
 
@@ -72,13 +72,13 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public void assignAccuracies(UnitFormationManager unit, int count) {
-        logger.info("assignAccuracies: "+ unit.toString() + ":"+ count);
+        logger.debug("assignAccuracies: "+ unit.toString() + ":"+ count);
     }
 
 
     @Override
     public void applyHits(UnitFormationManager unit, int count) {
-        logger.info("applyHits: "+ unit.toString() + ":"+ count);
+        logger.debug("applyHits: "+ unit.toString() + ":"+ count);
 
         // apply hits here
         unit.applyHits(count);
@@ -88,7 +88,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public void applyMorale(UnitFormationManager unit, int count) {
-        logger.info("applyMorale: "+ unit.toString() + ":"+ count);
+        logger.debug("applyMorale: "+ unit.toString() + ":"+ count);
     }
 
     @Override

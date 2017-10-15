@@ -38,7 +38,7 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
     @Override
     public void initializeUnit() {
-        logger.info("initializeUnit()");
+        logger.debug("initializeUnit()");
         this.commandTool = new CommandTool();
         List<DialFace> actionFaces = new ArrayList<>();
         List<DialFace> modifierFaces = new ArrayList<>();

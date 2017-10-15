@@ -32,7 +32,7 @@ public class Roller {
         return rollPool(pool.getAttackPool());
     }
     public static Map<Die,List<DieFace>> rollPool(int[] pool) {
-        logger.info("diepool: "+pool[0]+":"+pool[1]+":"+pool[2]);
+        logger.debug("diepool: "+pool[0]+":"+pool[1]+":"+pool[2]);
 //        List<ActionType> actionPool = new ArrayList<>();
         Map<Die, List<DieFace>> resultsPools = new HashMap<>();
 
@@ -41,7 +41,7 @@ public class Roller {
         resultsPools.put(whiteDie, rollDice(whiteDie,pool[DiePool.WHITE_DIE]));
 
 //        actionPool.addAll(processPool(resultsPools, unit, roller));
-        logger.info(resultsPools.toString());
+        logger.debug(resultsPools.toString());
         return resultsPools;
     }
 

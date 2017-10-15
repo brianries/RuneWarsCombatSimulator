@@ -9,11 +9,16 @@ public class RuleSetManager implements Manager {
     private static boolean useSeed = false;
 
     private static final long seed = 5567001l;
-    private static final Random random = new Random(seed);
-    private static final Random fullRandom = new Random(System.nanoTime());
+    private static Random random = new Random(seed);
+    public static final long randomSeed = System.nanoTime();
+    private static Random fullRandom = new Random(randomSeed);
 
     private static Map<String,Rule> allRules = new HashMap<>();
     private static Set<String> enabledRules = new HashSet<>();
+
+    public static void resetFullRandom(long newseed) {
+        fullRandom = new Random(newseed);
+    }
 
     public static Set<String> getRuleNames() {
         return allRules.keySet();

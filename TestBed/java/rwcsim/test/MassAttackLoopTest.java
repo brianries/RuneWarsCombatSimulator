@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Configuration;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.managers.RuleSetManager;
 import rwcsim.basicutils.managers.UnitFormationManager;
 import rwcsim.basicutils.systems.AttackLoop;
 import rwcsim.basicutils.unit.DeployableUnit;
@@ -12,12 +13,18 @@ import rwcsim.factions.waiqar.Reanimates;
 import rwcsim.interactions.DefaultInteractionManager;
 import rwcsim.interactions.InteractionManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MassAttackLoopTest {
     private static Logger log = Logger.getLogger(MassAttackLoopTest.class);
 
-//    public static int SIM_COUNT = 1000000;
-    public static int SIM_COUNT = 1;
-    public static int DEMARKATION = 100000;
+
+    private long testSeed = 421390616945059l;
+
+    public static int SIM_COUNT = 10000;
+//    public static int SIM_COUNT = 1;
+    public static int DEMARKATION = 100;
     public static AttackType attackType = AttackType.MELEE_ATTACK;
 
     InteractionManager waiqarInteraction;
@@ -28,6 +35,8 @@ public class MassAttackLoopTest {
 
     UnitFormationManager waiqarFormation;
     UnitFormationManager daqanFormation;
+
+    List<String> messages = new ArrayList<>();
 
 
     public void reset() {
@@ -43,9 +52,10 @@ public class MassAttackLoopTest {
 
 
     public void simulationLoop() {
+//        RuleSetManager.resetFullRandom(testSeed);
         for (int i = 0; i<SIM_COUNT; i++) {
             if (i != 0 && i % DEMARKATION == 0) {
-                System.out.println("Processing: " + i);
+                log.info("Processing: " + i);
             }
 
             reset();
@@ -60,7 +70,8 @@ public class MassAttackLoopTest {
 
             int rounds = 0;
             while ((waiqarFormation.isAlive() && daqanFormation.isAlive()) && rounds <= 7) {
-                log.info("Round: "+ rounds);
+                messages.add("Round "+ rounds);
+                log.debug("Round: "+ rounds);
 //            System.out.println("Round: "+rounds);
                 if (rounds % 2 == 0) {
                     attackerInteraction = waiqarInteraction;
@@ -74,6 +85,9 @@ public class MassAttackLoopTest {
                     attackerFormation = daqanFormation;
                 }
 
+                messages.add("Waiqar("+waiqarFormation.figuresRemaining()+"): "+ waiqarFormation.isAlive());
+                messages.add("Daqan("+daqanFormation.figuresRemaining()+"): "+ daqanFormation.isAlive());
+
                 attackLoop = new AttackLoop(attackerInteraction, attackerFormation, defenderInteraction, defenderFormation, attackType);
                 attackLoop.processAttack();
 
@@ -81,13 +95,22 @@ public class MassAttackLoopTest {
                     attackLoop = new AttackLoop(defenderInteraction, defenderFormation, attackerInteraction, attackerFormation, attackType);
                     attackLoop.processAttack();
                 }
+
+                messages.add("Waiqar("+waiqarFormation.figuresRemaining()+"): "+ waiqarFormation.isAlive());
+                messages.add("Daqan("+daqanFormation.figuresRemaining()+"): "+ daqanFormation.isAlive());
+
                 rounds++;
             }
 
             String message = waiqarFormation.isAlive()?"Waiqar is Alive":"Waiqar is Dead";
-            log.info(message);
-            message = waiqarFormation.isAlive()?"Daqan is Alive":"Daqan is Dead";
-            log.info(message);
+            log.debug(message);
+            message = daqanFormation.isAlive()?"Daqan is Alive":"Daqan is Dead";
+            log.debug(message);
+            log.debug("Seed: "+ RuleSetManager.randomSeed);
+
+            for (String s:messages) {
+                log.debug(s);
+            }
         }
     }
 

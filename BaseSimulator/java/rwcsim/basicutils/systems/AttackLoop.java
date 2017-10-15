@@ -39,7 +39,7 @@ public class AttackLoop {
     }
 
     public void processAttack() {
-        log.info("processAttack()");
+        log.debug("processAttack()");
         attackPool = attackingUnit.getDiePool(attackType);
         rollDice();
         rerollForExtraRanks();
@@ -81,7 +81,7 @@ public class AttackLoop {
     private void spendSurges() {
         log.debug("spendSurges()");
         int surgeCount = DieRollResultsAnalyzer.countAllSurges(rerollResults);
-        log.info("Surges: "+surgeCount);
+        log.debug("Surges: "+surgeCount);
         if (surgeCount>0) {
             attacker.applySurges(attackingUnit, defendingUnit, surgeCount);
         }
@@ -90,7 +90,7 @@ public class AttackLoop {
     private void assignAccuracy() {
         log.debug("assignAccuracy()");
         int accuracyCount = DieRollResultsAnalyzer.countAllAccuracies(rerollResults);
-        log.info("Accuracies: "+accuracyCount);
+        log.debug("Accuracies: "+accuracyCount);
         if (accuracyCount>0) {
             attacker.assignAccuracies(defendingUnit, accuracyCount);
         }
@@ -99,7 +99,7 @@ public class AttackLoop {
     private void spendMortalStrikes() {
         log.debug("spendMortalStrikes()");
         int mortalStrikeCount = DieRollResultsAnalyzer.countMortalStrikes(rerollResults);
-        log.info("MortalStrikes: "+ mortalStrikeCount);
+        log.debug("MortalStrikes: "+ mortalStrikeCount);
         if (mortalStrikeCount>0) {
             attacker.applyMortalStrikes(defendingUnit, mortalStrikeCount);
         }
@@ -108,9 +108,9 @@ public class AttackLoop {
     private void spendHits() {
         log.debug("spendHits()");
         int hitCount = DieRollResultsAnalyzer.countAllHits(rerollResults);
-        log.info("Hits: "+ hitCount);
+        log.debug("Hits: "+ hitCount);
         int fullHits = hitCount * attackingUnit.getThreat();
-        log.info("FullHits: "+fullHits);
+        log.debug("FullHits: "+fullHits);
 
         attacker.applyHits(defendingUnit, fullHits);
     }
@@ -123,7 +123,7 @@ public class AttackLoop {
     private void resolveMorale() {
         log.debug("resolveMorale()");
         int moraleCount = DieRollResultsAnalyzer.countAllMorale(rerollResults);
-        log.info("Morale: "+moraleCount);
+        log.debug("Morale: "+moraleCount);
         if (moraleCount>0) {
             attacker.applyMorale(defendingUnit, moraleCount);
         }
