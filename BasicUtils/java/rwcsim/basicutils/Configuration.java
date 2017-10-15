@@ -20,7 +20,7 @@ public class Configuration  {
             INSTANCE = new Configuration.NullableConfiguration();
         }
 
-        String log4jConfigFile = "../resources/log4j.xml";
+        String log4jConfigFile = "resources/log4j.xml";
         DOMConfigurator.configure(log4jConfigFile);
 
         return INSTANCE;

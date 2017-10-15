@@ -49,9 +49,6 @@ public class TestAttackLoop extends TestCase {
         InteractionManager attackerInteraction;
         InteractionManager defenderInteraction;
 
-        DeployableUnit attackerUnit;
-        DeployableUnit defenderUnit;
-
         UnitFormationManager attackerFormation;
         UnitFormationManager defenderFormation;
 

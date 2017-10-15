@@ -141,4 +141,13 @@ public abstract class BaseTray implements Tray {
         }
         return empty;
     }
+
+    @Override
+    public int getFigureCount() {
+        int count = 0;
+        for (Figure f:trayLayout) {
+            if (f.isAlive()) count++;
+        }
+        return count;
+    }
 }

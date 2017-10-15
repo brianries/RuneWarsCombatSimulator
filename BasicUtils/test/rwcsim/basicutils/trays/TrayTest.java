@@ -8,11 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TrayTest {
 
-    InfantryTray infantryTray;
-
     @Test
     public void testIsEmpty() {
-        infantryTray = new InfantryTray();
+        InfantryTray infantryTray = new InfantryTray();
         assertFalse(infantryTray.isEmpty(), "InfantryTray is not empty.");
         assertFalse(infantryTray.hasEmptySlots());
         assertEquals(infantryTray.getEmptySlots().length, 0);
@@ -35,7 +33,14 @@ public class TrayTest {
 
     @Test
     public void testAccuracy() {
-        infantryTray = new InfantryTray();
+        InfantryTray infantryTray = new InfantryTray();
         assertFalse(infantryTray.hasAccuracy(),"Infantry tray does not have accuracies assigned.");
+    }
+
+    @Test
+    public void testSmallDamage() {
+        InfantryTray infantryTray = new InfantryTray();
+        assertEquals(0, infantryTray.applyDamage(2));
+        assertEquals(2, infantryTray.getFigureCount());
     }
 }

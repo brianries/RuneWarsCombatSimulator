@@ -24,5 +24,6 @@ public interface Tray {
     boolean isEmpty();
     boolean hasEmptySlots();
     int[] getEmptySlots();
+    int getFigureCount();
 
 }

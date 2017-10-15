@@ -99,15 +99,36 @@ public class UnitFormationManager implements Manager {
         Tray tmp;
 
         while (remainingHits>0) {
-            tmp = trayLayout.get(curTray);
-            remainingHits = tmp.applyDamage(remainingHits);
-            if (tmp.isEmpty()) {
-                trayLayout.remove(curTray);
-                currentTrayCount--;
-                curTray--;
-            }
+            if (trayLayout.size()>0) {
+                tmp = trayLayout.get(curTray);
+                remainingHits = tmp.applyDamage(remainingHits);
+                if (tmp.isEmpty()) {
+                    trayLayout.remove(curTray);
+                    currentTrayCount--;
+                    curTray--;
+                }
+            } else { return; }
          }
     }
 
+    public boolean isAlive() {
+        ((ArrayList)trayLayout).trimToSize();
+        if (trayLayout.size()==0) return false;
 
+        for (Tray t : trayLayout) {
+            if (!t.isEmpty()) {
+                return true;
+            }
+        }
+        return true;
+    }
+
+    public int figuresRemaining() {
+        int result = 0;
+        ((ArrayList)trayLayout).trimToSize();
+        for (Tray t:trayLayout) {
+            result += t.getFigureCount();
+        }
+        return result;
+    }
 }
