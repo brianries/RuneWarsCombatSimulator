@@ -58,6 +58,10 @@ public class UnitFormationManager implements Manager {
         }
     }
 
+    public int getThreat() {
+        return formation.getThreat();
+    }
+
     public int getCurrentRanks() {
         int currentRanks = currentTrayCount / formation.getThreat();
         return currentRanks;
@@ -89,17 +93,20 @@ public class UnitFormationManager implements Manager {
 
 
     public void applyHits(int count) {
+        ((ArrayList)trayLayout).trimToSize();
         int curTray = trayLayout.size()-1;
         int remainingHits = count;
         Tray tmp;
-        do {
+
+        while (remainingHits>0) {
             tmp = trayLayout.get(curTray);
             remainingHits = tmp.applyDamage(remainingHits);
             if (tmp.isEmpty()) {
                 trayLayout.remove(curTray);
                 currentTrayCount--;
+                curTray--;
             }
-        } while (remainingHits > 0);
+         }
     }
 
 

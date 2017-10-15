@@ -16,40 +16,62 @@ public class TestAttackLoop extends TestCase {
 
     AttackType attackType;
 
-    InteractionManager attacker;
-    InteractionManager defender;
+    InteractionManager waiqarInteraction;
+    InteractionManager daqanInteraction;
 
-    DeployableUnit attackingUnit;
-    DeployableUnit defendingUnit;
+    DeployableUnit waiqarUnit;
+    DeployableUnit daqanUnit;
 
-    UnitFormationManager attackingFormation;
-    UnitFormationManager defendingFormation;
+    UnitFormationManager waiqarFormation;
+    UnitFormationManager daqanFormation;
 
 
     public void setup() {
-        Configuration.getInstance().reloadProperties();
+//        Configuration.getInstance().reloadProperties();
         System.out.println(Configuration.getInstance().get("test.message"));
         attackType = AttackType.MELEE_ATTACK;
 
-        attacker = DefaultInteractionManager.instance();
-        defender = DefaultInteractionManager.instance();
+        waiqarInteraction = DefaultInteractionManager.instance();
+        daqanInteraction = DefaultInteractionManager.instance();
 
-        attackingUnit = new DeployableUnit(new Reanimates(), Formation.THREE_BY_TWO);
-        defendingUnit = new DeployableUnit(new Spearmen(), Formation.THREE_BY_TWO);
+        waiqarUnit = new DeployableUnit(new Reanimates(), Formation.THREE_BY_TWO);
+        daqanUnit = new DeployableUnit(new Spearmen(), Formation.THREE_BY_TWO);
 
-        attackingFormation = new UnitFormationManager(attackingUnit);
-        defendingFormation = new UnitFormationManager(defendingUnit);
-
+        waiqarFormation = new UnitFormationManager(waiqarUnit);
+        daqanFormation = new UnitFormationManager(daqanUnit);
     }
 
     public void testAttackLoop() {
         setup();
-        AttackLoop al = new AttackLoop(attacker, attackingFormation, defender, defendingFormation, attackType);
 
-        al.processAttack();
+        AttackLoop attackLoop;
 
+        InteractionManager attackerInteraction;
+        InteractionManager defenderInteraction;
 
+        DeployableUnit attackerUnit;
+        DeployableUnit defenderUnit;
 
+        UnitFormationManager attackerFormation;
+        UnitFormationManager defenderFormation;
 
+        for (int i = 0; i < 8; i++) {
+            if (i%2==0) {
+                attackerInteraction = waiqarInteraction;
+                attackerFormation = waiqarFormation;
+                defenderInteraction = daqanInteraction;
+                defenderFormation = daqanFormation;
+            } else {
+                defenderInteraction = waiqarInteraction;
+                defenderFormation = waiqarFormation;
+                attackerInteraction = daqanInteraction;
+                attackerFormation = daqanFormation;
+            }
+
+            attackLoop = new AttackLoop(attackerInteraction, attackerFormation, defenderInteraction, defenderFormation, attackType);
+            attackLoop.processAttack();
+        }
     }
+
+
 }

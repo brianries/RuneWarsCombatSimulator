@@ -20,7 +20,7 @@ public class Configuration  {
             INSTANCE = new Configuration.NullableConfiguration();
         }
 
-        String log4jConfigFile = "resources/log4j.xml";
+        String log4jConfigFile = "../resources/log4j.xml";
         DOMConfigurator.configure(log4jConfigFile);
 
         return INSTANCE;
@@ -28,7 +28,7 @@ public class Configuration  {
 
     public void reloadProperties() {
         try {
-            this.properties = this.load("basicutils.properties");
+            this.properties = this.load("resources/base.properties");
             this.properties.putAll(System.getProperties());
         } catch (Exception e) {
             System.out.println(e);

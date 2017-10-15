@@ -93,18 +93,14 @@ public abstract class BaseTray implements Tray {
     @Override
     public int applyDamage(int count) {
         int remainingDamage = count;
-        int remainingFigureCount = figureCount;
 
         for (int i = 0; i < figureCount; i++) {
             remainingDamage = trayLayout[i].applyDamage(remainingDamage);
             if (!trayLayout[i].isAlive()) {
-                remainingFigureCount--;
                 trayLayout[i] = new DeadFigure();
             }
-
             if (remainingDamage <= 0) break;
         }
-        figureCount = remainingFigureCount;
         return remainingDamage;
     }
 
