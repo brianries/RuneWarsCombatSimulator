@@ -33,13 +33,6 @@ public class UnitFormationManager implements Manager {
      * Additional trays are added as needed following the same patterns
      *
      *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
      */
 
     DeployableUnit deployableUnit;
@@ -95,8 +88,6 @@ public class UnitFormationManager implements Manager {
     }
 
 
-
-
     public void applyHits(int count) {
         int curTray = trayLayout.size()-1;
         int remainingHits = count;
@@ -104,14 +95,12 @@ public class UnitFormationManager implements Manager {
         do {
             tmp = trayLayout.get(curTray);
             remainingHits = tmp.applyDamage(remainingHits);
-
-
-
-
-        } while (count > 0);
+            if (tmp.isEmpty()) {
+                trayLayout.remove(curTray);
+                currentTrayCount--;
+            }
+        } while (remainingHits > 0);
     }
 
 
-
-    
 }

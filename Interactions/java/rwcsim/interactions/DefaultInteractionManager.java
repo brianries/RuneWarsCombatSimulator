@@ -88,7 +88,6 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public void applyMorale(UnitFormationManager unit, int count) {
-
         logger.info("applyMorale: "+ unit.toString() + ":"+ count);
     }
 

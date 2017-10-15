@@ -115,7 +115,6 @@ public abstract class BaseTray implements Tray {
 
 
 
-
     @Override
     public boolean isEmpty() {
         for (Figure f:trayLayout) {

@@ -109,9 +109,7 @@ public class AttackLoop {
         log.debug("spendHits()");
         int hitCount = DieRollResultsAnalyzer.countAllHits(rerollResults);
         log.info("Hits: "+ hitCount);
-        if (hitCount>0) {
-            attacker.applyHits(defendingUnit, hitCount);
-        }
+        attacker.applyHits(defendingUnit, hitCount);
     }
 
     private void reconfigure() {
