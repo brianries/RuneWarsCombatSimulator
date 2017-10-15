@@ -15,9 +15,11 @@ public class AttackLoop {
     private static final Logger log = Logger.getLogger(AttackLoop.class);
     AttackType attackType;
 
+    // AI or UI
     InteractionManager attacker;
     InteractionManager defender;
 
+    // Internal processing of units
     UnitFormationManager attackingUnit;
     UnitFormationManager defendingUnit;
 

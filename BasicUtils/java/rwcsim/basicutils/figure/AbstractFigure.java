@@ -13,9 +13,18 @@ public abstract class AbstractFigure implements Figure {
     }
 
     @Override
-    public boolean applyDamage(int count) {
-        currentHealth -= count;
-        return isAlive();
+    public int applyDamage(int count) {
+        int remainingHits = count;
+
+        for (int i=0; i<getHealth();i++) {
+            if (remainingHits>getArmor()) {
+                remainingHits -= getArmor();
+                currentHealth--;
+            } else {
+                remainingHits = 0;
+            }
+        }
+        return remainingHits;
     }
 
     @Override

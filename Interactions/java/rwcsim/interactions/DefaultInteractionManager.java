@@ -79,6 +79,11 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     @Override
     public void applyHits(UnitFormationManager unit, int count) {
         logger.info("applyHits: "+ unit.toString() + ":"+ count);
+
+        // apply hits here
+        unit.applyHits(count);
+
+
     }
 
     @Override

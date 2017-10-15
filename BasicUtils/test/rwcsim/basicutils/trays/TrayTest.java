@@ -17,8 +17,13 @@ public class TrayTest {
         assertFalse(infantryTray.hasEmptySlots());
         assertEquals(infantryTray.getEmptySlots().length, 0);
 
-        assertFalse(infantryTray.applyDamage(1));
-        assertTrue(infantryTray.applyDamage(4));
+        assertEquals(0, infantryTray.applyDamage(1));
+        assertEquals(0, infantryTray.applyDamage(4));
+
+        infantryTray = new InfantryTray();
+        assertEquals(3, infantryTray.applyDamage(7));
+
+        assertTrue(infantryTray.isEmpty(), "InfantryTray is empty.");
     }
 
     @Test
@@ -30,6 +35,7 @@ public class TrayTest {
 
     @Test
     public void testAccuracy() {
+        infantryTray = new InfantryTray();
         assertFalse(infantryTray.hasAccuracy(),"Infantry tray does not have accuracies assigned.");
     }
 }

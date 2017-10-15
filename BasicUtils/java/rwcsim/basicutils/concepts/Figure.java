@@ -13,6 +13,6 @@ public interface Figure {
 
     boolean isAlive();
 
-    boolean applyDamage(int count);
+    int applyDamage(int count);
     void setInitialHealth();
 }

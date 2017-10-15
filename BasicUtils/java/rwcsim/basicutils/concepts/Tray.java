@@ -18,8 +18,8 @@ public interface Tray {
     void clearAccuracy();
     boolean hasAccuracy();
     int[] getAccuracySlots();
-    boolean applyDamage(int count);
-    boolean applyDamageToSlot(int slot, int count);
+    int applyDamage(int count);
+    int applyDamageToSlot(int slot, int count);
 
     boolean isEmpty();
     boolean hasEmptySlots();
