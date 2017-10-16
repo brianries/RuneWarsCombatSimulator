@@ -6,10 +6,10 @@ import javafx.scene.image.Image;
  * Created by dsayles on 8/18/17.
  */
 public enum RuneFaces {
-    BLANK(1, "/images/BlankUnstable.png"),
-    NATURAL(1, "/images/NaturalBlank.png"),
-    STABLE(1, "/images/StableStable.png"),
-    UNSTABLE(2, "/images/UnstableNatural.png");
+    BLANK(1, "../resources/images/BlankUnstable.png"),
+    NATURAL(1, "../resources/images/NaturalBlank.png"),
+    STABLE(1, "../resources/images/StableStable.png"),
+    UNSTABLE(2, "../resources/images/UnstableNatural.png");
 
     int count;
     String imageName;
@@ -18,10 +18,10 @@ public enum RuneFaces {
     static RuneFaces[] values = RuneFaces.values();
 
 
-    private RuneFaces(int count, String image) {
+    RuneFaces(int count, String image) {
         this.count = count;
         imageName = image;
-        rpic = new Image(this.getClass().getResourceAsStream(imageName));
+//        rpic = new Image(this.getClass().getResourceAsStream(imageName));
     }
 
 
