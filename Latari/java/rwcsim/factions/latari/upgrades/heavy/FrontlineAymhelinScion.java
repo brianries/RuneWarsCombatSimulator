@@ -35,7 +35,7 @@ public class FrontlineAymhelinScion extends BaseFigure implements FigureUpgrade,
 
     @Override
     public int getArmor() {
-        return 1 + RuneManager.currentRuneCount(RuneFaces.STABLE);
+        return 1 + RuneManager.getInstance().currentRuneCount(RuneFaces.STABLE);
     }
 
     @Override

@@ -6,6 +6,7 @@ import rwcsim.basicutils.managers.UnitFormationManager;
 import rwcsim.basicutils.dice.Die;
 import rwcsim.basicutils.dice.DieFace;
 import rwcsim.basicutils.dice.Roller;
+import rwcsim.basicutils.runes.RuneManager;
 
 import java.util.List;
 import java.util.Map;

@@ -18,7 +18,7 @@ public interface Brutal extends Ability<Brutal> {
 
     default int getValue() {
         if (useOther()) {
-            return RuneManager.currentRuneCount(RuneFaces.getFace(getOtherValue()));
+            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
         }
         return getOtherValue();
     }

@@ -41,18 +41,6 @@ public class MassAttackLoopTest {
     List<String> messages = new ArrayList<>();
 
 
-//    public void reset() {
-//        waiqarInteraction = DefaultInteractionManager.instance();
-//        daqanInteraction = DefaultInteractionManager.instance();
-//
-//        waiqarUnit = new DeployableUnit(new Reanimates(), Formation.THREE_BY_TWO);
-//        daqanUnit = new DeployableUnit(new Spearmen(), Formation.THREE_BY_TWO);
-//
-//        waiqarFormation = new UnitFormationManager(waiqarUnit);
-//        daqanFormation = new UnitFormationManager(daqanUnit);
-//    }
-
-
     public void setupLoops() {
 //        RuleSetManager.resetFullRandom(testSeed);
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);

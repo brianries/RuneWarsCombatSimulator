@@ -2,7 +2,11 @@ package rwcsim.basicutils.systems;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.unit.DeployableUnit;
+import rwcsim.factions.daqan.OathswornCavalry;
+import rwcsim.factions.daqan.RuneGolems;
 import rwcsim.factions.daqan.Spearmen;
+import rwcsim.factions.waiqar.CarrionLancer;
+import rwcsim.factions.waiqar.DeathKnights;
 import rwcsim.factions.waiqar.Reanimates;
 
 public class SimSetup {
@@ -12,10 +16,10 @@ public class SimSetup {
 
     public static SimSetup getSetup() {return ss;}
     public DeployableUnit getFirst() {
-        return new DeployableUnit(new Reanimates(), Formation.THREE_BY_TWO);
+        return new DeployableUnit(new CarrionLancer(), Formation.THREE_BY_TWO);
     }
 
     public DeployableUnit getSecond() {
-        return new DeployableUnit(new Spearmen(), Formation.THREE_BY_TWO);
+        return new DeployableUnit(new RuneGolems(), Formation.THREE_BY_TWO);
     }
 }

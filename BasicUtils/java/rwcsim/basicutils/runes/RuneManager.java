@@ -6,9 +6,14 @@ import rwcsim.utils.statistics.RuneStatistics;
  * Created by dsayles on 8/19/17.
  */
 public class RuneManager {
-    private static RuneManager _instance = new RuneManager();
-    private static RuneToken[] runeTokens = new RuneToken[5];
-    static {
+    private static ThreadLocal THREAD_LOCAL = ThreadLocal.withInitial(() -> new RuneManager());
+    private RuneToken[] runeTokens = new RuneToken[5];
+
+    public static RuneManager getInstance() {
+        return (RuneManager)THREAD_LOCAL.get();
+    }
+
+    private RuneManager() {
         runeTokens[0] = new RuneToken(RuneFaces.BLANK, RuneFaces.UNSTABLE);
         runeTokens[1] = new RuneToken(RuneFaces.STABLE, RuneFaces.STABLE);
         runeTokens[2] = new RuneToken(RuneFaces.NATURAL, RuneFaces.STABLE);
@@ -27,7 +32,7 @@ public class RuneManager {
         return runeTokens[index].sides[side];
     }
 
-    public static int[] currentRuneState() {
+    public int[] currentRuneState() {
         int[] res = new int[RuneFaces.values().length];
         for (int i = 0; i<res.length; i++) {
             res[runeTokens[i].getCurrentFace().ordinal()] += runeTokens[i].getCurrentFace().getCount();
@@ -35,7 +40,7 @@ public class RuneManager {
         return res;
     }
 
-    public static int currentRuneCount(RuneFaces rune) {
+    public int currentRuneCount(RuneFaces rune) {
         int r = 0;
         for (RuneToken rt:runeTokens) {
             if (rt.getCurrentFace() == rune) {
@@ -45,12 +50,10 @@ public class RuneManager {
         return r;
     }
 
-    public static RuneManager getInstance() {
-        return _instance;
-    }
+
 
     public static void main(String[] args) {
-        RuneManager rm = RuneManager.getInstance();
+        RuneManager rm = new RuneManager();
         rm.throwRunes();
     }
 }

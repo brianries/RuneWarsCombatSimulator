@@ -17,7 +17,9 @@ public class Statistics {
 
     public void showStats() {
         System.out.println("R: "+ rounds + " " + first.unit.getName() + ":"+first.isAlive+ " "+ second.unit.getName() +":"+second.isAlive);
-        System.out.println("\nDaqar Data");
+        System.out.println("\nLiving Data");
+
+
 //        daqan.showStats();
 //
 //        System.out.println("\nWaiqar Stats");

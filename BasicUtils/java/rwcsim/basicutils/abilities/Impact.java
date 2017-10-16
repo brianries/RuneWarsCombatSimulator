@@ -17,7 +17,7 @@ public interface Impact extends Ability<Impact> {
 
     default int getValue() {
         if (useOther()) {
-            return RuneManager.currentRuneCount(RuneFaces.getFace(getOtherValue()));
+            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
         }
         return getOtherValue();
     }

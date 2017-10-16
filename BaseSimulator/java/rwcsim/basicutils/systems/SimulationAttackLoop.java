@@ -5,6 +5,7 @@ import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.managers.RuleSetManager;
 import rwcsim.basicutils.managers.UnitFormationManager;
 import rwcsim.basicutils.managers.UnitStateManager;
+import rwcsim.basicutils.runes.RuneManager;
 import rwcsim.basicutils.unit.DeployableUnit;
 import rwcsim.interactions.DefaultInteractionManager;
 import rwcsim.interactions.InteractionManager;
@@ -56,7 +57,6 @@ public class SimulationAttackLoop implements Callable<Statistics> {
         if (atomicInteger.incrementAndGet() != 0 && atomicInteger.get() % DEMARKATION == 0) {
             log.info("Processing: " + atomicInteger.get());
         }
-
         this.firstInteraction = DefaultInteractionManager.instance();
         this.firstUnit = setup.getFirst();
         this.firstFormation = new UnitFormationManager(firstUnit);
@@ -84,6 +84,7 @@ public class SimulationAttackLoop implements Callable<Statistics> {
     }
 
     public void simulateLoop() {
+        RuneManager.getInstance().throwRunes();
         AttackLoop attackLoop;
 
         InteractionManager attackerInteraction;

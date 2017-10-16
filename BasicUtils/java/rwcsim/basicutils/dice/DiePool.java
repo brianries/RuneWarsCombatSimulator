@@ -47,7 +47,7 @@ public class DiePool {
 
         for (int i = 0; i < DIE_TYPE_COUNT; i++) {
             if (attackRune[i] != null) {
-                ret[i] = RuneManager.currentRuneCount(attackRune[i]);
+                ret[i] = RuneManager.getInstance().currentRuneCount(attackRune[i]);
             }
         }
 
