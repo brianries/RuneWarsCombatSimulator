@@ -30,6 +30,10 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Unique 
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Maegan Cyndewin"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

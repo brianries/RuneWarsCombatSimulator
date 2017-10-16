@@ -31,6 +31,10 @@ public class UthukBerserkers extends UthukUnit implements Infantry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Uthuk Berserkers"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

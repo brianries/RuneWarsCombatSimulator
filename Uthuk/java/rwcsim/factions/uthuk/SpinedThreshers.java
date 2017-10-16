@@ -33,6 +33,10 @@ public class SpinedThreshers extends UthukUnit implements Siege {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Spined Threshers"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

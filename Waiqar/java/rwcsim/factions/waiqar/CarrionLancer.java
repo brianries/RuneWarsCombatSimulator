@@ -32,6 +32,9 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
 //    }
 
     @Override
+    public String getName() { return "Carrion Lancer"; }
+
+    @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();
         List<DialFace> actionFaces = new ArrayList<>();

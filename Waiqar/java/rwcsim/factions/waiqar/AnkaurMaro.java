@@ -30,6 +30,9 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry, U
 //    }
 
     @Override
+    public String getName() { return "Ankaur Maro"; }
+
+    @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();
         List<DialFace> actionFaces = new ArrayList<>();

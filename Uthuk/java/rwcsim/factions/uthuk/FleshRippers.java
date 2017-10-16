@@ -30,6 +30,10 @@ public class FleshRippers extends UthukUnit implements Cavalry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Flesh Rippers"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

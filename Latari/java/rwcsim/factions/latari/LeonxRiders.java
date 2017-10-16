@@ -30,6 +30,10 @@ public class LeonxRiders extends LatariUnit implements Cavalry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Leonyx Riders"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

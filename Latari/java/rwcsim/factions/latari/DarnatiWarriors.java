@@ -29,6 +29,10 @@ public class DarnatiWarriors extends LatariUnit implements Infantry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Darnati Warriors"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

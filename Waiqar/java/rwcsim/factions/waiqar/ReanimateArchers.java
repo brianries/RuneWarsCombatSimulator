@@ -31,6 +31,10 @@ public class ReanimateArchers extends WaiqarUnit implements Infantry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Reanimate Archers"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

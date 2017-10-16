@@ -20,6 +20,7 @@ import java.util.Map;
  * Created by dsayles on 8/17/17.
  */
 public interface Unit {
+    String getName();
     List<Formation> legalFormations = new ArrayList<>();
     List<UpgradeType> legalUpgrades = new ArrayList<>();
     List<Ability> abilities = new ArrayList<>();

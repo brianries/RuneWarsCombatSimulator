@@ -143,4 +143,10 @@ public class UnitFormationManager implements Manager {
     }
 
 
+    public UnitStateManager setUSMForStats(UnitStateManager usm) {
+        usm.setAliveState(isAlive());
+        usm.setFormation(formation);
+        usm.setUnit(unit);
+        return usm;
+    }
 }

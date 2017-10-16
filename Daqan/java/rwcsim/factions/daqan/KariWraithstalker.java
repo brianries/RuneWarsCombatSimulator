@@ -29,6 +29,10 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry, Uniq
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Kari Wraithstalker"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

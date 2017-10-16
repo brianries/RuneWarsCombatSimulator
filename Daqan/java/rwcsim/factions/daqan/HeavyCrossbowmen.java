@@ -30,6 +30,10 @@ public class HeavyCrossbowmen extends DaqanUnit implements Infantry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Heavy Crossbowmen"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

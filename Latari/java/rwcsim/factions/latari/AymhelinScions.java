@@ -31,6 +31,10 @@ public class AymhelinScions extends LatariUnit implements Siege {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Aymhelin Scions"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

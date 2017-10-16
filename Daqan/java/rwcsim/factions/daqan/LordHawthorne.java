@@ -28,6 +28,10 @@ public class LordHawthorne extends DaqanUnit implements Hero, Cavalry, Unique {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Lord Hawthorne"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

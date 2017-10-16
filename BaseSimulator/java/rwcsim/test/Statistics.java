@@ -1,21 +1,23 @@
 package rwcsim.test;
 
+import rwcsim.basicutils.managers.UnitStateManager;
+
 /**
  * Created by dsayles on 8/17/17.
  */
 public class Statistics {
-    CoreUnit daqan;
-    CoreUnit waiqar;
+    UnitStateManager first;
+    UnitStateManager second;
     int rounds;
-    public Statistics(int r, CoreUnit d, CoreUnit w) {
-        daqan = d;
-        waiqar = w;
+    public Statistics(int r, UnitStateManager d, UnitStateManager w) {
+        first = d;
+        second = w;
         rounds = r;
     }
 
     public void showStats() {
-//        System.out.println("R: "+ rounds + " D:"+daqan.getHealth()+ " W:"+waiqar.getHealth());
-//        System.out.println("\nDaqar Data");
+        System.out.println("R: "+ rounds + " " + first.unit.getName() + ":"+first.isAlive+ " "+ second.unit.getName() +":"+second.isAlive);
+        System.out.println("\nDaqar Data");
 //        daqan.showStats();
 //
 //        System.out.println("\nWaiqar Stats");

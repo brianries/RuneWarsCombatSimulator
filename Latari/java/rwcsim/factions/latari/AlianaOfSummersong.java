@@ -30,6 +30,10 @@ public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry, Uni
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Aliana of Summersong"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

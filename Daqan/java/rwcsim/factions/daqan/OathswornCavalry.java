@@ -30,6 +30,10 @@ public class OathswornCavalry extends DaqanUnit implements Cavalry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Oathsworn Cavalry"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

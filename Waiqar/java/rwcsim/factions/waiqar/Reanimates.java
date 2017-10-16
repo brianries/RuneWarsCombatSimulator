@@ -35,6 +35,10 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
 
 
+    @Override
+    public String getName() { return "Reanimates"; }
+
+
 
     @Override
     public void initializeUnit() {

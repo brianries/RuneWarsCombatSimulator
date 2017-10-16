@@ -33,6 +33,10 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Death Knights"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

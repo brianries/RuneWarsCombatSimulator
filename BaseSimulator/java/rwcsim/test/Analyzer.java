@@ -14,13 +14,13 @@ public class Analyzer {
         System.out.println("Total Rounds: "+ totrounds.get());
         System.out.println("Avg Rounds: "+ totrounds.get()/stats.size());
 
-        int dlive = (int) stats.stream().filter(s->s.daqan.getHealth()>0).count();
-        int dwin = (int) stats.stream().filter(s->s.daqan.getHealth()>0 && s.waiqar.getHealth()<=0).count();
-        int wlive = (int) stats.stream().filter(s->s.waiqar.getHealth()>0).count();
-        int wwin = (int) stats.stream().filter(s->s.waiqar.getHealth()>0 && s.daqan.getHealth()<=0).count();
+//        int dlive = (int) stats.stream().filter(s->s.daqan.getHealth()>0).count();
+//        int dwin = (int) stats.stream().filter(s->s.daqan.getHealth()>0 && s.waiqar.getHealth()<=0).count();
+//        int wlive = (int) stats.stream().filter(s->s.waiqar.getHealth()>0).count();
+//        int wwin = (int) stats.stream().filter(s->s.waiqar.getHealth()>0 && s.daqan.getHealth()<=0).count();
 
-        System.out.println("Daqan  live: "+ dlive + " win: "+ dwin + " avgWin: " + (float)dwin/stats.size());
-        System.out.println("Waiqar live: "+ wlive + " win: "+ wwin + " avgWin: " + (float)wwin/stats.size());
+//        System.out.println("Daqan  live: "+ dlive + " win: "+ dwin + " avgWin: " + (float)dwin/stats.size());
+//        System.out.println("Waiqar live: "+ wlive + " win: "+ wwin + " avgWin: " + (float)wwin/stats.size());
 
     }
 }

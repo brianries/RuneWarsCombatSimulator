@@ -32,6 +32,10 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege, Unique
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Ravos the Everhungry"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

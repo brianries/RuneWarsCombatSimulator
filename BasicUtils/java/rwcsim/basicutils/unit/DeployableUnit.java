@@ -56,4 +56,6 @@ public class DeployableUnit {
         int dieRerolls = unitFormationManager.getCurrentRanks()-1;
         return dieRerolls;
     }
+
+
 }

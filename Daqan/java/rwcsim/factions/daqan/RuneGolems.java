@@ -31,6 +31,10 @@ public class RuneGolems extends DaqanUnit implements Siege {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Rune Golems"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

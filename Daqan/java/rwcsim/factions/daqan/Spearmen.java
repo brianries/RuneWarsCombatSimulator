@@ -29,6 +29,10 @@ public class Spearmen extends DaqanUnit implements Infantry {
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Spearmen"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

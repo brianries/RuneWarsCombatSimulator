@@ -30,6 +30,10 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
 //        super(formation, unitStats, diePool);
 //    }
 
+
+    @Override
+    public String getName() { return "Ardus Ix'Erebus"; }
+
     @Override
     public void initializeUnit() {
         this.commandTool = new CommandTool();

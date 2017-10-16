@@ -1,19 +1,26 @@
 package rwcsim.basicutils.managers;
 
 import rwcsim.basicutils.ActionType;
+import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.concepts.Manager;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dice.Die;
 import rwcsim.basicutils.dice.DieFace;
 import rwcsim.basicutils.states.*;
 import rwcsim.basicutils.concepts.State;
 import rwcsim.utils.statistics.DieStatisticCounter;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class UnitStateManager implements Manager {
+    public boolean isAlive = true;
+    public Formation formation;
+    public Unit unit;
+
     DieStatisticCounter dsc = new DieStatisticCounter();
     public static UnavailableState UNAVAILABLE_STATE = new UnavailableState();
     public static List<State> UNAVAILABLE_STATE_LIST = new ArrayList<>();
@@ -84,4 +91,9 @@ public class UnitStateManager implements Manager {
             dsc.incrementBy(DieStatisticCounter.REROLL_SURGE, s);
         }
     }
+
+    public void setAliveState(boolean isAlive) { this.isAlive = isAlive; }
+    public void setUnit(Unit unit) { this.unit = unit; }
+    public void setFormation(Formation formation) { this.formation = formation; }
+    public DieStatisticCounter getDsc() { return dsc; }
 }
