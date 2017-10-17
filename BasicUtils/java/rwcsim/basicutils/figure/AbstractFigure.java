@@ -5,7 +5,9 @@ import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Tray;
 
 public abstract class AbstractFigure implements Figure {
-    int currentHealth = 0;
+    public int currentHealth = 0;
+    public int health;
+    public int armor;
 
     @Override
     public boolean isAlive() {
@@ -21,14 +23,15 @@ public abstract class AbstractFigure implements Figure {
                 remainingHits -= this.getArmor();
                 currentHealth--;
             } else {
-                remainingHits = 0;
+                remainingHits=0;
             }
         }
         return remainingHits;
     }
 
+
     @Override
-    public void setInitialHealth() {
-        currentHealth = getHealth();
-    }
+    public int getArmor() { return armor;}
+    @Override
+    public int getHealth() { return health;}
 }

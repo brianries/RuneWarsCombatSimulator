@@ -23,8 +23,6 @@ public abstract class BaseTray implements Tray {
             return count;
         }
 
-        @Override
-        public void setInitialHealth() {}
     }
 
     protected int figureCount;
