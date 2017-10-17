@@ -16,10 +16,10 @@ public class SimSetup {
 
     public static SimSetup getSetup() {return ss;}
     public DeployableUnit getFirst() {
-        return new DeployableUnit(new CarrionLancer(), Formation.THREE_BY_TWO);
+        return new DeployableUnit(new CarrionLancer(), Formation.TWO_BY_ONE);
     }
 
     public DeployableUnit getSecond() {
-        return new DeployableUnit(new RuneGolems(), Formation.THREE_BY_TWO);
+        return new DeployableUnit(new RuneGolems(), Formation.TWO_BY_ONE);
     }
 }
