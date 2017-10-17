@@ -11,6 +11,9 @@ public interface Figure {
         return 1;
     }
 
+//    int getArmor();
+//    int getHealth();
+
     boolean isAlive();
 
     int applyDamage(int count);

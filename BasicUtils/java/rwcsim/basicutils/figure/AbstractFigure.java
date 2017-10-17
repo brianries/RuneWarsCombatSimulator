@@ -17,8 +17,8 @@ public abstract class AbstractFigure implements Figure {
         int remainingHits = count;
 
         for (int i=0; i<getHealth();i++) {
-            if (remainingHits>=getArmor()) {
-                remainingHits -= getArmor();
+            if (remainingHits>=this.getArmor()) {
+                remainingHits -= this.getArmor();
                 currentHealth--;
             } else {
                 remainingHits = 0;

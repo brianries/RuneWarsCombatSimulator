@@ -1,10 +1,7 @@
 package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.concepts.Cavalry;
-import rwcsim.basicutils.concepts.Hero;
-import rwcsim.basicutils.concepts.Infantry;
-import rwcsim.basicutils.concepts.Unit;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.unit.WaiqarUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
@@ -15,7 +12,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;
-import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.HeroFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,10 +77,15 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry, U
 
     @Override
     public Tray getTray() {
-        return new HeroTray();
+        return new HeroTray(this);
     }
 
     @Override
     public void setAbilities() {
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new HeroFigure(2,5);
     }
 }

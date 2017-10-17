@@ -4,6 +4,7 @@ import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Impact;
 import rwcsim.basicutils.abilities.Steadfast;
 import rwcsim.basicutils.concepts.Cavalry;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.concepts.Unit;
@@ -16,6 +17,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.CavalryTray;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.CavalryFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,12 +109,17 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
 
     @Override
     public Tray getTray() {
-        return new CavalryTray();
+        return new CavalryTray(this);
     }
 
     @Override
     public void setAbilities() {
         addAbility(Impact.asAbility(RuneFaces.STABLE));
         addAbility(Steadfast.asAbility(MoraleType.FEAR,1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new CavalryFigure(3,1);
     }
 }

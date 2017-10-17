@@ -1,6 +1,7 @@
 package rwcsim.basicutils.trays;
 
 import org.junit.jupiter.api.Test;
+import rwcsim.basicutils.unit.BaseUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +11,7 @@ public class TrayTest {
 
     @Test
     public void testIsEmpty() {
-        InfantryTray infantryTray = new InfantryTray();
+        InfantryTray infantryTray = new InfantryTray(new BaseUnit.NullUnit());
         assertFalse(infantryTray.isEmpty(), "InfantryTray is not empty.");
         assertFalse(infantryTray.hasEmptySlots());
         assertEquals(infantryTray.getEmptySlots().length, 0);
@@ -18,7 +19,7 @@ public class TrayTest {
         assertEquals(0, infantryTray.applyDamage(1));
         assertEquals(0, infantryTray.applyDamage(4));
 
-        infantryTray = new InfantryTray();
+        infantryTray = new InfantryTray(new BaseUnit.NullUnit());
         assertEquals(3, infantryTray.applyDamage(7));
 
         assertTrue(infantryTray.isEmpty(), "InfantryTray is empty.");
@@ -33,13 +34,13 @@ public class TrayTest {
 
     @Test
     public void testAccuracy() {
-        InfantryTray infantryTray = new InfantryTray();
+        InfantryTray infantryTray = new InfantryTray(new BaseUnit.NullUnit());
         assertFalse(infantryTray.hasAccuracy(),"Infantry tray does not have accuracies assigned.");
     }
 
     @Test
     public void testSmallDamage() {
-        InfantryTray infantryTray = new InfantryTray();
+        InfantryTray infantryTray = new InfantryTray(new BaseUnit.NullUnit());
         assertEquals(0, infantryTray.applyDamage(2));
         assertEquals(2, infantryTray.getFigureCount());
     }

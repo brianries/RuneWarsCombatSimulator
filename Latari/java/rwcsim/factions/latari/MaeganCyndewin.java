@@ -3,11 +3,9 @@ package rwcsim.factions.latari;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Lethal;
 import rwcsim.basicutils.abilities.Protected;
-import rwcsim.basicutils.concepts.Cavalry;
-import rwcsim.basicutils.concepts.Hero;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.unit.LatariUnit;
-import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -16,7 +14,7 @@ import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.HeroTray;
-import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.HeroFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,12 +76,17 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Unique 
 
     @Override
     public Tray getTray() {
-        return new HeroTray();
+        return new HeroTray(this);
     }
 
     @Override
     public void setAbilities() {
         addAbility(Lethal.asAbility(RuneFaces.NATURAL));
         addAbility(Protected.asAbility(RuneFaces.STABLE));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new HeroFigure(2,4);
     }
 }

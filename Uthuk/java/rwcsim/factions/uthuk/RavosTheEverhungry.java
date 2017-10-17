@@ -4,10 +4,8 @@ import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.abilities.Precise;
 import rwcsim.basicutils.abilities.Steadfast;
-import rwcsim.basicutils.concepts.Hero;
-import rwcsim.basicutils.concepts.Siege;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.morale.MoraleType;
-import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.unit.UthukUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
@@ -18,7 +16,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.HeroTray;
-import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.HeroFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +77,7 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege, Unique
 
     @Override
     public Tray getTray() {
-        return new HeroTray();
+        return new HeroTray(this);
     }
 
     @Override
@@ -87,5 +85,10 @@ public class RavosTheEverhungry extends UthukUnit implements Hero, Siege, Unique
         addAbility(Brutal.asAbility(1));
         addAbility(Precise.asAbility(1));
         addAbility(Steadfast.asAbility(MoraleType.FEAR, 2));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new HeroFigure(2,7);
     }
 }

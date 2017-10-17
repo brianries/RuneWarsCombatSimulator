@@ -43,6 +43,8 @@ public interface Unit {
     UthukUnit getAsUthukUnit();
     WaiqarUnit getAsWaiqarUnit();
 
+    Figure getFigure();
+
     void populateFormations();
     void populateUpgrades(Formation formation);
 

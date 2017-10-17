@@ -2,12 +2,17 @@ package rwcsim.basicutils.trays;
 
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.concepts.FigureUpgrade;
 
 public abstract class BaseTray implements Tray {
     class DeadFigure implements Figure {
 
+        @Override
+        public int getArmor() { return 0;}
+        @Override
+        public int getHealth() { return 0;}
         @Override
         public boolean isAlive() {
             return false;
@@ -28,12 +33,12 @@ public abstract class BaseTray implements Tray {
     protected int[] figureUpgradeSlots;
 
 
-    BaseTray(int c) {
+    BaseTray(Unit unit, int c) {
         figureCount = c;
         trayLayout = new Figure[c];
         accuracyCountPerSlot = new int[c];
         for (int i = 0; i < figureCount; i++) {
-            trayLayout[i] = new BaseFigure();
+            trayLayout[i] = unit.getFigure();
         }
         figureUpgradeSlots = new int[c];
         clearAccuracy();

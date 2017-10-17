@@ -2,6 +2,7 @@ package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.concepts.Unit;
@@ -14,6 +15,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.SiegeTray;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.SiegeFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,11 +103,16 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
 
     @Override
     public Tray getTray() {
-        return new SiegeTray();
+        return new SiegeTray(this);
     }
 
     @Override
     public void setAbilities() {
         addAbility(Steadfast.asAbility(MoraleType.DOUBT,1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new SiegeFigure(3,3);
     }
 }

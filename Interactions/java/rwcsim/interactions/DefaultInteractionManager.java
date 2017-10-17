@@ -8,8 +8,8 @@ import rwcsim.basicutils.dice.DieFace;
 import rwcsim.basicutils.dice.Roller;
 import rwcsim.basicutils.runes.RuneManager;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class DefaultInteractionManager extends BaseInteractionManager {
     private static final Logger logger = Logger.getLogger(DefaultInteractionManager.class);
@@ -26,22 +26,36 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, UnitFormationManager attacker, Map<Die, List<DieFace>> results, AttackType type) {
+        Map<Die, List<DieFace>> working;
+//        results.forEach(working::putIfAbsent);
+//        working.putAll(results);
+        working = results.entrySet().stream()
+                .collect(Collectors.toMap(
+                        e -> e.getKey(), e -> new ArrayList<DieFace>(e.getValue())));
+
         /* default reroll of blanks if possible */
         int rerollDieCount =  rerollRankCount;
 
-        int[] rerollPool = new int[results.keySet().size()];
+        int[] rerollPool = new int[working.keySet().size()];
 
-        if (containsBlanks(results)) {
-            for (Map.Entry<Die, List<DieFace>> e : results.entrySet()) {
-                long r = e.getValue().stream().filter(f -> f == DieFace.BLANK).count();
+        if (containsNotHits(working)) {
+
+
+            for (Map.Entry<Die, List<DieFace>> e : working.entrySet()) {
+                long r = e.getValue().stream().filter(
+                        f -> !f.hasHit()
+                ).count();
                 if (r > 0) rerollPool[e.getKey().getDieType()] = (int) r;
-                while (e.getValue().remove(DieFace.BLANK)) {
-                    logger.debug("Removing blank face from " + e.getKey().toString());
+                for ( DieFace df : e.getValue()) {
+                    if (!df.hasHit()) {
+                        logger.debug("Removing " + df.name() + " face from " + e.getKey().toString());
+                        results.get(e.getKey()).remove(df);
+                    }
                 }
             }
 
             Map<Die, List<DieFace>> rerollResult = Roller.rollPool(rerollPool);
-            for (Map.Entry<Die, List<DieFace>> e : results.entrySet()) {
+            for (Map.Entry<Die, List<DieFace>> e : working.entrySet()) {
                 if (rerollResult.containsKey(e.getKey())) {
                     e.getValue().addAll(rerollResult.get(e.getKey()));
                 }
@@ -145,5 +159,15 @@ public class DefaultInteractionManager extends BaseInteractionManager {
         return false;
     }
 
+    public boolean containsNotHits(Map<Die, List<DieFace>> results) {
+        for (Map.Entry<Die,List<DieFace>> e : results.entrySet()) {
+            for (DieFace df : e.getValue()) {
+                if (!df.hasHit()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
 }

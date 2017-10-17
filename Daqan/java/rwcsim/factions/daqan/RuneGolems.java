@@ -2,18 +2,20 @@ package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
 import rwcsim.basicutils.dials.FaceColor;
+import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.unit.DaqanUnit;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
-import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.trays.SiegeTray;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.SiegeFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +95,12 @@ public class RuneGolems extends DaqanUnit implements Siege {
 
     @Override
     public Tray getTray() {
-        return new SiegeTray();
+        return new SiegeTray(this);
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new SiegeFigure(4,2);
     }
 
     @Override

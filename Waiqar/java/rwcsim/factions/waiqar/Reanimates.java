@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Regenerate;
 import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.*;
 import rwcsim.basicutils.concepts.Infantry;
 import rwcsim.basicutils.morale.MoraleType;
@@ -14,6 +15,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.InfantryTray;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.InfantryFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,12 +116,17 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
     @Override
     public Tray getTray() {
-        return new InfantryTray();
+        return new InfantryTray(this);
     }
 
     @Override
     public void setAbilities() {
         addAbility(Regenerate.asAbility(RuneFaces.NATURAL));
         addAbility(Steadfast.asAbility(MoraleType.DOUBT,1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new InfantryFigure(1,1);
     }
 }

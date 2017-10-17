@@ -2,6 +2,7 @@ package rwcsim.factions.daqan;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Protected;
+import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -13,6 +14,7 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.InfantryTray;
 import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.InfantryFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,10 +95,15 @@ public class HeavyCrossbowmen extends DaqanUnit implements Infantry {
 
     @Override
     public Tray getTray() {
-        return new InfantryTray();
+        return new InfantryTray(this);
     }
     @Override
     public void setAbilities() {
         addAbility(Protected.asAbility(1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new InfantryFigure(1,1);
     }
 }

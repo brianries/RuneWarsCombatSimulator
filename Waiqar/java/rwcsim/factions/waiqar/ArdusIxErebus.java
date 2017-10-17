@@ -3,10 +3,8 @@ package rwcsim.factions.waiqar;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.abilities.Steadfast;
-import rwcsim.basicutils.concepts.Hero;
-import rwcsim.basicutils.concepts.Infantry;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.morale.MoraleType;
-import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.unit.WaiqarUnit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
@@ -16,7 +14,7 @@ import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.HeroTray;
-import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.HeroFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +79,7 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
 
     @Override
     public Tray getTray() {
-        return new HeroTray();
+        return new HeroTray(this);
     }
 
     @Override
@@ -89,5 +87,10 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
         addAbility(Brutal.asAbility(1));
         addAbility(Steadfast.asAbility(MoraleType.DOUBT, 1));
         addAbility(Steadfast.asAbility(MoraleType.FEAR, 1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new HeroFigure(3,4);
     }
 }

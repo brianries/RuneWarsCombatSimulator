@@ -9,6 +9,64 @@ import rwcsim.basicutils.upgrades.UpgradeType;
 import java.util.List;
 
 public abstract class BaseUnit implements Unit {
+    public static class NullUnit extends BaseUnit {
+        @Override
+        public String getName() {
+            return null;
+        }
+
+        @Override
+        public void initializeUnit() {
+
+        }
+
+        @Override
+        public Tray getTray() {
+            return null;
+        }
+
+        @Override
+        public DaqanUnit getAsDaqanUnit() {
+            return null;
+        }
+
+        @Override
+        public LatariUnit getAsLatariUnit() {
+            return null;
+        }
+
+        @Override
+        public UthukUnit getAsUthukUnit() {
+            return null;
+        }
+
+        @Override
+        public WaiqarUnit getAsWaiqarUnit() {
+            return null;
+        }
+
+        @Override
+        public Figure getFigure() {
+            return null;
+        }
+
+        @Override
+        public void populateFormations() {
+
+        }
+
+        @Override
+        public void populateUpgrades(Formation formation) {
+
+        }
+
+        @Override
+        public void setAbilities() {
+
+        }
+
+    }
+
     public CommandTool commandTool;
 
     DiePool meleePool;

@@ -2,9 +2,17 @@ package rwcsim.basicutils.figure;
 
 
 public class BaseFigure extends AbstractFigure {
+
+
     public BaseFigure() {
         setInitialHealth();
     }
+
+
+//    @Override
+//    public int getArmor() { return 1;}
+//    @Override
+//    public int getHealth() { return 1;}
 //    @Override
 //    public boolean replaceTray() {
 //        return false;

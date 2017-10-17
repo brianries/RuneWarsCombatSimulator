@@ -39,4 +39,11 @@ public enum DieFace {
         return actions;
     }
     public int getSymbolCount() { return symbolCount; }
+
+    public boolean hasHit() {
+        if (actions.contains(ActionType.HIT)) {
+            return true;
+        }
+        return false;
+    }
 }

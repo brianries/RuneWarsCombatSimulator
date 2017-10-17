@@ -3,10 +3,8 @@ package rwcsim.factions.daqan;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.abilities.Precise;
-import rwcsim.basicutils.concepts.Hero;
-import rwcsim.basicutils.concepts.Infantry;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.unit.DaqanUnit;
-import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
 import rwcsim.basicutils.dials.Face;
@@ -15,7 +13,7 @@ import rwcsim.basicutils.upgrades.Unique;
 import rwcsim.basicutils.upgrades.UpgradeType;
 import rwcsim.basicutils.dice.DiePool;
 import rwcsim.basicutils.trays.HeroTray;
-import rwcsim.basicutils.concepts.Tray;
+import rwcsim.factions.neutral.figures.HeroFigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,12 +76,17 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry, Uniq
 
     @Override
     public Tray getTray() {
-        return new HeroTray();
+        return new HeroTray(this);
     }
 
     @Override
     public void setAbilities() {
         addAbility(Brutal.asAbility(1));
         addAbility(Precise.asAbility(1));
+    }
+
+    @Override
+    public Figure getFigure() {
+        return new HeroFigure(3,4);
     }
 }
