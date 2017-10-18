@@ -6,6 +6,8 @@ import rwcsim.factions.daqan.KariWraithstalker;
 import rwcsim.factions.daqan.OathswornCavalry;
 import rwcsim.factions.daqan.RuneGolems;
 import rwcsim.factions.daqan.Spearmen;
+import rwcsim.factions.uthuk.RavosTheEverhungry;
+import rwcsim.factions.uthuk.SpinedThreshers;
 import rwcsim.factions.waiqar.ArdusIxErebus;
 import rwcsim.factions.waiqar.CarrionLancer;
 import rwcsim.factions.waiqar.DeathKnights;
@@ -18,10 +20,10 @@ public class SimSetup {
 
     public static SimSetup getSetup() {return ss;}
     public DeployableUnit getFirst() {
-        return new DeployableUnit(new KariWraithstalker(), Formation.ONE);
+        return new DeployableUnit(new DeathKnights(), Formation.TWO_BY_THREE);
     }
 
     public DeployableUnit getSecond() {
-        return new DeployableUnit(new ArdusIxErebus(), Formation.ONE);
+        return new DeployableUnit(new OathswornCavalry(), Formation.TWO_BY_THREE);
     }
 }
