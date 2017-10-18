@@ -2,7 +2,8 @@ package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Brutal;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
+import rwcsim.basicutils.abilities.SteadfastFear;
 import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.unit.WaiqarUnit;
@@ -84,9 +85,9 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
 
     @Override
     public void setAbilities() {
-        addAbility(Brutal.asAbility(1));
-        addAbility(Steadfast.asAbility(MoraleType.DOUBT, 1));
-        addAbility(Steadfast.asAbility(MoraleType.FEAR, 1));
+        addAbility(new Brutal(1));
+        addAbility(new SteadfastFear(1));
+        addAbility(new SteadfastDoubt(1));
     }
 
     @Override

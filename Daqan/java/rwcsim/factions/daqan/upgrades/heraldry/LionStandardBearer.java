@@ -1,5 +1,6 @@
 package rwcsim.factions.daqan.upgrades.heraldry;
 
+import rwcsim.basicutils.abilities.SteadfastFear;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.figure.BaseFigure;
 import rwcsim.basicutils.modifiers.AddAbility;
@@ -7,11 +8,11 @@ import rwcsim.basicutils.morale.MoraleType;
 import rwcsim.basicutils.concepts.Cost;
 import rwcsim.basicutils.concepts.FigureUpgrade;
 import rwcsim.basicutils.upgrades.InfantryUpgrade;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
 import rwcsim.basicutils.upgrades.Heraldry;
 import rwcsim.factions.daqan.upgrades.Daqan;
 
-public class LionStandardBearer extends BaseFigure implements FigureUpgrade, Cost, Daqan, Heraldry, InfantryUpgrade, AddAbility<Steadfast> {
+public class LionStandardBearer extends BaseFigure implements FigureUpgrade, Cost, Daqan, Heraldry, InfantryUpgrade, AddAbility<SteadfastFear> {
     public LionStandardBearer() {
 
     }
@@ -22,8 +23,8 @@ public class LionStandardBearer extends BaseFigure implements FigureUpgrade, Cos
     }
 
     @Override
-    public Steadfast getAbility() {
-        return Steadfast.asAbility(MoraleType.FEAR, 1);
+    public SteadfastFear getAbility() {
+        return new SteadfastFear(1);
     }
 
     @Override

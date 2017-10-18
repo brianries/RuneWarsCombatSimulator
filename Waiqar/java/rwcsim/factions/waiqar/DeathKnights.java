@@ -2,7 +2,8 @@ package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Impact;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
+import rwcsim.basicutils.abilities.SteadfastFear;
 import rwcsim.basicutils.concepts.Cavalry;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.morale.MoraleType;
@@ -114,8 +115,8 @@ public class DeathKnights extends WaiqarUnit implements Cavalry {
 
     @Override
     public void setAbilities() {
-        addAbility(Impact.asAbility(RuneFaces.STABLE));
-        addAbility(Steadfast.asAbility(MoraleType.FEAR,1));
+        addAbility(new Impact(RuneFaces.STABLE));
+        addAbility(new SteadfastFear(1));
     }
 
     @Override

@@ -16,6 +16,6 @@ public class AncientTechnique implements Cost, Waiqar, HeroSpecific<ArdusIxErebu
 
     @Override
     public Precise getAbility() {
-        return Precise.asAbility(1);
+        return new Precise(1);
     }
 }

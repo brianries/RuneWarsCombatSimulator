@@ -102,7 +102,7 @@ public class AymhelinScions extends LatariUnit implements Siege {
 
     @Override
     public void setAbilities() {
-        addAbility(Immobilize.asAbility(1));
+        addAbility(new Immobilize(1));
     }
 
     @Override

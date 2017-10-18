@@ -1,7 +1,7 @@
 package rwcsim.factions.waiqar;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.concepts.Siege;
 import rwcsim.basicutils.morale.MoraleType;
@@ -108,7 +108,7 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
 
     @Override
     public void setAbilities() {
-        addAbility(Steadfast.asAbility(MoraleType.DOUBT,1));
+        addAbility(new SteadfastDoubt(1));
     }
 
     @Override

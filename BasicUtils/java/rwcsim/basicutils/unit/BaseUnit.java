@@ -76,6 +76,7 @@ public abstract class BaseUnit implements Unit {
 
     public BaseUnit() {
         initializeUnit();
+        setAbilities();
     }
 
     @Override

@@ -3,7 +3,7 @@ package rwcsim.factions.waiqar;
 import org.apache.log4j.Logger;
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.abilities.Regenerate;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.*;
 import rwcsim.basicutils.concepts.Infantry;
@@ -121,8 +121,8 @@ public class Reanimates extends WaiqarUnit implements Infantry {
 
     @Override
     public void setAbilities() {
-        addAbility(Regenerate.asAbility(RuneFaces.NATURAL));
-        addAbility(Steadfast.asAbility(MoraleType.DOUBT,1));
+        addAbility(new Regenerate(RuneFaces.NATURAL));
+        addAbility(new SteadfastDoubt(1));
     }
 
     @Override

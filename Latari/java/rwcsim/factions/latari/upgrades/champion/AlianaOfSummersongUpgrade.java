@@ -30,7 +30,7 @@ public class AlianaOfSummersongUpgrade extends BaseFigure implements FigureUpgra
 
     @Override
     public Impact getAbility() {
-        return Impact.asAbility(1);
+        return new Impact(1);
     }
 
     @Override

@@ -4,22 +4,14 @@ import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public interface Protector extends Ability<Protector> {
-    static Protector asAbility(int i) {
-        return (Protector) new NullAbility(i);
+public class Protector extends NullAbility<Protector> {
+    public static final String KEY = "PROTECTOR";
+    public Protector(int v) {
+        setValue(v);
     }
-
-    static Protector asAbility(RuneFaces rf) {
-        Protector ability = (Protector) new NullAbility(rf.ordinal());
-        ability.activateOther();
-        return ability;
-    }
-
-    default int getValue() {
-        if (useOther()) {
-            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
-        }
-        return getOtherValue();
+    public Protector(RuneFaces rf) {
+        super(rf.ordinal());
+        activateOther();
     }
 
 }

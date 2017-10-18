@@ -18,6 +18,6 @@ public class ViolentForces implements Cost, Waiqar,HeroSpecific<AnkaurMaro>, Uni
 
     @Override
     public Brutal getAbility() {
-        return Brutal.asAbility(1);
+        return new Brutal(1);
     }
 }

@@ -100,7 +100,7 @@ public class FleshRippers extends UthukUnit implements Cavalry {
 
     @Override
     public void setAbilities() {
-        addAbility(Impact.asAbility(1));
+        addAbility(new Impact(1));
     }
 
     @Override

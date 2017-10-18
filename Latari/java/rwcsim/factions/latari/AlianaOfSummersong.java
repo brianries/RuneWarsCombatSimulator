@@ -81,8 +81,8 @@ public class AlianaOfSummersong extends LatariUnit implements Hero, Cavalry, Uni
 
     @Override
     public void setAbilities() {
-        addAbility(Impact.asAbility(2));
-        addAbility(Precise.asAbility(1));
+        addAbility(new Impact(2));
+        addAbility(new Precise(1));
     }
 
     @Override

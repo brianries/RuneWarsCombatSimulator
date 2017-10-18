@@ -99,7 +99,7 @@ public class HeavyCrossbowmen extends DaqanUnit implements Infantry {
     }
     @Override
     public void setAbilities() {
-        addAbility(Protected.asAbility(1));
+        addAbility(new Protected(1));
     }
 
     @Override

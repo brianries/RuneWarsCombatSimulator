@@ -1,14 +1,13 @@
 package rwcsim.basicutils.managers;
 
+import org.apache.log4j.Logger;
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.concepts.Manager;
+import rwcsim.basicutils.abilities.Brutal;
+import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.dice.Die;
 import rwcsim.basicutils.dice.DieFace;
 import rwcsim.basicutils.unit.DeployableUnit;
-import rwcsim.basicutils.concepts.FigureUpgrade;
-import rwcsim.basicutils.concepts.Tray;
-import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.dice.DiePool;
 
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UnitFormationManager implements Manager {
+    private static final Logger log = Logger.getLogger(UnitFormationManager.class);
     /**
      * 1: [0]  1x2:  [0]    1x3:  [0]
      *               [1]          [1]
@@ -62,7 +62,17 @@ public class UnitFormationManager implements Manager {
     }
 
     public int getThreat() {
-        return formation.getThreat();
+        log.debug("getThreat()");
+        int threat = formation.getThreat();
+        Ability brutal = new Brutal(1);
+        int index = unit.getAbilities().indexOf(brutal);
+        if (index > 0) {
+            brutal = unit.getAbilities().get(index);
+            log.debug("Brutal ["+threat+"]("+brutal.getValue()+")");
+            threat += brutal.getValue();
+            log.debug("Brutal ["+threat+"]");
+        }
+        return threat;
     }
 
     public int getCurrentRanks() {

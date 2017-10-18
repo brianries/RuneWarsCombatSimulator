@@ -1,25 +1,17 @@
 package rwcsim.basicutils.abilities;
 
-import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
-import rwcsim.basicutils.runes.RuneManager;
 
-public interface Brutal extends Ability<Brutal> {
-
-    static Brutal asAbility(int i) {
-        return (Brutal) new NullAbility(i);
+public class Brutal extends NullAbility<Brutal> {
+    public static final String KEY = "BRUTAL";
+    public Brutal(int v) {
+        this.setValue(v);
     }
 
-    static Brutal asAbility(RuneFaces rf) {
-        Brutal ability = (Brutal) new NullAbility(rf.ordinal());
-        ability.activateOther();
-        return ability;
-    }
-
-    default int getValue() {
-        if (useOther()) {
-            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
-        }
-        return getOtherValue();
+    public Brutal(RuneFaces rf) {
+        super(rf.ordinal());
+        activateOther();
     }
 }
+
+

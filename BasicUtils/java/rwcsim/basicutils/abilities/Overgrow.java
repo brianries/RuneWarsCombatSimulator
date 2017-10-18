@@ -4,21 +4,13 @@ import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public interface Overgrow extends Ability<Overgrow> {
-    static Overgrow asAbility(int i) {
-        return (Overgrow) new NullAbility(i);
+public class Overgrow extends NullAbility<Overgrow> {
+    public static final String KEY = "OVERGROW";
+    public Overgrow(int v) {
+        setValue(v);
     }
-
-    static Overgrow asAbility(RuneFaces rf) {
-        Overgrow ability = (Overgrow) new NullAbility(rf.ordinal());
-        ability.activateOther();
-        return ability;
-    }
-
-    default int getValue() {
-        if (useOther()) {
-            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
-        }
-        return getOtherValue();
+    public Overgrow(RuneFaces rf) {
+        super(rf.ordinal());
+        activateOther();
     }
 }

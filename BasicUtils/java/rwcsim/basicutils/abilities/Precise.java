@@ -4,21 +4,13 @@ import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
-public interface Precise extends Ability<Precise> {
-    static Precise asAbility(int i) {
-        return (Precise) new NullAbility(i);
+public class Precise extends NullAbility<Precise> {
+    public static final String KEY = "PRECISE";
+    public Precise(int v) {
+        setValue(v);
     }
-
-    static Precise asAbility(RuneFaces rf) {
-        Precise ability = (Precise) new NullAbility(rf.ordinal());
-        ability.activateOther();
-        return ability;
-    }
-
-    default int getValue() {
-        if (useOther()) {
-            return RuneManager.getInstance().currentRuneCount(RuneFaces.getFace(getOtherValue()));
-        }
-        return getOtherValue();
+    public Precise(RuneFaces rf) {
+        super(rf.ordinal());
+        activateOther();
     }
 }

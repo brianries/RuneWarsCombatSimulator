@@ -13,6 +13,6 @@ public class BullPennon implements Cost, Heraldry, AddAbility<Impact> {
 
     @Override
     public Impact getAbility() {
-        return Impact.asAbility(1);
+        return new Impact(1);
     }
 }

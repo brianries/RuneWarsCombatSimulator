@@ -21,7 +21,7 @@ public class ProfaneBannerBearer extends BaseFigure implements FigureUpgrade, Co
 
     @Override
     public Protector getAbility() {
-        return Protector.asAbility(2);
+        return new Protector(2);
     }
 
     @Override

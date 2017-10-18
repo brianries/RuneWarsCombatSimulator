@@ -1,7 +1,8 @@
 package rwcsim.factions.uthuk;
 
 import rwcsim.basicutils.Formation;
-import rwcsim.basicutils.abilities.Steadfast;
+import rwcsim.basicutils.abilities.SteadfastDoubt;
+import rwcsim.basicutils.abilities.SteadfastFear;
 import rwcsim.basicutils.concepts.Figure;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dials.DialFace;
@@ -103,7 +104,7 @@ public class UthukBerserkers extends UthukUnit implements Infantry {
 
     @Override
     public void setAbilities() {
-        addAbility(Steadfast.asAbility(MoraleType.FEAR, 1));
+        addAbility(new SteadfastFear(1));
     }
 
     @Override

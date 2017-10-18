@@ -105,6 +105,6 @@ public class RuneGolems extends DaqanUnit implements Siege {
 
     @Override
     public void setAbilities() {
-        addAbility(Brutal.asAbility(RuneFaces.STABLE));
+        addAbility(new Brutal(RuneFaces.STABLE));
     }
 }

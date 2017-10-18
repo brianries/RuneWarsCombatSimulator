@@ -23,7 +23,7 @@ public class FrontlineRuneGolem extends BaseFigure implements FigureUpgrade, Daq
 
     @Override
     public Brutal getAbility() {
-        return Brutal.asAbility(RuneFaces.STABLE);
+        return new Brutal(RuneFaces.STABLE);
     }
 
     @Override

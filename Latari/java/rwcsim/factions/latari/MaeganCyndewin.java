@@ -81,8 +81,8 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Unique 
 
     @Override
     public void setAbilities() {
-        addAbility(Lethal.asAbility(RuneFaces.NATURAL));
-        addAbility(Protected.asAbility(RuneFaces.STABLE));
+        addAbility(new Lethal(RuneFaces.NATURAL));
+        addAbility(new Protected(RuneFaces.STABLE));
     }
 
     @Override

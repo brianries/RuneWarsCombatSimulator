@@ -13,6 +13,6 @@ public class RankDiscipline implements Cost, Training, AddAbility<Precise> {
 
     @Override
     public Precise getAbility() {
-        return Precise.asAbility(1);
+        return new Precise(1);
     }
 }

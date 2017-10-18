@@ -81,8 +81,8 @@ public class KariWraithstalker extends DaqanUnit implements Hero, Infantry, Uniq
 
     @Override
     public void setAbilities() {
-        addAbility(Brutal.asAbility(1));
-        addAbility(Precise.asAbility(1));
+        addAbility(new Brutal(1));
+        addAbility(new Precise(1));
     }
 
     @Override

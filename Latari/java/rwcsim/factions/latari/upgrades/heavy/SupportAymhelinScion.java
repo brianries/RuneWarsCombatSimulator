@@ -25,7 +25,7 @@ public class SupportAymhelinScion extends BaseFigure implements FigureUpgrade, C
 
     @Override
     public Overgrow getAbility() {
-        return Overgrow.asAbility(1);
+        return new Overgrow(1);
     }
 
     @Override

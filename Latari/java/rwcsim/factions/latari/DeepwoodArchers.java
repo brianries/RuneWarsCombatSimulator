@@ -108,7 +108,7 @@ public class DeepwoodArchers extends LatariUnit implements Infantry {
 
     @Override
     public void setAbilities() {
-        addAbility(Precise.asAbility(1));
+        addAbility(new Precise(1));
     }
 
     @Override

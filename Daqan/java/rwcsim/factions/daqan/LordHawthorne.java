@@ -79,7 +79,7 @@ public class LordHawthorne extends DaqanUnit implements Hero, Cavalry, Unique {
 
     @Override
     public void setAbilities() {
-        addAbility(Brutal.asAbility(1));
+        addAbility(new Brutal(1));
     }
 
     @Override

@@ -23,7 +23,7 @@ public interface Unit {
     String getName();
     List<Formation> legalFormations = new ArrayList<>();
     List<UpgradeType> legalUpgrades = new ArrayList<>();
-    List<Ability> abilities = new ArrayList<>();
+    List<Ability<?>> abilities = new ArrayList<>();
     Map<Stage.Key,List<UpgradeSlot>> upgradeRegister = new HashMap<>();
 
     void initializeUnit();
@@ -56,6 +56,7 @@ public interface Unit {
 
     void setAbilities();
     default void addAbility(Ability ability) { abilities.add(ability); }
+    default List<Ability<?>> getAbilities() { return abilities; }
 
     default void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot) {
         if (!upgradeRegister.containsKey(stage.key())) {
