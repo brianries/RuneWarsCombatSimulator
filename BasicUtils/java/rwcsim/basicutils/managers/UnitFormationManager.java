@@ -3,6 +3,7 @@ package rwcsim.basicutils.managers;
 import org.apache.log4j.Logger;
 import rwcsim.basicutils.AttackType;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.abilities.Abilities;
 import rwcsim.basicutils.abilities.Brutal;
 import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.dice.Die;
@@ -64,10 +65,9 @@ public class UnitFormationManager implements Manager {
     public int getThreat() {
         log.debug("getThreat()");
         int threat = formation.getThreat();
-        Ability brutal = new Brutal(1);
-        int index = unit.getAbilities().indexOf(brutal);
-        if (index > 0) {
-            brutal = unit.getAbilities().get(index);
+        Ability brutal;
+        if (unit.getAbilities().containsKey(Abilities.BRUTAL)) {
+            brutal = unit.getAbilities().get(Abilities.BRUTAL);
             log.debug("Brutal ["+threat+"]("+brutal.getValue()+")");
             threat += brutal.getValue();
             log.debug("Brutal ["+threat+"]");

@@ -23,7 +23,7 @@ public interface Unit {
     String getName();
     List<Formation> legalFormations = new ArrayList<>();
     List<UpgradeType> legalUpgrades = new ArrayList<>();
-    List<Ability<?>> abilities = new ArrayList<>();
+    Map<Integer, Ability<?>> abilities = new HashMap<>();
     Map<Stage.Key,List<UpgradeSlot>> upgradeRegister = new HashMap<>();
 
     void initializeUnit();
@@ -55,8 +55,8 @@ public interface Unit {
     void setRangedAttackPool(DiePool diePool);
 
     void setAbilities();
-    default void addAbility(Ability ability) { abilities.add(ability); }
-    default List<Ability<?>> getAbilities() { return abilities; }
+    default void addAbility(Ability ability) { abilities.put(ability.getKey(), ability); }
+    default Map<Integer, Ability<?>> getAbilities() { return abilities; }
 
     default void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot) {
         if (!upgradeRegister.containsKey(stage.key())) {

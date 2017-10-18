@@ -6,6 +6,7 @@ import rwcsim.basicutils.runes.RuneFaces;
 import rwcsim.basicutils.runes.RuneManager;
 
 public class NullAbility<T> implements Ability<T> {
+    public int KEY;
     boolean secondary = false;
     int value;
     int value2;
@@ -49,6 +50,7 @@ public class NullAbility<T> implements Ability<T> {
     public void setValue(int v) {
         this.value = v;
     }
-
+    public int getKey() { return KEY; }
+    public void setKey(int key) { this.KEY = key; }
 
 }
