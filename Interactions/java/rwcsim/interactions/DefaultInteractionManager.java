@@ -97,8 +97,6 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
         // apply hits here
         unit.applyHits(count);
-
-
     }
 
     @Override

@@ -71,6 +71,9 @@ public class AttackLoop {
         if (attackingUnit.canReroll()){
             rerollResults = attacker.reroll(attackingUnit.getRerollDieCount(), attackingUnit.hasPartialRank(), attackingUnit, rollResults, attackType);
             attackingUnit.recordDieRoll(rerollResults, true);
+        } else {
+            // if no rerolls, make sure to set the reroll results to roll results or npes happen
+            rerollResults = rollResults;
         }
     }
 

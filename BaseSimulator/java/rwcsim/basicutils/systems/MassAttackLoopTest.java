@@ -25,8 +25,7 @@ public class MassAttackLoopTest {
     private long testSeed = 421390616945059l;
 
     public static int THREAD_COUNT = 10;
-    public static int SIM_COUNT = 1;
-//    public static int SIM_COUNT = 1;
+    public static int SIM_COUNT = 100000;
     public static AttackType attackType = AttackType.MELEE_ATTACK;
 
     InteractionManager waiqarInteraction;

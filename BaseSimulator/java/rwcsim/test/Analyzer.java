@@ -43,24 +43,24 @@ public class Analyzer {
                 unitLife.put("Both Alive", unitLife.get("Both Alive") + 1);
             }
 
-            if (!unitLife.containsKey("First kills Second")) {
-                unitLife.put("First kills Second", new Long(0));
+            if (!unitLife.containsKey("First ("+s.first.unit.getName()+") kills Second ("+s.second.unit.getName()+")")) {
+                unitLife.put("First ("+s.first.unit.getName()+") kills Second ("+s.second.unit.getName()+")", new Long(0));
             }
             if (s.first.isAlive && !s.second.isAlive) {
-                unitLife.put("First kills Second", unitLife.get("First kills Second") + 1);
+                unitLife.put("First ("+s.first.unit.getName()+") kills Second ("+s.second.unit.getName()+")", unitLife.get("First ("+s.first.unit.getName()+") kills Second ("+s.second.unit.getName()+")") + 1);
             }
 
-            if (!unitLife.containsKey("Second kills First")) {
-                unitLife.put("Second kills First", new Long(0));
+            if (!unitLife.containsKey("Second ("+s.second.unit.getName()+") kills First ("+s.first.unit.getName()+")")) {
+                unitLife.put("Second ("+s.second.unit.getName()+") kills First ("+s.first.unit.getName()+")", new Long(0));
             }
             if (!s.first.isAlive && s.second.isAlive) {
-                unitLife.put("Second kills First", unitLife.get("Second kills First") + 1);
+                unitLife.put("Second ("+s.second.unit.getName()+") kills First ("+s.first.unit.getName()+")", unitLife.get("Second ("+s.second.unit.getName()+") kills First ("+s.first.unit.getName()+")") + 1);
             }
         });
 
         for (Map.Entry<String,Long> ul : unitLife.entrySet()) {
             int value = ul.getValue().intValue();
-            log.info(ul.getKey() + " (isAlive): " + value+ " (delta):" + ((double)value)/stats.size()*100);
+            log.info(ul.getKey() + " (isAlive): " + value+ " (delta): " + ((double)value)/stats.size()*100);
         }
     }
 }
