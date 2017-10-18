@@ -47,7 +47,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
                 ).count();
                 if (r > 0) rerollPool[e.getKey().getDieType()] = (int) r;
                 for ( DieFace df : e.getValue()) {
-                    if (!df.hasHit()) {
+                    if (!df.dealsDamage()) {
                         logger.debug("Removing " + df.name() + " face from " + e.getKey().toString());
                         results.get(e.getKey()).remove(df);
                     }
@@ -79,7 +79,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
         logger.debug("applyMortalStrikes: "+ unit.toString() + ":"+ count);
 
         // apply mortal strikes to defender
-
+        unit.applyMortalStrikes(count);
 
 
     }
@@ -160,7 +160,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
     public boolean containsNotHits(Map<Die, List<DieFace>> results) {
         for (Map.Entry<Die,List<DieFace>> e : results.entrySet()) {
             for (DieFace df : e.getValue()) {
-                if (!df.hasHit()) {
+                if (!df.hasHit() && !df.hasMortalStrike()) {
                     return true;
                 }
             }

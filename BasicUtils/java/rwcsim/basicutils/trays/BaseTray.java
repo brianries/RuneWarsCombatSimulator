@@ -23,6 +23,9 @@ public abstract class BaseTray implements Tray {
             return count;
         }
 
+        @Override
+        public int applyMortalStrikes(int count) { return count; }
+
     }
 
     protected int figureCount;
@@ -112,6 +115,24 @@ public abstract class BaseTray implements Tray {
         return trayLayout[slot].applyDamage(count);
     }
 
+    @Override
+    public int applyMortalStrikes(int count) {
+        int remainingStrikes = count;
+
+        for (int i = 0; i < figureCount; i++) {
+            remainingStrikes = trayLayout[i].applyMortalStrikes(remainingStrikes);
+            if (!trayLayout[i].isAlive()) {
+                trayLayout[i] = new DeadFigure();
+            }
+            if (remainingStrikes <= 0) break;
+        }
+        return remainingStrikes;
+    }
+
+    @Override
+    public int applyMortalStrikesToSlot(int slot, int count) {
+        return trayLayout[slot].applyMortalStrikes(count);
+    }
 
 
     @Override

@@ -18,10 +18,10 @@ public class SimSetup {
 
     public static SimSetup getSetup() {return ss;}
     public DeployableUnit getFirst() {
-        return new DeployableUnit(new ArdusIxErebus(), Formation.ONE);
+        return new DeployableUnit(new KariWraithstalker(), Formation.ONE);
     }
 
     public DeployableUnit getSecond() {
-        return new DeployableUnit(new KariWraithstalker(), Formation.ONE);
+        return new DeployableUnit(new ArdusIxErebus(), Formation.ONE);
     }
 }

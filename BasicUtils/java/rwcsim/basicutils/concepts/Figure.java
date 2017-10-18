@@ -17,4 +17,5 @@ public interface Figure {
     boolean isAlive();
 
     int applyDamage(int count);
+    int applyMortalStrikes(int count);
 }

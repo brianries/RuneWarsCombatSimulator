@@ -20,6 +20,8 @@ public interface Tray {
     int[] getAccuracySlots();
     int applyDamage(int count);
     int applyDamageToSlot(int slot, int count);
+    int applyMortalStrikes(int count);
+    int applyMortalStrikesToSlot(int slot, int count);
 
     boolean isEmpty();
     boolean hasEmptySlots();

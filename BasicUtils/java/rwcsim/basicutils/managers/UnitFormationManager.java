@@ -77,6 +77,13 @@ public class UnitFormationManager implements Manager {
 
     public int getCurrentRanks() {
         int currentRanks = currentTrayCount / formation.getThreat();
+
+        if (this.deployableUnit.getUnit().getAbilities().containsKey(Abilities.PRECISE)) {
+            log.debug("Ranks: "+ currentRanks);
+            currentRanks += this.deployableUnit.getUnit().getAbilities().get(Abilities.PRECISE).getValue();
+            log.debug("Precise: "+ currentRanks);
+        }
+
         return currentRanks;
     }
 
@@ -89,7 +96,14 @@ public class UnitFormationManager implements Manager {
     }
 
     public boolean canReroll() {
-        return this.deployableUnit.canReroll();
+        boolean result = false;
+        result = this.deployableUnit.canReroll();
+
+        if (this.deployableUnit.getUnit().getAbilities().containsKey(Abilities.PRECISE)) {
+            result = true;
+        }
+
+        return result;
     }
 
     public int getRerollDieCount() {
@@ -122,6 +136,25 @@ public class UnitFormationManager implements Manager {
                 }
             } else { return; }
          }
+    }
+
+    public void applyMortalStrikes(int count) {
+        ((ArrayList)trayLayout).trimToSize();
+        int curTray = trayLayout.size()-1;
+        int remainingStrikes = count;
+        Tray tmp;
+
+        while (remainingStrikes>0) {
+            if (trayLayout.size()>0) {
+                tmp = trayLayout.get(curTray);
+                remainingStrikes = tmp.applyMortalStrikes(remainingStrikes);
+                if (tmp.isEmpty()) {
+                    trayLayout.remove(curTray);
+                    currentTrayCount--;
+                    curTray--;
+                }
+            } else { return; }
+        }
     }
 
     public boolean isAlive() {

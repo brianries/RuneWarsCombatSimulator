@@ -46,4 +46,15 @@ public enum DieFace {
         }
         return false;
     }
+
+    public boolean hasMortalStrike() {
+        if (actions.contains(ActionType.MORTAL_STRIKE)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean dealsDamage() {
+        return (hasHit() || hasMortalStrike());
+    }
 }

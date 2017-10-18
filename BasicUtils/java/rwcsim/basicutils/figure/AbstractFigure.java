@@ -29,6 +29,19 @@ public abstract class AbstractFigure implements Figure {
         return remainingHits;
     }
 
+    @Override
+    public int applyMortalStrikes(int count) {
+        int remainingStrikes = count;
+
+        for (int i=0; i<getHealth(); i++) {
+            if (remainingStrikes>=currentHealth) {
+                currentHealth--;
+            } else {
+                remainingStrikes = 0;
+            }
+        }
+        return remainingStrikes;
+    }
 
     @Override
     public int getArmor() { return armor;}
