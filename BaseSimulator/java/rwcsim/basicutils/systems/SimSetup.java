@@ -2,10 +2,7 @@ package rwcsim.basicutils.systems;
 
 import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.unit.DeployableUnit;
-import rwcsim.factions.daqan.KariWraithstalker;
-import rwcsim.factions.daqan.OathswornCavalry;
-import rwcsim.factions.daqan.RuneGolems;
-import rwcsim.factions.daqan.Spearmen;
+import rwcsim.factions.daqan.*;
 import rwcsim.factions.uthuk.RavosTheEverhungry;
 import rwcsim.factions.uthuk.SpinedThreshers;
 import rwcsim.factions.waiqar.ArdusIxErebus;
@@ -20,10 +17,10 @@ public class SimSetup {
 
     public static SimSetup getSetup() {return ss;}
     public DeployableUnit getFirst() {
-        return new DeployableUnit(new DeathKnights(), Formation.TWO_BY_THREE);
+        return new DeployableUnit(new LordHawthorne(), Formation.ONE);
     }
 
     public DeployableUnit getSecond() {
-        return new DeployableUnit(new OathswornCavalry(), Formation.TWO_BY_THREE);
+        return new DeployableUnit(new ArdusIxErebus(), Formation.ONE);
     }
 }
