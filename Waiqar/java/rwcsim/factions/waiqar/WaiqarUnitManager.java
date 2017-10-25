@@ -17,6 +17,37 @@ public class WaiqarUnitManager extends UnitManager {
     public static final int DEATH_KNIGHTS = 5;
     public static final int WRAITHS = 6;
 
+    public WaiqarUnitManager() {
+        init();
+    }
+
+    private void init() {
+        availableUnitNames = new String[]{
+                "Arus Ix'Erebus",
+                "Carrion Lancers",
+                "Reanimate Archers",
+                "Reanimates",
+                "Ankaur Maro",
+                "Death Knights",
+                "Wraiths"
+        };
+    }
+
+    @Override
+    public int getIdFromName(String name) {
+        switch (name) {
+            case "Arus Ix'Erebus": return ARDUS_IX_EREBUS;
+            case "Carrion Lancers": return CARRION_LANCERS;
+            case "Reanimate Archers": return REANIMATE_ARCHERS;
+            case "Reanimates": return REANIMATES;
+            case "Ankaur Maro": return ANKAUR_MARO;
+            case "Death Knights": return DEATH_KNIGHTS;
+            case "Wraiths": return WRAITHS;
+        }
+        return -100;
+    }
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case ARDUS_IX_EREBUS: return new ArdusIxErebus().availableFormations();

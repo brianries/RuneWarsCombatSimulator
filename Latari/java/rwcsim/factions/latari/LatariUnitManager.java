@@ -16,6 +16,36 @@ public class LatariUnitManager extends UnitManager {
     public static final int DARNATI_WARRIORS = 5;
 //    public static final int WRAITHS = 6;
 
+    public LatariUnitManager() {
+        init();
+    }
+
+    private void init() {
+        availableUnitNames = new String[]{
+                "Aliana of Summersong",
+                "Deepwood Archers",
+                "Leonx Riders",
+                "Aymhelin Scions",
+                "Maegan Cyndewin",
+                "Darnati Warriors",
+        };
+    }
+
+    @Override
+    public int getIdFromName(String name) {
+        switch (name) {
+            case "Aliana of Summersong": return ALIANA_OF_SUMMERSONG;
+            case "Deepwood Archers": return DEEPWOOD_ARCHERS;
+            case "Leonx Riders": return LEONX_RIDERS;
+            case "Aymhelin Scions": return AYMHELIN_SCIONS;
+            case "Maegan Cyndewin": return MAEGAN_CYNDEWIN;
+            case "Darnati Warriors":return DARNATI_WARRIORS;
+        }
+        return -100;
+    }
+
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case ALIANA_OF_SUMMERSONG: return new AlianaOfSummersong().availableFormations();

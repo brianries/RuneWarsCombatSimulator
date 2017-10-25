@@ -68,11 +68,11 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
     }
 
     public void populateFormations() {
-        if (Unit.legalFormations.size()>0) return;
-        Unit.legalFormations.add(Formation.ONE);
-        Unit.legalFormations.add(Formation.TWO_BY_ONE);
-        Unit.legalFormations.add(Formation.TWO_BY_TWO);
-        Unit.legalFormations.add(Formation.THREE_BY_TWO);
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.ONE);
+        legalFormations.add(Formation.TWO_BY_ONE);
+        legalFormations.add(Formation.TWO_BY_TWO);
+        legalFormations.add(Formation.THREE_BY_TWO);
     }
 
 
@@ -81,9 +81,9 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
 
     @Override
     public void populateUpgrades(boolean listContainsArdus, Formation formation) {
-        int legalFormationIndex = Unit.legalFormations.indexOf(formation);
+        int legalFormationIndex = legalFormations.indexOf(formation);
         if (listContainsArdus) {
-            if (legalFormationIndex < (Unit.legalFormations.size() - 1)) {
+            if (legalFormationIndex < (legalFormations.size() - 1)) {
                 legalFormationIndex++;
             }
         }
@@ -91,10 +91,10 @@ public class CarrionLancer extends WaiqarUnit implements Siege {
         switch(legalFormationIndex) {
             case 3:
             case 2:
-                Unit.legalUpgrades.add(UpgradeType.Equipment);
+                legalUpgrades.add(UpgradeType.Equipment);
             case 1:
             case 0:
-                Unit.legalUpgrades.add(UpgradeType.Training);
+                legalUpgrades.add(UpgradeType.Training);
                 break;
             default:
                 return;

@@ -7,12 +7,11 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="BasicUtils" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="mockito-all-2.0.2-beta" level="project" />
-    <orderEntry type="library" name="log4j" level="project" />
+    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jsr305-3.0.2" level="project" />
+    <orderEntry type="module" module-name="BasicUtils" />
     <orderEntry type="library" name="intellij" level="project" />
+    <orderEntry type="library" name="log4j" level="project" />
   </component>
 </module>

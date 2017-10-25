@@ -16,6 +16,36 @@ public class UthukUnitManager extends UnitManager {
 //    public static final int DARNATI_WARRIORS = 5;
 //    public static final int WRAITHS = 6;
 
+    public UthukUnitManager() {
+        init();
+    }
+
+    private void init() {
+        availableUnitNames = new String[]{
+                "Ravos the Everhungry",
+                "Uthuk Berserkers",
+                "Flesh Rippers",
+                "Spined Threshers",
+//                "Ankaur Maro",
+//                "Death Knights",
+//                "Wraiths"
+        };
+    }
+
+
+    @Override
+    public int getIdFromName(String name) {
+        switch (name) {
+            case "Ravos the Everhungry": return RAVOS_THE_EVERHUNGRY;
+            case "Uthuk Berserkers": return UTHUK_BERSERKERS;
+            case "Flesh Rippers": return FLESH_RIPPERS;
+            case "Spined Threshers": return SPINE_THRESHERS;
+        }
+        return -100;
+    }
+
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case RAVOS_THE_EVERHUNGRY: return new RavosTheEverhungry().availableFormations();

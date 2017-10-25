@@ -16,6 +16,39 @@ public class DaqanUnitManager extends UnitManager {
     public static final int HEAVY_CROSSBOWMEN = 5;
 //    public static final int WRAITHS = 6;
 
+    public DaqanUnitManager() {
+        init();
+    }
+
+    private void init() {
+        availableUnitNames = new String[]{
+                "Kari Wraithstalker",
+                "Spearmen",
+                "Oathsworn Cavalry",
+                "Rune Golems",
+                "Lord Hawthorne",
+                "Heavy Crossbowmen",
+//                "Scouts"
+        };
+    }
+
+    @Override
+    public int getIdFromName(String name) {
+        switch (name) {
+            case "Kari Wraithstalker": return KARI_WRAITHSTALKER;
+            case "Spearmen": return SPEARMEN;
+            case "Oathsworn Cavalry": return OATHSWORN_CAVALRY;
+            case "Rune Golems": return RUNE_GOLEMS;
+            case "Lord Hawthorne": return LORD_HAWTHORNE;
+            case "Heavy Crossbowmen": return HEAVY_CROSSBOWMEN;
+//            case "Scouts": return SCO
+
+        }
+        return -100;
+    }
+
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case KARI_WRAITHSTALKER: return new KariWraithstalker().availableFormations();

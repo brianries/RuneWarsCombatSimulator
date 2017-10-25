@@ -1,0 +1,8 @@
+Scenarios to simulate
+
+1)  If reforming when flanked is beneficial.
+
+2)  Spearmen, is the slower heavy attack better than the early attack.
+
+3)  Cavalry 2x2 and 4x1 to see which is better against various units
+

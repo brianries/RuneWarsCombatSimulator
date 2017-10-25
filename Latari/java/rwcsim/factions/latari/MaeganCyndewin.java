@@ -64,14 +64,14 @@ public class MaeganCyndewin extends LatariUnit implements Hero, Cavalry, Unique 
     }
 
     public void populateFormations() {
-        Unit.legalFormations.add(Formation.ONE);
+        legalFormations.add(Formation.ONE);
     }
 
 
     @Override
     public void populateUpgrades(Formation formation) {
-        Unit.legalUpgrades.add(UpgradeType.Artifact);
-        Unit.legalUpgrades.add(UpgradeType.Unique);
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 
     @Override

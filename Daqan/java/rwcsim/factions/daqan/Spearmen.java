@@ -67,27 +67,27 @@ public class Spearmen extends DaqanUnit implements Infantry {
     }
 
     public void populateFormations() {
-        if (Unit.legalFormations.size()>0) return;
-        Unit.legalFormations.add(Formation.TWO_BY_ONE);
-        Unit.legalFormations.add(Formation.TWO_BY_TWO);
-        Unit.legalFormations.add(Formation.THREE_BY_TWO);
-        Unit.legalFormations.add(Formation.THREE_BY_THREE);
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.TWO_BY_ONE);
+        legalFormations.add(Formation.TWO_BY_TWO);
+        legalFormations.add(Formation.THREE_BY_TWO);
+        legalFormations.add(Formation.THREE_BY_THREE);
     }
 
 
     @Override
     public void populateUpgrades(Formation formation) {
-        int legalFormationIndex = Unit.legalFormations.indexOf(formation);
+        int legalFormationIndex = legalFormations.indexOf(formation);
         switch(legalFormationIndex) {
             case 3:
-                Unit.legalUpgrades.add(UpgradeType.Heavy);
+                legalUpgrades.add(UpgradeType.Heavy);
             case 2:
-                Unit.legalUpgrades.add(UpgradeType.Heraldry);
+                legalUpgrades.add(UpgradeType.Heraldry);
             case 1:
-                Unit.legalUpgrades.add(UpgradeType.Champion);
+                legalUpgrades.add(UpgradeType.Champion);
             case 0:
-                Unit.legalUpgrades.add(UpgradeType.Equipment);
-                Unit.legalUpgrades.add(UpgradeType.Music);
+                legalUpgrades.add(UpgradeType.Equipment);
+                legalUpgrades.add(UpgradeType.Music);
                 break;
             default:
                 return;

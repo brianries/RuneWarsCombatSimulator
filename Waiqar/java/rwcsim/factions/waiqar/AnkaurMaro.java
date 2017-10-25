@@ -61,8 +61,8 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry, U
     }
 
     public void populateFormations() {
-        if (Unit.legalFormations.size()>0) return;
-        Unit.legalFormations.add(Formation.ONE);
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.ONE);
     }
 
 
@@ -71,8 +71,8 @@ public class AnkaurMaro extends WaiqarUnit implements Hero, Cavalry, Infantry, U
 
     @Override
     public void populateUpgrades(boolean listContainsArdus, Formation formation) {
-        Unit.legalUpgrades.add(UpgradeType.Artifact);
-        Unit.legalUpgrades.add(UpgradeType.Unique);
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 
     @Override

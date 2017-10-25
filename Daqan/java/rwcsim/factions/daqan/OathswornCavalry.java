@@ -68,26 +68,26 @@ public class OathswornCavalry extends DaqanUnit implements Cavalry {
     }
 
     public void populateFormations() {
-        if (Unit.legalFormations.size()>0) return;
-        Unit.legalFormations.add(Formation.TWO_BY_ONE);
-        Unit.legalFormations.add(Formation.TWO_BY_TWO);
-        Unit.legalFormations.add(Formation.TWO_BY_THREE);
-        Unit.legalFormations.add(Formation.THREE_BY_THREE);
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.TWO_BY_ONE);
+        legalFormations.add(Formation.TWO_BY_TWO);
+        legalFormations.add(Formation.TWO_BY_THREE);
+        legalFormations.add(Formation.THREE_BY_THREE);
     }
 
 
     @Override
     public void populateUpgrades(Formation formation) {
-        int legalFormationIndex = Unit.legalFormations.indexOf(formation);
+        int legalFormationIndex = legalFormations.indexOf(formation);
         switch(legalFormationIndex) {
             case 3:
             case 2:
-                Unit.legalUpgrades.add(UpgradeType.Champion);
+                legalUpgrades.add(UpgradeType.Champion);
             case 1:
-                Unit.legalUpgrades.add(UpgradeType.Heraldry);
+                legalUpgrades.add(UpgradeType.Heraldry);
             case 0:
-                Unit.legalUpgrades.add(UpgradeType.Equipment);
-                Unit.legalUpgrades.add(UpgradeType.Training);
+                legalUpgrades.add(UpgradeType.Equipment);
+                legalUpgrades.add(UpgradeType.Training);
                 break;
             default:
                 return;

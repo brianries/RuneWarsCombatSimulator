@@ -65,8 +65,8 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
     }
 
     public void populateFormations() {
-        if (Unit.legalFormations.size()>0) return;
-        Unit.legalFormations.add(Formation.ONE);
+        if (legalFormations.size()>0) return;
+        legalFormations.add(Formation.ONE);
     }
 
     @Override
@@ -74,8 +74,8 @@ public class ArdusIxErebus extends WaiqarUnit implements Hero, Infantry, Unique 
 
     @Override
     public void populateUpgrades(boolean listContainsArdus, Formation formation) {
-        Unit.legalUpgrades.add(UpgradeType.Artifact);
-        Unit.legalUpgrades.add(UpgradeType.Unique);
+        legalUpgrades.add(UpgradeType.Artifact);
+        legalUpgrades.add(UpgradeType.Unique);
     }
 
     @Override
