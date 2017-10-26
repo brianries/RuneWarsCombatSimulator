@@ -11,6 +11,6 @@ public class FactionComboBean {
     }
 
     private static void reload() {
-        factionNames = FactionManager.instance().getLeadingNullFactionList();
+        factionNames = FactionManager.instance().getFactionList();
     }
 }

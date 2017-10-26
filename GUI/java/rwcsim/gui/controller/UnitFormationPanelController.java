@@ -11,6 +11,7 @@ import rwcsim.gui.view.UnitFormationPanel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.List;
 
 public class UnitFormationPanelController {
@@ -35,40 +36,57 @@ public class UnitFormationPanelController {
         formationComboBox = unitFormationPanelFrame.getFormationComboBox();
 
         loadFactions();
+        loadUnits();
+        loadFormations();
     }
 
     private void loadFactions() {
-        factionComboBox.removeAllItems();
-        unitComboBox.removeAllItems();
-        formationComboBox.removeAllItems();
+        log.info("loadFactions");
         String[] factions = FactionComboBean.getFactionNames();
+        Arrays.sort(factions);
         for (String f: factions) {
             factionComboBox.addItem(f);
         }
-        factionComboBox.setSelectedIndex(0);
     }
 
-    private void loadUnits(UnitManager unitManager) {
-        log.info("Loading Units");
-        unitComboBox.removeAllItems();
 
-        String[] names = unitManager.getAvailableUnitNames();
-        for (String n: names) {
-            unitComboBox.addItem(n);
+    private void clearUnits() {
+        log.info("clearUnits");
+        DefaultComboBoxModel model = (DefaultComboBoxModel) unitComboBox.getModel();
+        if (model.getSize()>0) {
+            model.removeAllElements();
         }
-//        unitComboBox.setSelectedIndex(0);
-        loadFormations(unitManager, (String)unitComboBox.getSelectedItem());
     }
 
-    private void loadFormations(UnitManager unitManager, String unit) {
-        log.info("Loading Formations for "+ unit);
+    private void loadUnits() {
+        log.info("Loading Units for: "+ factionComboBox.getSelectedItem());
+        DefaultComboBoxModel model = (DefaultComboBoxModel) unitComboBox.getModel();
+        UnitManager unitManager = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
+        String[] names = unitManager.getAvailableUnitNames();
+        Arrays.sort(names);
+        for (String n: names) {
+            model.addElement(n);
+        }
+    }
 
-        formationComboBox.removeAllItems();
+    private void clearFormations() {
+        log.info("clearFormations");
+        DefaultComboBoxModel model = (DefaultComboBoxModel) formationComboBox.getModel();
+        if (model.getSize()>0) {
+            model.removeAllElements();
+        }
+    }
+
+    private void loadFormations() {
+        log.info("Load Formations for: "+ factionComboBox.getSelectedItem() + " " + unitComboBox.getSelectedItem());
+        DefaultComboBoxModel model = (DefaultComboBoxModel) formationComboBox.getModel();
+        UnitManager unitManager = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
+        String unit = (String)unitComboBox.getSelectedItem();
+        log.info("Loading Formations for "+ unit);
         List<Formation> formations = unitManager.availableFormations(unit);
         for (Formation formation:formations) {
-            formationComboBox.addItem(formation.name());
+            model.addElement(formation.name());
         }
-//        formationComboBox.setSelectedIndex(0);
     }
 
     public void initListeners() {
@@ -76,8 +94,16 @@ public class UnitFormationPanelController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 log.info("FactionComboBox "+e.getActionCommand()+ ": "+factionComboBox.getSelectedItem()+" "+ factionComboBox.getSelectedIndex());
-                UnitManager um = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
-                loadUnits(um);
+                if (e.getActionCommand().compareTo("comboBoxChanged")==0) {
+                    if (formationComboBox.getItemCount()>0) {
+                        clearFormations();
+                    }
+                    if (unitComboBox.getItemCount()>0) {
+                        clearUnits();
+                    }
+                    loadUnits();
+                    loadFormations();
+                }
             }
         });
 
@@ -85,8 +111,14 @@ public class UnitFormationPanelController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 log.info("UnitComboBox "+e.getActionCommand() + ": "+unitComboBox.getSelectedItem()+" "+unitComboBox.getSelectedIndex());
-                UnitManager um = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
-                loadFormations(um, (String)unitComboBox.getSelectedItem());
+                if (e.getActionCommand().compareTo("comboBoxChanged")==0) {
+                    if (formationComboBox.getItemCount()>0) {
+                        clearFormations();
+                    }
+                    if (unitComboBox.getItemCount()>0) {
+                        loadFormations();
+                    }
+                }
             }
         });
 
