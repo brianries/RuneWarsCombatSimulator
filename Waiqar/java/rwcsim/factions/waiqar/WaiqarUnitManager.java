@@ -48,6 +48,20 @@ public class WaiqarUnitManager extends UnitManager {
     }
 
     @Override
+    public Unit getUnit(int unit) {
+        switch (unit) {
+            case ARDUS_IX_EREBUS: return new ArdusIxErebus();
+            case CARRION_LANCERS: return new CarrionLancer();
+            case REANIMATE_ARCHERS: return new ReanimateArchers();
+            case REANIMATES: return new Reanimates();
+            case ANKAUR_MARO: return new AnkaurMaro();
+            case DEATH_KNIGHTS: return new DeathKnights();
+//            case WRAITHS: return new Wraiths().avaialbleFormations();
+        }
+        return null;
+    }
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case ARDUS_IX_EREBUS: return new ArdusIxErebus().availableFormations();

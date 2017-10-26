@@ -25,6 +25,15 @@ public class MassAttackLoopTest {
     private long testSeed = 421390616945059l;
 
     public static int THREAD_COUNT = 10;
+
+    public static int getSimCount() {
+        return SIM_COUNT;
+    }
+
+    public static void setSimCount(int simCount) {
+        SIM_COUNT = simCount;
+    }
+
     public static int SIM_COUNT = 500000;
     public static AttackType attackType = AttackType.MELEE_ATTACK;
 
@@ -40,7 +49,7 @@ public class MassAttackLoopTest {
     List<String> messages = new ArrayList<>();
 
 
-    public void setupLoops() {
+    public void setupLoops(SimSetup ss) {
 //        RuleSetManager.resetFullRandom(testSeed);
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
 
@@ -49,7 +58,7 @@ public class MassAttackLoopTest {
         SimulationAttackLoop sal;
 
         for (int i = 0; i<SIM_COUNT; i++) {
-            sal = new SimulationAttackLoop(SimSetup.getSetup());
+            sal = new SimulationAttackLoop(ss);
             loops.add(sal);
         }
 
@@ -85,6 +94,6 @@ public class MassAttackLoopTest {
     public static void main(String[] args) {
         Configuration.getInstance();
         MassAttackLoopTest malt = new MassAttackLoopTest();
-        malt.setupLoops();
+        malt.setupLoops(SimSetup.getSetup());
     }
 }

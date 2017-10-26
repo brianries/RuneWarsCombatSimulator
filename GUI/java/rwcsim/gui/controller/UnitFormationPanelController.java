@@ -3,6 +3,7 @@ package rwcsim.gui.controller;
 import org.apache.log4j.Logger;
 import rwcsim.basicutils.Factions;
 import rwcsim.basicutils.Formation;
+import rwcsim.basicutils.concepts.Unit;
 import rwcsim.basicutils.managers.FactionManager;
 import rwcsim.basicutils.managers.UnitManager;
 import rwcsim.gui.beans.FactionComboBean;
@@ -22,14 +23,18 @@ public class UnitFormationPanelController {
     private JComboBox unitComboBox;
     private JComboBox factionComboBox;
 
-    public UnitFormationPanelController() {
-        initComponents();
+    public UnitFormationPanelController(UnitFormationPanel ufp) {
+        initialize(ufp);
+    }
+
+    public void initialize(UnitFormationPanel ufp) {
+        initComponents(ufp);
         initListeners();
     }
 
 
-    public void initComponents() {
-        unitFormationPanelFrame = new UnitFormationPanel();
+    public void initComponents(UnitFormationPanel ufp) {
+        unitFormationPanelFrame = ufp;
 
         factionComboBox = unitFormationPanelFrame.getFactionComboBox();
         unitComboBox = unitFormationPanelFrame.getUnitComboBox();
@@ -39,6 +44,16 @@ public class UnitFormationPanelController {
         loadUnits();
         loadFormations();
     }
+
+    public Unit getUnit() {
+        UnitManager um = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
+        return um.getUnit(um.getIdFromName((String)unitComboBox.getSelectedItem()));
+    }
+
+    public Formation getFormation() {
+        return Formation.valueOf((String)formationComboBox.getSelectedItem());
+    }
+
 
     private void loadFactions() {
         log.info("loadFactions");

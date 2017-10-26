@@ -49,6 +49,19 @@ public class DaqanUnitManager extends UnitManager {
 
 
     @Override
+    public Unit getUnit(int unit) {
+        switch (unit) {
+            case KARI_WRAITHSTALKER: return new KariWraithstalker();
+            case SPEARMEN: return new Spearmen();
+            case OATHSWORN_CAVALRY: return new OathswornCavalry();
+            case RUNE_GOLEMS: return new RuneGolems();
+            case LORD_HAWTHORNE: return new LordHawthorne();
+            case HEAVY_CROSSBOWMEN: return new HeavyCrossbowmen();
+        }
+        return null;
+    }
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case KARI_WRAITHSTALKER: return new KariWraithstalker().availableFormations();

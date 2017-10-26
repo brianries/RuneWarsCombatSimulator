@@ -46,6 +46,19 @@ public class LatariUnitManager extends UnitManager {
 
 
     @Override
+    public Unit getUnit(int unit) {
+        switch (unit) {
+            case ALIANA_OF_SUMMERSONG: return new AlianaOfSummersong();
+            case DEEPWOOD_ARCHERS: return new DeepwoodArchers();
+            case LEONX_RIDERS: return new LeonxRiders();
+            case AYMHELIN_SCIONS: return new AymhelinScions();
+            case MAEGAN_CYNDEWIN: return new MaeganCyndewin();
+            case DARNATI_WARRIORS: return new DeepwoodArchers();
+        }
+        return null;
+    }
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case ALIANA_OF_SUMMERSONG: return new AlianaOfSummersong().availableFormations();

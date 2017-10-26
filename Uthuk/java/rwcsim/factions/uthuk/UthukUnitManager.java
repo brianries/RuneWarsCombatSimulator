@@ -46,6 +46,19 @@ public class UthukUnitManager extends UnitManager {
 
 
     @Override
+    public Unit getUnit(int unit) {
+        switch (unit) {
+            case RAVOS_THE_EVERHUNGRY: return new RavosTheEverhungry();
+            case UTHUK_BERSERKERS: return new UthukBerserkers();
+            case FLESH_RIPPERS: return new FleshRippers();
+            case SPINE_THRESHERS: return new SpinedThreshers();
+//            case MAEGAN_CYNDEWIN: return new MaeganCyndewin().availableFormations();
+//            case DARNATI_WARRIORS: return new DeepwoodArchers().availableFormations();
+        }
+        return null;
+    }
+
+    @Override
     public List<Formation> availableFormations(int unit) {
         switch (unit) {
             case RAVOS_THE_EVERHUNGRY: return new RavosTheEverhungry().availableFormations();
