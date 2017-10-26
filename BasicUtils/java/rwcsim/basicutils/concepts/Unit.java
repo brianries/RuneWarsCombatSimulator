@@ -21,10 +21,7 @@ import java.util.Map;
  */
 public interface Unit {
     String getName();
-    List<Formation> legalFormations = new ArrayList<>();
-    List<UpgradeType> legalUpgrades = new ArrayList<>();
-    Map<Integer, Ability<?>> abilities = new HashMap<>();
-    Map<Stage.Key,List<UpgradeSlot>> upgradeRegister = new HashMap<>();
+
 
     void initializeUnit();
 
@@ -55,14 +52,9 @@ public interface Unit {
     void setRangedAttackPool(DiePool diePool);
 
     void setAbilities();
-    default void addAbility(Ability ability) { abilities.put(ability.getKey(), ability); }
-    default Map<Integer, Ability<?>> getAbilities() { return abilities; }
+    void addAbility(Ability ability);
+    Map<Integer, Ability<?>> getAbilities();
 
-    default void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot) {
-        if (!upgradeRegister.containsKey(stage.key())) {
-            upgradeRegister.put(stage.key(), new ArrayList<UpgradeSlot>());
-        }
-        upgradeRegister.get(stage.key()).add(upgradeSlot);
-    }
-    default Map<Stage.Key, List<UpgradeSlot>> getStageRegister() { return upgradeRegister; }
+    void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot);
+    Map<Stage.Key, List<UpgradeSlot>> getStageRegister();
 }

@@ -4,11 +4,20 @@ import rwcsim.basicutils.Formation;
 import rwcsim.basicutils.concepts.*;
 import rwcsim.basicutils.dials.CommandTool;
 import rwcsim.basicutils.dice.DiePool;
+import rwcsim.basicutils.upgrades.UpgradeSlot;
 import rwcsim.basicutils.upgrades.UpgradeType;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public abstract class BaseUnit implements Unit {
+    public List<Formation> legalFormations=null;// = new ArrayList<>();
+    public List<UpgradeType> legalUpgrades=null;// = new ArrayList<>();
+    public Map<Integer, Ability<?>> abilities = new HashMap<>();
+    public Map<Stage.Key,List<UpgradeSlot>> upgradeRegister = new HashMap<>();
+
     public static class NullUnit extends BaseUnit {
         @Override
         public String getName() {
@@ -104,7 +113,10 @@ public abstract class BaseUnit implements Unit {
     }
 
     public List<Formation> availableFormations() {
-        populateFormations();
+        if (null == legalFormations) {
+            legalFormations = new ArrayList<>();
+            populateFormations();
+        }
         return legalFormations;
     };
 
@@ -130,4 +142,15 @@ public abstract class BaseUnit implements Unit {
     public void setRangedAttackPool(DiePool diePool) {
         this.rangedPool = diePool;
     }
+
+    public void addAbility(Ability ability) { abilities.put(ability.getKey(), ability); }
+    public Map<Integer, Ability<?>> getAbilities() { return abilities; }
+
+    public void registerUpgrade(Stage stage, UpgradeSlot upgradeSlot) {
+        if (!upgradeRegister.containsKey(stage.key())) {
+            upgradeRegister.put(stage.key(), new ArrayList<UpgradeSlot>());
+        }
+        upgradeRegister.get(stage.key()).add(upgradeSlot);
+    }
+    public Map<Stage.Key, List<UpgradeSlot>> getStageRegister() { return upgradeRegister; }
 }

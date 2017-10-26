@@ -56,7 +56,7 @@ public class UnitFormationPanelController {
         for (String n: names) {
             unitComboBox.addItem(n);
         }
-        unitComboBox.setSelectedIndex(0);
+//        unitComboBox.setSelectedIndex(0);
         loadFormations(unitManager, (String)unitComboBox.getSelectedItem());
     }
 
@@ -68,7 +68,7 @@ public class UnitFormationPanelController {
         for (Formation formation:formations) {
             formationComboBox.addItem(formation.name());
         }
-        formationComboBox.setSelectedIndex(0);
+//        formationComboBox.setSelectedIndex(0);
     }
 
     public void initListeners() {
@@ -84,7 +84,7 @@ public class UnitFormationPanelController {
         unitComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                log.info("UnitComboBox "+e.getActionCommand() + ": "+unitComboBox.getSelectedIndex());
+                log.info("UnitComboBox "+e.getActionCommand() + ": "+unitComboBox.getSelectedItem()+" "+unitComboBox.getSelectedIndex());
                 UnitManager um = FactionManager.instance().getUnitManager(Factions.valueOfFromString((String)factionComboBox.getSelectedItem()));
                 loadFormations(um, (String)unitComboBox.getSelectedItem());
             }
