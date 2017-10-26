@@ -50,13 +50,14 @@ public class SimulatorController {
         simulationCountField.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+//                malt.setSimCount(Integer.parseInt(simulationCountField.getSelectedText()));
             }
         }));
     }
 
     public void runSimulation() {
         ss = new SimSetup(firstController.getUnit(), firstController.getFormation(), secondController.getUnit(), secondController.getFormation());
+        malt.setSimCount(Integer.parseInt(simulationCountField.getText()));
         malt.setupLoops(ss);
     }
 
