@@ -1,8 +1,6 @@
 package rwcsim.basicutils.abilities;
 
-import rwcsim.basicutils.concepts.Ability;
 import rwcsim.basicutils.runes.RuneFaces;
-import rwcsim.basicutils.runes.RuneManager;
 
 public class Regenerate extends NullAbility<Regenerate> {
     public Regenerate(int v) {

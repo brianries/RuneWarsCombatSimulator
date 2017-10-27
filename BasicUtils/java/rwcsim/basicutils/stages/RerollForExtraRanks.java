@@ -2,7 +2,8 @@ package rwcsim.basicutils.stages;
 
 import rwcsim.basicutils.concepts.Stage;
 
-public interface RerollForExtraRanks extends Stage<RerollForExtraRanks> {
-    Key<RerollForExtraRanks> key = new Key<>();
-    default Key<RerollForExtraRanks> key() { return key; };
+public class RerollForExtraRanks extends NullStage<RerollForExtraRanks> {
+    public RerollForExtraRanks() {
+        setKey(Stages.REROLL_FOR_EXTRA_RANKS);
+    }
 }

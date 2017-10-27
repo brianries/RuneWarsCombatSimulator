@@ -2,7 +2,8 @@ package rwcsim.basicutils.stages;
 
 import rwcsim.basicutils.concepts.Stage;
 
-public interface OnReceivingBane extends Stage<OnReceivingBane> {
-    Key<OnReceivingBane> key = new Key<>();
-    default Key<OnReceivingBane> key() { return key; };
+public class OnReceivingBane extends NullStage<OnReceivingBane> {
+    public OnReceivingBane() {
+        setKey(Stages.ON_RECIEVING_BANE);
+    }
 }

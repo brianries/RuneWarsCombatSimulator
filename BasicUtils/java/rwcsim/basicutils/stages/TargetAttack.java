@@ -2,7 +2,8 @@ package rwcsim.basicutils.stages;
 
 import rwcsim.basicutils.concepts.Stage;
 
-public interface TargetAttack extends Stage<TargetAttack> {
-    Key<TargetAttack> key = new Key<>();
-    default Key<TargetAttack> key() { return key; };
+public class TargetAttack extends NullStage<TargetAttack> {
+    public TargetAttack() {
+        setKey(Stages.TARGET_ATTACK);
+    }
 }
