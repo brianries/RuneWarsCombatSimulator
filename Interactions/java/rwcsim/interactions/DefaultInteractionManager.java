@@ -27,6 +27,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
     @Override
     public Map<Die, List<DieFace>> reroll(int rerollRankCount, boolean rerollPartialRank, UnitFormationManager attacker, Map<Die, List<DieFace>> results, AttackType type) {
+        /*
         Map<Die, List<DieFace>> working;
 //        results.forEach(working::putIfAbsent);
 //        working.putAll(results);
@@ -34,7 +35,7 @@ public class DefaultInteractionManager extends BaseInteractionManager {
                 .collect(Collectors.toMap(
                         e -> e.getKey(), e -> new ArrayList<DieFace>(e.getValue())));
 
-        /* default reroll of blanks if possible */
+        // default reroll of blanks if possible
         int rerollDieCount =  rerollRankCount;
 
         int[] rerollPool = new int[working.keySet().size()];
@@ -70,7 +71,44 @@ public class DefaultInteractionManager extends BaseInteractionManager {
 
         if (containsBlanks(results) && rerollPartialRank) {
             results = rerollBlanks(results, rerollPartialRank);
+        }*/
+
+
+        int rerollCount = 1;
+        int oneRerollCount = 1;
+        while (rerollCount <= rerollRankCount) {
+            boolean oneRerollOnly = (rerollCount == rerollRankCount && rerollPartialRank);
+
+            for (Die die : results.keySet()) {
+                List<DieFace> currentResults = results.get(die);
+                if (currentResults.size() > 0) {
+                    List<DieFace> facesWithHits = currentResults.stream().filter(DieFace::hasHit).collect(Collectors.toList());
+                    int noHitCount = currentResults.size() - facesWithHits.size();
+                    if (!oneRerollOnly) {
+                        List<DieFace> newRolls = Roller.rollDice(die, noHitCount);
+                        currentResults.clear();
+                        currentResults.addAll(facesWithHits);
+                        currentResults.addAll(newRolls);
+                    } else {
+                        // TODO need logic for determining the best die to reroll -- right now just removing the first one
+                        if (noHitCount >= 1 && oneRerollCount == 1) {
+                            DieFace newRoll = Roller.roll(die);
+                            List<DieFace> notHitFaces = currentResults.stream().filter(dieFace -> !dieFace.hasHit()).collect(Collectors.toList());
+                            notHitFaces.remove(0);
+                            notHitFaces.add(newRoll);
+                            currentResults.clear();
+                            currentResults.addAll(facesWithHits);
+                            currentResults.addAll(notHitFaces);
+                            oneRerollCount = 0;
+                        }
+                    }
+                }
+            }
+
+            rerollCount++;
         }
+
+        logger.debug("reroll results: " + results.toString());
 
         return results;
     }
